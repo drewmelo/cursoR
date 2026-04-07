@@ -1,0 +1,150 @@
+---
+title: |
+  <div style="display: flex; align-items: center;">
+    <span style="color: #313130; font-weight: bold; font-size: 2em;">Introdução ao</span>
+  <img src="logo/r_logo.png" style="margin-left: -15px; height: 150px; margin-bottom: -40px;">
+  <object data="images/qrcode.svg" type="image/svg+xml" style="margin-left: 650px; height: 300px; position: absolute; top: 180px; right: 0;"></object>
+  </div>
+author:
+  - name: André Vitor Pereira de Melo
+    email: andre.melo@ufdpar.edu.br
+    affiliations: Universidade Federal do Delta do Parnaíba
+subtitle: "Fundamentos do R e pensamento com dados"
+date: "2026-04-10"
+date-format: long
+lang: pt-BR
+format: 
+  revealjs: 
+    theme: [default, custom.scss]
+    transition: slide
+    background-transition: fade
+    slide-level: 2
+    logo: logo/ufdpar_logo.png
+    footer: "[https://drewmelo.github.io/cursoR](https://drewmelo.github.io/cursoR)"
+    slide-number: true
+    controls: true
+    smaller: true
+    scrollable: false
+    incremental: true
+    preview-links: true
+    background: 
+      class: "title-slide-bg"
+    include-after-body: title/clean_title_page.html
+    execute:
+      echo: true
+    bibliography: referencias.bib
+    csl: abnt.csl
+---
+
+# Introdução ao R e pensamento com dados {style="font-size:1.5em;"}
+
+# O que é análise de dados? {.center .nonincremental}
+
+- Rodar o código, fazer um gráfico ou só calcular estatísticas para formalizar seu resultado?
+  - Nenhum dos três de forma isolada. **É transformar dados em respostas.**
+
+- *“É muito melhor uma resposta aproximada à pergunta certa, que muitas vezes é vaga, do que uma resposta exata à pergunta errada, que sempre pode ser tornada precisa. (John Tukey)”*
+
+# Exemplo de análise de dados (Case 1) {.center .nonincremental}
+
+::: {style="text-align: center; margin-top: 1em"}
+::: {.fragment .fade-in-then-semi-out}
+![](images/case1.png){height="500"}
+:::
+:::
+
+# Exemplo de análise de dados (Case 2) {.center .nonincremental}
+
+::: {style="text-align: center; margin-top: 1em"}
+::: {.fragment .fade-in-then-semi-out}
+<div style="text-align: center;">
+![](images/case2.png){height="500"}
+<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
+Fonte: @knaflic2019storytelling.
+</div>
+</div>
+:::
+:::
+
+# O papel do R {.center .nonincremental}
+
+- Onde entra o R nisso?
+
+::: {style="text-align: center; margin-top: 1em"}
+::: {.fragment .fade-in-then-semi-out}
+<div style="text-align: center;">
+![](images/workflow.png){height="300"}
+<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
+Fonte: @wickham2023r.
+</div>
+</div>
+:::
+:::
+
+# Por que economistas usam R {.center .nonincremental}
+
+- Trabalha bem com grandes bases;
+- É completamente gratuito e *open source*;
+- Muito utilizado pela comunidade acadêmica e pelo mercado;
+- Possui uma comunidade ativa que **desenvolve e compartilha pacotes**;
+- Permite replicação de resultados;
+- E o principal: **Permite contar histórias com dados!**
+
+# O que é o RStudio? {.center .nonincremental}
+
+-   Ambiente de Desenvolvimento Integrado (IDE);
+    -   RStudio é um ambiente de desenvolvimento integrado projetado especificamente para trabalhar com a linguagem R.
+-   Suas vantagens.
+    -   Facilita o desenvolvimento e análise de código R com recursos como edição de scripts, **gerenciamento de projetos e depuração integrada**.
+
+# Passos da instalação {.center}
+
+::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+Visite [CRAN - The Comprehensive R Archive Network](https://cran.rstudio.com/) e baixe a linguagem, através de um arquivo executável, para seu sistema operacional;
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+Visite [RStudio Desktop](https://posit.co/download/rstudio-desktop/) e baixe o instalador para seu sistema operacional;
+:::
+
+::: {.fragment .fade-in}
+<p style="color: #028DB7">
+Siga as instruções fornecidas nos instaladores para completar o processo de instalação.
+</p>
+:::
+:::
+
+::: {.column width="50%"}
+![](logo/rstudio_logo.png){.absolute height="150"}\
+![](logo/r_logo.png){.absolute height="200" bottom="50px"}
+:::
+:::
+
+# RStudio Cloud {.center .nonincremental}
+
+::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+Visite a [Posit Cloud](https://posit.cloud/) para acessar e utilizar o RStudio sem a necessidade de instalação local;
+:::
+
+::: {.fragment .fade-in}
+<p style="color: #028DB7">
+Necessário realizar **login** (através de uma conta Google, Github, entre outros) para acessar o RStudio Cloud.
+</p>
+:::
+:::
+
+::: {.column width="50%"}
+![](images/rstudio_cloud.png){.absolute .border .shadow-border height="300" width="600"}
+:::
+:::
+
+# Vamos à prática! {style="font-size:1.5em;"}
+
+# Referências {.unnumbered}
+
+::: {#refs}
+:::
