@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input8d35a6e3b863e9a2</title>
+  <title>quarto-input3e969b3a4af37ad4</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -188,7 +254,12 @@ André Vitor Pereira de Melo
 <h1>Exemplo de análise de dados (Case 1)</h1>
 <div style="text-align: center; margin-top: 1em">
 <div class="fragment fade-in-then-semi-out">
-<p><img data-src="images/case1.png" height="500"></p>
+<div style="text-align: center;">
+<img data-src="images/case1.png" height="500">
+<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
+<p>Fonte: <span class="citation" data-cites="wilher2023analise">Wilher (<a href="#/referências" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -197,12 +268,7 @@ André Vitor Pereira de Melo
 <h1>Exemplo de análise de dados (Case 2)</h1>
 <div style="text-align: center; margin-top: 1em">
 <div class="fragment fade-in-then-semi-out">
-<div style="text-align: center;">
-<img data-src="images/case2.png" height="500">
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-<p>Fonte: <span class="citation" data-cites="knaflic2019storytelling">Knaflic (<a href="#/referências" role="doc-biblioref" onclick="">2019</a>)</span>.</p>
-</div>
-</div>
+<p><img data-src="images/case2.png" height="500"></p>
 </div>
 </div>
 </section>
@@ -215,7 +281,7 @@ André Vitor Pereira de Melo
 <div style="text-align: center; margin-top: 1em">
 <div class="fragment fade-in-then-semi-out">
 <div style="text-align: center;">
-<img data-src="images/workflow.png" height="300">
+<img data-src="images/workflow.png" height="350">
 <div style="margin-top: 2px; font-size: 0.6em; color: gray;">
 <p>Fonte: <span class="citation" data-cites="wickham2023r">Wickham e Grolemund (<a href="#/referências" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
 </div>
@@ -288,19 +354,52 @@ Necessário realizar <strong>login</strong> (através de uma conta Google, Githu
 </div></div>
 </section>
 
+<section id="interface-do-rstudio" class="title-slide slide level1 center nonincremental">
+<h1>Interface do RStudio</h1>
+<div style="text-align: center; margin-top: 1em">
+<div class="fragment fade-in-then-semi-out">
+<p><img data-src="images/console.png" class="border shadow-border" height="500"></p>
+</div>
+</div>
+</section>
+
 <section id="vamos-à-prática" class="title-slide slide level1 center" style="font-size:1.5em;">
 <h1>Vamos à prática!</h1>
 
 </section>
 
+<section id="exercício-de-fixação" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação</h1>
+<ol type="1">
+<li class="fragment">Considere os dados de uma empresa que vende 4 produtos:</li>
+</ol>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>preco <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">30</span>)</span>
+<span id="cb1-2"><a href=""></a>quantidade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">80</span>, <span class="dv">40</span>)</span>
+<span id="cb1-3"><a href=""></a>custo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">800</span>, <span class="dv">600</span>, <span class="dv">900</span>, <span class="dv">1250</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<ol type="a">
+<li class="fragment">Calcule a receita de cada produto</li>
+<li class="fragment">Calcule o lucro de cada produto</li>
+<li class="fragment">Mostre quais produtos tiveram lucro positivo</li>
+<li class="fragment">Qual produto teve maior lucro?</li>
+<li class="fragment">Existe algum produto que deu prejuízo?</li>
+</ol>
+<ol start="2" type="1">
+<li class="fragment">Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)</li>
+</ol>
+</section>
+
 <section id="referências" class="title-slide slide level1 unnumbered smaller scrollable">
 <h1>Referências</h1>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
-<div id="ref-knaflic2019storytelling" class="csl-entry" role="listitem">
-KNAFLIC, C. N. <strong>Storytelling with Data: A Data Visualization Guide for Business Professionals</strong>. Hoboken, NJ: Wiley, 2019.
-</div>
 <div id="ref-wickham2023r" class="csl-entry" role="listitem">
 WICKHAM, H.; GROLEMUND, G. <strong>R para ciência de dados: importe, transforme, visualize e modele dados</strong>. Rio de Janeiro: Alta Books, 2023.
+</div>
+<div id="ref-wilher2023analise" class="csl-entry" role="listitem">
+WILHER, V. Análise de Dados na Prática com um Case real. [<em>S. l.</em>]: Análise Macro, 21 abr. 2023. Disponível em: <a href="https://analisemacro.com.br/data-science/analise-de-dados-na-pratica-com-um-case-real/">https://analisemacro.com.br/data-science/analise-de-dados-na-pratica-com-um-case-real/</a>.
 </div>
 </div>
 
@@ -546,6 +645,82 @@ WICKHAM, H.; GROLEMUND, G. <strong>R para ciência de dados: importe, transforme
         });
       };
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

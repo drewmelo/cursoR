@@ -49,7 +49,12 @@ format:
 
 ::: {style="text-align: center; margin-top: 1em"}
 ::: {.fragment .fade-in-then-semi-out}
+<div style="text-align: center;">
 ![](images/case1.png){height="500"}
+<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
+Fonte: @wilher2023analise.
+</div>
+</div>
 :::
 :::
 
@@ -57,12 +62,7 @@ format:
 
 ::: {style="text-align: center; margin-top: 1em"}
 ::: {.fragment .fade-in-then-semi-out}
-<div style="text-align: center;">
 ![](images/case2.png){height="500"}
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-Fonte: @knaflic2019storytelling.
-</div>
-</div>
 :::
 :::
 
@@ -73,7 +73,7 @@ Fonte: @knaflic2019storytelling.
 ::: {style="text-align: center; margin-top: 1em"}
 ::: {.fragment .fade-in-then-semi-out}
 <div style="text-align: center;">
-![](images/workflow.png){height="300"}
+![](images/workflow.png){height="350"}
 <div style="margin-top: 2px; font-size: 0.6em; color: gray;">
 Fonte: @wickham2023r.
 </div>
@@ -142,7 +142,35 @@ Necessário realizar **login** (através de uma conta Google, Github, entre outr
 :::
 :::
 
+# Interface do RStudio {.center .nonincremental}
+
+::: {style="text-align: center; margin-top: 1em"}
+::: {.fragment .fade-in-then-semi-out}
+![](images/console.png){.border .shadow-border height="500"}
+:::
+:::
+
 # Vamos à prática! {style="font-size:1.5em;"}
+
+# Exercício de Fixação {.center .center-x background-color="#00263A"}
+
+1. Considere os dados de uma empresa que vende 4 produtos:
+
+::: fragment
+```{r}
+preco <- c(10, 20, 15, 30)
+quantidade <- c(100, 50, 80, 40)
+custo <- c(800, 600, 900, 1250)
+```
+:::
+
+(a) Calcule a receita de cada produto
+(b) Calcule o lucro de cada produto
+(c) Mostre quais produtos tiveram lucro positivo
+(d) Qual produto teve maior lucro?
+(e) Existe algum produto que deu prejuízo?
+
+2. Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)
 
 # Referências {.unnumbered}
 
