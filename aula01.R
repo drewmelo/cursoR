@@ -146,3 +146,58 @@ as.character(numero)
 ausente <- c(3, 5, 6, NA)
 ausente
 
+preco <- c(10, 20, 15, 30)
+quantidade <- c(100, 50, 80, 40)
+custo <- c(800, 600, 900, 1250)
+
+
+# Resolução exercício fixação ---------------------------------------------
+preco <- c(10, 20, 15, 30)
+quantidade <- c(100, 50, 80, 40)
+custo <- c(800, 600, 900, 1250)
+
+#Calcule a receita de cada produto
+receita <- preco * quantidade
+
+receita
+
+#Calcule o lucro de cada produto
+lucro <- receita - custo
+lucro
+
+#Mostre quais produtos tiveram lucro positivo
+lucro[lucro > 0]
+
+#Qual produto teve maior lucro?
+max(lucro)
+
+which.max(lucro)
+
+paste0("O produto que teve maior lucro encontra-se na posição:",
+       which.max(lucro))
+
+#Existe algum produto que deu prejuízo?
+min(lucro)
+
+which.min(lucro)
+
+paste0("O produto que deu prejuízo está nas posição:",
+       which.min(lucro))
+
+#Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)
+lucro[lucro < 0] <- 0
+lucro
+
+# Vetores aumentados ------------------------------------------------------
+porte <- c("pequeno", "grande", "médio", "pequeno", "grande")
+porte
+
+as.factor(porte)
+
+porte_fator <- factor(x = porte, 
+                      levels = c("pequeno", "médio", "grande"),
+                      ordered = T)
+porte_fator
+
+class(porte_fator)
+
