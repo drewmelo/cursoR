@@ -20,7 +20,7 @@ format:
     background-transition: fade
     slide-level: 2
     logo: logo/ufdpar_logo.png
-    footer: "[https://drewmelo.github.io/cursoR](https://drewmelo.github.io/cursoR)"
+    footer: "[https://github.com/drewmelo/cursoR](https://github.com/drewmelo/cursoR)"
     slide-number: true
     controls: true
     smaller: true
