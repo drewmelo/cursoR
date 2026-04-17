@@ -10,7 +10,7 @@ author:
     email: andre.melo@ufdpar.edu.br
     affiliations: Universidade Federal do Delta do Parnaíba
 subtitle: "Fundamentos do R e pensamento com dados"
-date: "2026-04-10"
+date: "2026-04-17"
 date-format: long
 lang: pt-BR
 format: 
@@ -36,7 +36,7 @@ format:
     csl: abnt.csl
 ---
 
-# Introdução ao R e pensamento com dados {style="font-size:1.5em;"}
+# 01 - Introdução ao R e pensamento com dados {style="font-size:1.5em;"}
 
 # O que é análise de dados? {.center .nonincremental}
 
@@ -171,6 +171,200 @@ custo <- c(800, 600, 900, 1250)
 (e) Existe algum produto que deu prejuízo?
 
 2. Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)
+
+# 02 - Estruturas de dados e funções básicas {style="font-size:1.5em;"}
+
+#  {.center .nonincremental}
+::: {style="text-align: center; margin-top: 1em"}
+![](images/freq.jpeg){height="500"}
+:::
+
+# Como os dados aparecem na economia {.center .nonincremental}
+
+- Séries de valores (ex: PIB ao longo do tempo)
+- Séries temporais (inflação, taxa de juros, desemprego)
+- Tabelas com múltiplas variáveis (PIB, emprego, crédito por município)
+- Bases com diferentes indicadores (social, econômico, ambiental)
+- Dados por região (país, estado)
+- Dados por setor (indústria, serviços, agropecuária, entre outros)
+
+# E o que podemos fazer com esses dados {.center .nonincremental}
+
+- Calcular médias e medianas
+- Identificar máximos e mínimos
+- Criar novas variáveis
+- Comparar informações 
+- Agrupar dados
+- A ideia central é **transformar dados brutos em informação econômica**
+
+# Tipos de estruturas de dados {.center .noincremental}
+
+::: columns
+::: {.column width="50%"}
+::: {.fragment .fade-in-then-semi-out}
+Na linguagem R, há várias estruturas de dados fundamentais que são usadas para armazenar e manipular informações de maneiras específicas.
+:::
+
+-   **Vetores**: Unidimensionais;
+-   **Matrizes**: Bidimensionais;
+-   **Data Frames**: Bidimensionais;
+-   **Arrays**: Multidimensionais;
+-   **Listas**: Flexíveis.
+:::
+
+::: {.column width="50%"}
+![](images/estruturas_de_dados.png){.absolute .border .shadow-border width="500" heigth="500"}
+:::
+:::
+
+# Tipos de estruturas de dados {.center .nonincremental visibility="uncounted"}
+
+::: {style="text-align: center; margin-top: 1em"}
+![](images/datatypes_dataframes.png){height="400"}
+:::
+
+# Principais classes de dados {.center .noincremental}
+
+::: columns
+::: {.column width="30%"}
+-   numeric;
+-   integer;
+-   character;
+-   logical;
+-   complex;
+-   raw;
+-   list.
+:::
+
+::: {.column width="70%"}
+::: fragment
+Quando se mistura diferentes tipos de dados em uma operação, o R usa uma **hierarquia de coerção** para determinar como converter **estes dados**.
+
+::: {.fragment .center-text}
+logical ➡ integer ➡ numeric ➡ complex ➡ character
+:::
+:::
+:::
+:::
+
+# O que são data frames? {.center .noincremental}
+
+- Os *data frames* são estruturas de dados fundamentais no R, muito utilizadas para **armazenar conjuntos de dados tabulares**, onde as colunas podem conter **diferentes tipos de classes** (numéricos, caracteres, lógicos, etc.).
+
+-   Quanto a sua estrutura, temos:
+    -   **Nome das Colunas (variáveis):** Cada coluna em um *data frame* tem um nome que a identifica, representando seus respectivos atributos;
+    -   **Rótulos de Linhas (observações):** As linhas podem ser rotuladas para identificar cada observação de maneira única ou significativa.
+
+# O que são data frames? {.center visibility="uncounted"}
+
+::: {style="text-align: center; margin-top: 1em"}
+![](images/schema_data.png){height="450"}
+:::
+
+# Dados nativos do R
+
+O R vem com vários conjuntos de *data frames* nativos, que estão disponíveis para **uso imediato**. Esses conjuntos de dados são fornecidos principalmente pelo pacote `datasets`, que é **carregado automaticamente quando você inicia uma sessão R**.
+
+::: fragment
+Você pode listar todos os conjuntos de dados disponíveis no pacote `datasets` usando a função `data()`.
+
+```{r, results='hide', eval=FALSE}
+data(package = "datasets")
+```
+:::
+
+-   Principais conjuntos de dados:
+    -   airquality
+    -   mtcars
+    -   cars
+    -   iris
+
+# Dados brasileiros
+
+- **sidrar**: IBGE *(PIB, população, produção, etc.)*  
+- **rbcb**: Banco Central *(juros, crédito, inflação)*  
+- **ipeadatar**: indicadores econômicos (IPEA)  
+- **basedosdados**: diversas bases públicas organizadas *(IBGE, BCB, RAIS, etc.)*  
+- **pnadcIBGE**: microdados da PNAD Contínua *(mercado de trabalho)*  
+- **microdatasus**: dados de saúde *(DATASUS)*  
+- **censobr**: Censo demográfico  
+- **geobr**: dados espaciais do Brasil *(mapas, municípios)* 
+
+# Dados internacionais
+
+- **WDI**: Banco Mundial *(PIB, pobreza, educação)*  
+- **gapminder**: desenvolvimento global *(didático)*  
+- **oecd** / APIs: indicadores econômicos de países  
+- **IMFData**: Fundo Monetário Internacional *(macro global)*  
+- **tidyquant**: dados financeiros *(mercados, ações)*  
+- **quantmod**: séries financeiras *(Yahoo Finance, etc.)*  
+- **fredr**: Federal Reserve *(EUA: juros, inflação, desemprego)*  
+
+# Listas no R 
+
+- Permitem guardar **diferentes tipos de dados juntos**  
+- Podem conter vetores, data frames e até outros objetos, ou seja, são úteis quando trabalhamos com **múltiplas bases ou resultados**
+
+- Então temos:
+  - **Vetor**: uma única informação 
+  - **Data frame**: várias informações organizadas  
+  - **Lista**: vários objetos diferentes reunidos 
+
+# Criando listas {.center visibility="uncounted"}
+
+- Dessa forma, a lista criada estará em um formato parecido com esse:
+
+::: fragment
+::: {style="text-align: center;"}
+![](images/rstudio_screenshot1.png){.border .shadow-border height="450"}
+:::
+:::
+
+# Vamos à prática! {style="font-size:1.5em;"}
+
+# Exercício de Fixação (Aula 02) {.center .center-x background-color="#00263A"}
+
+1. Utilizando o objeto `paises`, responda:
+
+```{r, echo = FALSE}
+library(tidyverse)
+```
+
+::: fragment
+```{r}
+paises <- tibble(
+  pais = c("Brasil", "Argentina", "Chile", "Peru"),
+  pop = c(203, 46, 19, 34),
+  desemprego = c(7.8, 6.5, 8.7, 7.2),
+  pib = c(2174, 633, 335, 268)
+)
+```
+:::
+
+(a) Mostre apenas as colunas pais e pib.
+(b) Mostre apenas os países com pib maior que 300.
+(c) Crie uma nova coluna chamada pib_percapita, que representa a divisão do pib pela população
+(d) Crie uma nova coluna chamada desemprego_alto, que deve ser: TRUE para desemprego maior que 7 e FALSE caso contrário
+(e) Altere o valor do desemprego do Chile para 8 e remova a coluna pop
+
+# Exercício de Fixação (Aula 02) {.center .center-x background-color="#00263A"}
+
+2. Na lista lista_econ:
+
+::: fragment
+```{r}
+lista_econ <- list(
+  paises = paises,
+  codigos = c("Brasil" = "BRA", 
+              "Argentina" = "ARG", 
+              "Chile" = "CHL", 
+              "Peru" = "PER"),
+  anos = c(2021, 2022, 2023, 2024)
+)
+```
+:::
+
+(a) Modifique, dentro da lista, o código do Peru de "PER" para "PRU"
 
 # Referências {.unnumbered}
 
