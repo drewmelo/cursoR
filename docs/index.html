@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input8fbc43d94f616b1</title>
+  <title>quarto-inputa89393967fafc640</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -232,10 +232,10 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">10 de abril de 2026</p>
+  <p class="date">17 de abril de 2026</p>
 </section>
 <section id="introdução-ao-r-e-pensamento-com-dados" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>Introdução ao R e pensamento com dados</h1>
+<h1>01 - Introdução ao R e pensamento com dados</h1>
 
 </section>
 
@@ -389,6 +389,249 @@ Necessário realizar <strong>login</strong> (através de uma conta Google, Githu
 </ol>
 <ol start="2" type="1">
 <li class="fragment">Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)</li>
+</ol>
+</section>
+
+<section id="estruturas-de-dados-e-funções-básicas" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>02 - Estruturas de dados e funções básicas</h1>
+
+</section>
+
+<section id="section" class="title-slide slide level1 center nonincremental">
+<h1></h1>
+<div style="text-align: center; margin-top: 1em">
+<p><img data-src="images/freq.jpeg" height="500"></p>
+</div>
+</section>
+
+<section id="como-os-dados-aparecem-na-economia" class="title-slide slide level1 center nonincremental">
+<h1>Como os dados aparecem na economia</h1>
+<ul>
+<li class="fragment">Séries de valores (ex: PIB ao longo do tempo)</li>
+<li class="fragment">Séries temporais (inflação, taxa de juros, desemprego)</li>
+<li class="fragment">Tabelas com múltiplas variáveis (PIB, emprego, crédito por município)</li>
+<li class="fragment">Bases com diferentes indicadores (social, econômico, ambiental)</li>
+<li class="fragment">Dados por região (país, estado)</li>
+<li class="fragment">Dados por setor (indústria, serviços, agropecuária, entre outros)</li>
+</ul>
+</section>
+
+<section id="e-o-que-podemos-fazer-com-esses-dados" class="title-slide slide level1 center nonincremental">
+<h1>E o que podemos fazer com esses dados</h1>
+<ul>
+<li class="fragment">Calcular médias e medianas</li>
+<li class="fragment">Identificar máximos e mínimos</li>
+<li class="fragment">Criar novas variáveis</li>
+<li class="fragment">Comparar informações</li>
+<li class="fragment">Agrupar dados</li>
+<li class="fragment">A ideia central é <strong>transformar dados brutos em informação econômica</strong></li>
+</ul>
+</section>
+
+<section id="tipos-de-estruturas-de-dados" class="title-slide slide level1 center noincremental">
+<h1>Tipos de estruturas de dados</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment fade-in-then-semi-out">
+<p>Na linguagem R, há várias estruturas de dados fundamentais que são usadas para armazenar e manipular informações de maneiras específicas.</p>
+</div>
+<ul>
+<li class="fragment"><strong>Vetores</strong>: Unidimensionais;</li>
+<li class="fragment"><strong>Matrizes</strong>: Bidimensionais;</li>
+<li class="fragment"><strong>Data Frames</strong>: Bidimensionais;</li>
+<li class="fragment"><strong>Arrays</strong>: Multidimensionais;</li>
+<li class="fragment"><strong>Listas</strong>: Flexíveis.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/estruturas_de_dados.png" class="absolute border shadow-border" style="width: 500px; " data-heigth="500"></p>
+</div></div>
+</section>
+
+<section id="tipos-de-estruturas-de-dados-1" class="title-slide slide level1 center nonincremental" data-visibility="uncounted">
+<h1>Tipos de estruturas de dados</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><img data-src="images/datatypes_dataframes.png" height="400"></p>
+</div>
+</section>
+
+<section id="principais-classes-de-dados" class="title-slide slide level1 center noincremental">
+<h1>Principais classes de dados</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li class="fragment">numeric;</li>
+<li class="fragment">integer;</li>
+<li class="fragment">character;</li>
+<li class="fragment">logical;</li>
+<li class="fragment">complex;</li>
+<li class="fragment">raw;</li>
+<li class="fragment">list.</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<div class="fragment">
+<p>Quando se mistura diferentes tipos de dados em uma operação, o R usa uma <strong>hierarquia de coerção</strong> para determinar como converter <strong>estes dados</strong>.</p>
+<div class="fragment center-text">
+<p>logical ➡ integer ➡ numeric ➡ complex ➡ character</p>
+</div>
+</div>
+</div></div>
+</section>
+
+<section id="o-que-são-data-frames" class="title-slide slide level1 center noincremental">
+<h1>O que são data frames?</h1>
+<ul>
+<li class="fragment"><p>Os <em>data frames</em> são estruturas de dados fundamentais no R, muito utilizadas para <strong>armazenar conjuntos de dados tabulares</strong>, onde as colunas podem conter <strong>diferentes tipos de classes</strong> (numéricos, caracteres, lógicos, etc.).</p></li>
+<li class="fragment"><p>Quanto a sua estrutura, temos:</p>
+<ul>
+<li class="fragment"><strong>Nome das Colunas (variáveis):</strong> Cada coluna em um <em>data frame</em> tem um nome que a identifica, representando seus respectivos atributos;</li>
+<li class="fragment"><strong>Rótulos de Linhas (observações):</strong> As linhas podem ser rotuladas para identificar cada observação de maneira única ou significativa.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="o-que-são-data-frames-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>O que são data frames?</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><img data-src="images/schema_data.png" height="450"></p>
+</div>
+</section>
+
+<section id="dados-nativos-do-r" class="title-slide slide level1 center">
+<h1>Dados nativos do R</h1>
+<p>O R vem com vários conjuntos de <em>data frames</em> nativos, que estão disponíveis para <strong>uso imediato</strong>. Esses conjuntos de dados são fornecidos principalmente pelo pacote <code>datasets</code>, que é <strong>carregado automaticamente quando você inicia uma sessão R</strong>.</p>
+<div class="fragment">
+<p>Você pode listar todos os conjuntos de dados disponíveis no pacote <code>datasets</code> usando a função <code>data()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">data</span>(<span class="at">package =</span> <span class="st">"datasets"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<ul>
+<li class="fragment">Principais conjuntos de dados:
+<ul>
+<li class="fragment">airquality</li>
+<li class="fragment">mtcars</li>
+<li class="fragment">cars</li>
+<li class="fragment">iris</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="dados-brasileiros" class="title-slide slide level1 center">
+<h1>Dados brasileiros</h1>
+<ul>
+<li class="fragment"><strong>sidrar</strong>: IBGE <em>(PIB, população, produção, etc.)</em><br>
+</li>
+<li class="fragment"><strong>rbcb</strong>: Banco Central <em>(juros, crédito, inflação)</em><br>
+</li>
+<li class="fragment"><strong>ipeadatar</strong>: indicadores econômicos (IPEA)<br>
+</li>
+<li class="fragment"><strong>basedosdados</strong>: diversas bases públicas organizadas <em>(IBGE, BCB, RAIS, etc.)</em><br>
+</li>
+<li class="fragment"><strong>pnadcIBGE</strong>: microdados da PNAD Contínua <em>(mercado de trabalho)</em><br>
+</li>
+<li class="fragment"><strong>microdatasus</strong>: dados de saúde <em>(DATASUS)</em><br>
+</li>
+<li class="fragment"><strong>censobr</strong>: Censo demográfico<br>
+</li>
+<li class="fragment"><strong>geobr</strong>: dados espaciais do Brasil <em>(mapas, municípios)</em></li>
+</ul>
+</section>
+
+<section id="dados-internacionais" class="title-slide slide level1 center">
+<h1>Dados internacionais</h1>
+<ul>
+<li class="fragment"><strong>WDI</strong>: Banco Mundial <em>(PIB, pobreza, educação)</em><br>
+</li>
+<li class="fragment"><strong>gapminder</strong>: desenvolvimento global <em>(didático)</em><br>
+</li>
+<li class="fragment"><strong>oecd</strong> / APIs: indicadores econômicos de países<br>
+</li>
+<li class="fragment"><strong>IMFData</strong>: Fundo Monetário Internacional <em>(macro global)</em><br>
+</li>
+<li class="fragment"><strong>tidyquant</strong>: dados financeiros <em>(mercados, ações)</em><br>
+</li>
+<li class="fragment"><strong>quantmod</strong>: séries financeiras <em>(Yahoo Finance, etc.)</em><br>
+</li>
+<li class="fragment"><strong>fredr</strong>: Federal Reserve <em>(EUA: juros, inflação, desemprego)</em></li>
+</ul>
+</section>
+
+<section id="listas-no-r" class="title-slide slide level1 center">
+<h1>Listas no R</h1>
+<ul>
+<li class="fragment"><p>Permitem guardar <strong>diferentes tipos de dados juntos</strong><br>
+</p></li>
+<li class="fragment"><p>Podem conter vetores, data frames e até outros objetos, ou seja, são úteis quando trabalhamos com <strong>múltiplas bases ou resultados</strong></p></li>
+<li class="fragment"><p>Então temos:</p>
+<ul>
+<li class="fragment"><strong>Vetor</strong>: uma única informação</li>
+<li class="fragment"><strong>Data frame</strong>: várias informações organizadas<br>
+</li>
+<li class="fragment"><strong>Lista</strong>: vários objetos diferentes reunidos</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="criando-listas" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Criando listas</h1>
+<ul>
+<li class="fragment">Dessa forma, a lista criada estará em um formato parecido com esse:</li>
+</ul>
+<div class="fragment">
+<div style="text-align: center;">
+<p><img data-src="images/rstudio_screenshot1.png" class="border shadow-border" height="450"></p>
+</div>
+</div>
+</section>
+
+<section id="vamos-à-prática-1" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>Vamos à prática!</h1>
+
+</section>
+
+<section id="exercício-de-fixação-aula-02" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação (Aula 02)</h1>
+<ol type="1">
+<li class="fragment">Utilizando o objeto <code>paises</code>, responda:</li>
+</ol>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>paises <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-2"><a href=""></a>  <span class="at">pais =</span> <span class="fu">c</span>(<span class="st">"Brasil"</span>, <span class="st">"Argentina"</span>, <span class="st">"Chile"</span>, <span class="st">"Peru"</span>),</span>
+<span id="cb3-3"><a href=""></a>  <span class="at">pop =</span> <span class="fu">c</span>(<span class="dv">203</span>, <span class="dv">46</span>, <span class="dv">19</span>, <span class="dv">34</span>),</span>
+<span id="cb3-4"><a href=""></a>  <span class="at">desemprego =</span> <span class="fu">c</span>(<span class="fl">7.8</span>, <span class="fl">6.5</span>, <span class="fl">8.7</span>, <span class="fl">7.2</span>),</span>
+<span id="cb3-5"><a href=""></a>  <span class="at">pib =</span> <span class="fu">c</span>(<span class="dv">2174</span>, <span class="dv">633</span>, <span class="dv">335</span>, <span class="dv">268</span>)</span>
+<span id="cb3-6"><a href=""></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<ol type="a">
+<li class="fragment">Mostre apenas as colunas pais e pib.</li>
+<li class="fragment">Mostre apenas os países com pib maior que 300.</li>
+<li class="fragment">Crie uma nova coluna chamada pib_percapita, que representa a divisão do pib pela população</li>
+<li class="fragment">Crie uma nova coluna chamada desemprego_alto, que deve ser: TRUE para desemprego maior que 7 e FALSE caso contrário</li>
+<li class="fragment">Altere o valor do desemprego do Chile para 8 e remova a coluna pop</li>
+</ol>
+</section>
+
+<section id="exercício-de-fixação-aula-02-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação (Aula 02)</h1>
+<ol start="2" type="1">
+<li class="fragment">Na lista lista_econ:</li>
+</ol>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>lista_econ <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb4-2"><a href=""></a>  <span class="at">paises =</span> paises,</span>
+<span id="cb4-3"><a href=""></a>  <span class="at">codigos =</span> <span class="fu">c</span>(<span class="st">"Brasil"</span> <span class="ot">=</span> <span class="st">"BRA"</span>, </span>
+<span id="cb4-4"><a href=""></a>              <span class="st">"Argentina"</span> <span class="ot">=</span> <span class="st">"ARG"</span>, </span>
+<span id="cb4-5"><a href=""></a>              <span class="st">"Chile"</span> <span class="ot">=</span> <span class="st">"CHL"</span>, </span>
+<span id="cb4-6"><a href=""></a>              <span class="st">"Peru"</span> <span class="ot">=</span> <span class="st">"PER"</span>),</span>
+<span id="cb4-7"><a href=""></a>  <span class="at">anos =</span> <span class="fu">c</span>(<span class="dv">2021</span>, <span class="dv">2022</span>, <span class="dv">2023</span>, <span class="dv">2024</span>)</span>
+<span id="cb4-8"><a href=""></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<ol type="a">
+<li class="fragment">Modifique, dentro da lista, o código do Peru de “PER” para “PRU”</li>
 </ol>
 </section>
 
