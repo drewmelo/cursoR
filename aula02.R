@@ -141,4 +141,76 @@ NULL
 paises$pib_mil <- NULL
 paises$pais <- NA
 paises
+library(tidyverse)
 
+paises <- tibble(
+  pais = c("Brasil", "Argentina", "Chile", "Peru"),
+  pop = c(203, 46, 19, 34),
+  desemprego = c(7.8, 6.5, 8.7, 7.2),
+  pib = c(2174, 633, 335, 268)
+)
+paises
+#Mostre apenas as colunas pais e pib.
+paises[, c("pais", "pib")]
+paises[, c(1, 4)]
+paises[, -c(2, 3)]
+
+#Mostre apenas os países com pib maior que 300.
+paises[paises$pib > 300, ]
+paises$pib > 300
+
+#Crie uma nova coluna chamada pib_percapita, que 
+#representa a divisão do pib pela população
+paises$pib_percapita <- paises$pib / paises$pop
+paises
+
+#Crie uma nova coluna chamada desemprego_alto, que deve 
+# ser: TRUE para desemprego maior que 7 e FALSE 
+# caso contrário
+paises$desemprego_alto <- paises$desemprego > 7
+paises
+
+#Altere o valor do desemprego do Chile para 8 e 
+#remova a coluna pop
+paises[3, 3] <- 8
+paises$pop <- NULL
+paises
+
+paises |> 
+  mutate(desemprego = replace(x = desemprego, 
+                              pais == "Chile", 8)) |> 
+  select(-pop)
+
+# Listas
+lista <- list(
+  a = c(1, 2, 3, 4),
+  dados = paises,
+  c = c("letra a" = "a","letra b" = "b","letra c" = "c","letra d" = "d"),
+  matriz = matrix(data = c(1, 2, 3, "d"), nrow = 2)
+)
+
+paises <- tibble(
+  pais = c("Brasil", "Argentina", "Chile", "Peru"),
+  pop = c(203, 46, 19, 34),
+  desemprego = c(7.8, 6.5, 8.7, 7.2),
+  pib = c(2174, 633, 335, 268)
+)
+
+# Acessar posição da lista
+paises
+lista 
+
+lista$matriz
+lista[[1]]
+lista[[1]][1]
+
+# Modificar as posições da lista
+lista[[3]][2] <- NA
+lista
+
+lista[[1]] <- NULL
+lista
+
+lista$dados$desemprego
+lista[["c"]][3]
+lista[["c"]]["letra c"]
