@@ -10,7 +10,7 @@ author:
     email: andre.melo@ufdpar.edu.br
     affiliations: Universidade Federal do Delta do Parnaíba
 subtitle: "Fundamentos do R e pensamento com dados"
-date: "2026-04-17"
+date: today
 date-format: long
 lang: pt-BR
 format: 

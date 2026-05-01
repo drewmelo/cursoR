@@ -1,9 +1,10 @@
 # Curso: Introdução à análise de dados com R aplicado à Economia
 
-![](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/drewmelo/cursoR)
-![Repo Size](https://img.shields.io/github/repo-size/drewmelo/cursoR)
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
+![Last Commit](https://img.shields.io/github/last-commit/drewmelo/cursoR?style=for-the-badge)
+![Repo Size](https://img.shields.io/github/repo-size/drewmelo/cursoR?style=for-the-badge)
+![GitHub code size](https://img.shields.io/github/languages/code-size/drewmelo/cursoR?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-ff9800?style=for-the-badge)
 
 Este repositório reúne os materiais do curso **Introdução à análise de dados com R aplicado à Economia**, com início em **10 de abril de 2026**.
 
@@ -15,19 +16,15 @@ Os materiais estão organizados da seguinte forma:
 
 ```
 📦 cursoR
- ┣ 📜 aula01.R
- ┣ 📜 aula02.R
- ┣ 📜 aula03.R
- ┣ ...
- ┣ 📂 slides
- ┃ ┣ 📄 aula01.pdf
- ┃ ┣ 📄 aula02.pdf
- ┃ ┣ 📄 aula03.pdf
- ┃ ┗ ...
+ ┣ 📂 slides        → material teórico
+ ┣ 📂 atividades    → listas de exercícios
+ ┣ 📂 dados         → bases de dados utilizadas
 ```
 
 * **Arquivos `.R`**: scripts utilizados em aula, organizados por número (aula01, aula02, etc.)
-* **Pasta `slides/`**: apresentações em PDF utilizadas durante as aulas
+* **Pasta `slides/`**: apresentações em PDF organizadas por módulo, contendo o conteúdo teórico do curso
+* **Pasta `atividades/`**: listas de exercícios correspondentes a cada módulo
+* **Pasta `dados/`**: bases de dados utilizadas nos exemplos e exercícios, em formatos como .txt, .csv, .xlsx e .zip
 
 ## Objetivo do curso
 

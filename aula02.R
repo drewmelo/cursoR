@@ -214,3 +214,28 @@ lista
 lista$dados$desemprego
 lista[["c"]][3]
 lista[["c"]]["letra c"]
+
+lista_econ <- list(
+  paises = paises,
+  codigos = c("Brasil" = "BRA", 
+              "Argentina" = "ARG", 
+              "Chile" = "CHL", 
+              "Peru" = "PER"),
+  anos = c(2021, 2022, 2023, 2024)
+)
+
+# Modifique, dentro da lista, o código do Peru de 
+# “PER” para “PRU”
+lista_econ[["codigos"]][4]
+lista_econ[["codigos"]]["Peru"] <- "PRU"
+lista_econ
+
+# Para listas
+lapply(lista_econ, summary)
+
+# Para dataframes
+apply(paises[, 2:4],2, mean)
+apply(paises[, 2:4], 1, mean)
+apply(paises[, 2:4], 1, sum)
+
+paises
