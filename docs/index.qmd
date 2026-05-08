@@ -174,11 +174,6 @@ custo <- c(800, 600, 900, 1250)
 
 # 02 - Estruturas de dados e funções básicas {style="font-size:1.5em;"}
 
-#  {.center .nonincremental}
-::: {style="text-align: center; margin-top: 1em"}
-![](images/freq.jpeg){height="500"}
-:::
-
 # Como os dados aparecem na economia {.center .nonincremental}
 
 - Séries de valores (ex: PIB ao longo do tempo)
@@ -365,6 +360,382 @@ lista_econ <- list(
 :::
 
 (a) Modifique, dentro da lista, o código do Peru de "PER" para "PRU"
+
+# 03 - Importação e exportação de dados {style="font-size:1.5em;"}
+
+# Exportação de dados {.center}
+
+Exportar dados é uma tarefa comum no R, especialmente quando se deseja salvar resultados de análises ou compartilhar informações com outros usuários.
+
+**1.** Exportando para CSV
+
+::: fragment
+```{r, eval=FALSE}
+write.csv(dados, file = "dados/dados.csv", row.names = FALSE)
+```
+:::
+
+**2.** Exportando para Excel (*xlsx*)
+
+::: fragment
+```{r, eval=FALSE}
+# Ativando pacote
+library(openxlsx) # Necessário instalar
+
+write.xlsx(dados, file = "dados/dados.xlsx", rowNames = FALSE)
+```
+:::
+
+**3.** Exportando para Texto (*txt*)
+
+::: fragment
+```{r, eval=FALSE}
+write.table(dados, file = "dados/dados.txt", sep = "\t", row.names = FALSE)
+```
+:::
+
+# Importação de dados {.center}
+
+Neste caso, ao importar dados no R, estaremos carregando conjuntos de dados externos para análise, manipulação e visualização.
+
+**1.** Importando para CSV
+
+::: fragment
+```{r, eval=FALSE}
+readr::read_csv(file = "dados/dados.csv")
+```
+:::
+
+**2.** Importando para Excel (*xlsx*)
+
+::: fragment
+```{r, eval=FALSE}
+# Ativando o pacote
+library(readxl) # Necessário instalar
+
+readxl::read_excel(path = "dados/dados.xlsx")
+```
+:::
+
+**3.** Importando para Texto (*txt*)
+
+::: fragment
+```{r, eval=FALSE}
+read.table(file = "dados/dados.txt", header = TRUE, sep = "\t")
+```
+:::
+
+# 04 - Estruturas condicionais e de repetição  {style="font-size:1.5em;"}
+
+# Operadores lógicos {.center}
+
+::: {.fragment .fade-in-then-semi-out}
+As operações lógicas (ou *booleanas*), utilizadas para retornar valores `TRUE` ou `FALSE`, são fundamentais para **controle de fluxo, filtragem de dados**, e muitos outros aspectos da programação em R.
+:::
+
+::: fragment
+-   Principais Operadores Lógicos:
+    -   **AND** (`&` e `&&`);
+    -   **OR** (`|` e `||`);
+    -   **NOT** (`!`).
+:::
+
+#  Operadores lógicos {.center}
+
+<div style="text-align: center;">
+![](images/transform.png){height="350"}
+<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
+Fonte: @wickham2023r.
+</div>
+</div>
+
+# Operadores Relacionais {.center visibility="uncounted"}
+
+-   Igual a (`==`);
+-   Diferente de (`!=`);
+-   Maior que (`>`);
+-   Menor que (`<`);
+-   Maior ou igual a (`>=`);
+-   Menor ou igual a (`<=`);
+-   Pertence a (`%in%`).
+
+# Estrutura condicional {.center}
+
+O `if` é uma estrutura condicional que permite executar um bloco de código se uma condição for verdadeira. O `else` é opcional e permite executar um bloco de código alternativo se a condição do `if` for falsa.
+
+::: fragment
+::: {style="text-align: center;"}
+![](images/function_schema.png){height="450"}
+:::
+:::
+
+# if/else/else if {.center}
+
+::: fragment
+O `if`…`else` permite criar dois blocos de código:
+
+```{r, results='hide'}
+#| code-line-numbers: "|3-4"
+x <- 10
+
+if(x > 0){
+  print("Número não negativo")
+} else {
+  print("Número negativo")
+}
+
+```
+:::
+
+::: fragment
+Use o `else if` para testar várias condições em sequência.
+
+```{r, results='hide'}
+#| code-line-numbers: "|5-6"
+x <- 0
+
+if (x > 0) {
+  print("x é um número positivo")
+} else if (x < 0) {
+  print("x é um número negativo")
+} else {
+  print("x é zero")
+}
+
+```
+:::
+
+# Uso de operadores lógicos em condicionais {.center}
+
+Os operadores lógicos são amplamente usados em estruturas condicionais, como `if`, `else` e `while`.
+
+::: fragment
+```{r, results='hide'}
+# Usando operadores lógicos em condicionais
+x <- 10
+y <- 5
+
+# Condicional if
+if (x > y && y > 0) {
+  print("x é maior que y e y é positivo")
+}
+
+# Condicional if-else
+if (x < y || y < 0) {
+  print("x é menor que y ou y é negativo")
+} else {
+  print("Nenhuma das condições foi satisfeita")
+}
+
+```
+:::
+
+# Loop {.center}
+
+Estruturas de repetição, ou *loops*, são fundamentais na programação para executar um bloco de código várias vezes.
+
+-   Estrutura `for`
+
+::: fragment
+```{r}
+for (i in 1:5) {
+  print(i)
+}
+```
+:::
+
+# Loop {.center visibility="uncounted"}
+
+-   Estrutura `while`
+
+::: fragment
+```{r}
+# Inicializando uma variável
+contador <- 1
+
+# Loop while para iterar até que a condição seja falsa
+while (contador <= 5) {
+  print(contador)
+  contador <- contador + 1
+}
+```
+:::
+
+# Loop {.center visibility="uncounted"}
+
+-   Estrutura `repeat`
+
+::: fragment
+```{r}
+# Inicializando uma variável
+contador <- 1
+
+# Loop repeat
+repeat {
+  print(contador)
+  contador <- contador + 1
+  if (contador > 5) {
+    break
+  }
+}
+```
+:::
+
+# Condições vetorizadas {.center}
+
+O `ifelse` é uma função fundamental no R que permite aplicar condições de forma vetorizada, ou seja, para cada elemento de um vetor, aplica-se uma decisão baseada em uma condição lógica.
+
+::: fragment
+```{r}
+x <- factor(sample(letters[1:5], 10, replace = TRUE))
+
+y <- ifelse(x %in% c("a", "b", "c"), x, NA)
+
+y
+```
+:::
+
+::: fragment
+Tem-se o `if_else` do pacote `dplyr` como alternativa ao `ifelse` do pacote base do R.
+
+```{r}
+y2 <- if_else(x %in% c("a", "b", "c"), x, NA)
+
+y2
+```
+:::
+
+# Diferenças entre ifelse e if_else {.center}
+
+-   `ifelse`
+    -   Funciona bem para vetores simples, mas **pode causar problemas de coerção de tipos e eficiência em grandes conjuntos de dados** ou quando esses tipos são mistos, como mostrado no primeiro exemplo.
+-   `if_else`
+    -   É mais seguro para uso em *data frames*, mantendo a coerência dos tipos de dados e **evitando problemas de coerção**, como mostrado no segundo exemplo.
+
+# O que são funções? {.center}
+
+Uma função é um conjunto de instruções que recebe entradas (argumentos), realiza operações específicas e retorna uma saída (valor de retorno).
+
+::: fragment
+::: {style="text-align: center;"}
+![](images/r_function_syntax.png){height="450"}
+:::
+:::
+
+# Funções com condicionais {.center}
+
+::: {.fragment .fade-in-then-semi-out}
+A seguir, iremos criar uma função em R para calcular o Índice de Massa Corporal (IMC) e determinar a faixa de peso (abaixo do peso, peso normal, ou acima do peso) utilizando estruturas condicionais (`if`, `else if`, `else`).
+:::
+
+::: fragment
+O IMC é calculado pela fórmula:
+
+$$ \text{IMC} = \frac{\text{peso}}{\text{altura}^2} $$
+:::
+
+::: fragment
+Neste caso, $peso$ é o peso da pessoa em quilogramas, e $altura$ é a altura em metros.
+:::
+
+# Funções com condicionais {.center visibility="uncounted"}
+
+Definindo a Função `calculo_imc`:
+
+::: fragment
+```{r}
+#| code-line-numbers: "|3-4|7|9-14|"
+calculo_imc <- function(peso, altura) {
+  # Verifica se peso ou altura são NA
+  if (is.na(peso) | is.na(altura)) {
+    return(NA)
+  }
+  # Calcula o IMC
+  imc <- peso / (altura^2)
+  # Avalia o IMC e retorna a faixa de peso correspondente
+  if (imc < 18.5) {
+    return("Abaixo do peso")
+  } else if (imc < 25) {
+    return("Peso normal")
+  } else {
+    return("Acima do peso")
+  }
+}
+```
+:::
+
+# Funções com condicionais {.center visibility="uncounted"}
+
+E então, podemos utilizá-la com base nos valores dos vetores `altura` e `peso`.
+
+::: fragment
+```{r}
+# Definindo o peso e a altura
+peso <- 70
+altura <- 1.68
+
+# Calculando o IMC
+imc <- calculo_imc(peso, altura)
+
+imc
+```
+:::
+
+# Como aplicar funções aos dados? {.center}
+
+Primeiramente, iremos instalar o pacote `dados`, que oferece uma versão traduzida dos conjuntos de dados listados, facilitando o acesso e a compreensão para usuários que preferem ou necessitam de informações em português.
+
+::: fragment
+```{r, eval=FALSE}
+# Instalar e carregar o pacote dados (se ainda não estiver instalado)
+install.packages("dados")
+
+library(dados)
+```
+:::
+
+::: fragment
+```{r}
+# Armazenando dados_stars
+dados <- dados::dados_starwars |> 
+          dplyr::select(1:5) 
+```
+
+```{r, echo=FALSE}
+head(dados, 5)
+```
+:::
+
+# Como aplicar funções aos dados? {.center visibility="uncounted"}
+
+Neste caso, aplicaremos a função `calculo_imc` ao conjunto `dados_starwars`. Porém, será necessário tornar a altura dos personagens, que está em centímetros, em metros.
+
+::: fragment
+```{r}
+dados$altura <- dados$altura / 100 
+```
+:::
+
+::: fragment
+Vamos usar `mapply` para aplicar a função `calculo_imc` as colunas de `massa` e `altura` de `dados`.
+
+```{r}
+dados$categoria_imc <- mapply(calculo_imc, dados$massa, dados$altura)
+```
+
+```{r, echo=FALSE}
+head(dados, 5)
+```
+:::
+
+<!--
+##  {.center .nonincremental}
+
+::: {style="text-align: center; margin-top: 1em"}
+![](images/freq.jpeg){height="500"}
+:::
+-->
+
 
 # Referências {.unnumbered}
 

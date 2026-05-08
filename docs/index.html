@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input8d52d392565e4f87</title>
+  <title>quarto-inpute5bd845f5d6b92ae</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -232,7 +232,7 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">17 de abril de 2026</p>
+  <p class="date">8 de maio de 2026</p>
 </section>
 <section id="introdução-ao-r-e-pensamento-com-dados" class="title-slide slide level1 center" style="font-size:1.5em;">
 <h1>01 - Introdução ao R e pensamento com dados</h1>
@@ -395,13 +395,6 @@ Necessário realizar <strong>login</strong> (através de uma conta Google, Githu
 <section id="estruturas-de-dados-e-funções-básicas" class="title-slide slide level1 center" style="font-size:1.5em;">
 <h1>02 - Estruturas de dados e funções básicas</h1>
 
-</section>
-
-<section id="section" class="title-slide slide level1 center nonincremental">
-<h1></h1>
-<div style="text-align: center; margin-top: 1em">
-<p><img data-src="images/freq.jpeg" height="500"></p>
-</div>
 </section>
 
 <section id="como-os-dados-aparecem-na-economia" class="title-slide slide level1 center nonincremental">
@@ -633,6 +626,428 @@ Necessário realizar <strong>login</strong> (através de uma conta Google, Githu
 <ol type="a">
 <li class="fragment">Modifique, dentro da lista, o código do Peru de “PER” para “PRU”</li>
 </ol>
+</section>
+
+<section id="importação-e-exportação-de-dados" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>03 - Importação e exportação de dados</h1>
+
+</section>
+
+<section id="exportação-de-dados" class="title-slide slide level1 center">
+<h1>Exportação de dados</h1>
+<p>Exportar dados é uma tarefa comum no R, especialmente quando se deseja salvar resultados de análises ou compartilhar informações com outros usuários.</p>
+<p><strong>1.</strong> Exportando para CSV</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">write.csv</span>(dados, <span class="at">file =</span> <span class="st">"dados/dados.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p><strong>2.</strong> Exportando para Excel (<em>xlsx</em>)</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Ativando pacote</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">library</span>(openxlsx) <span class="co"># Necessário instalar</span></span>
+<span id="cb6-3"><a href=""></a></span>
+<span id="cb6-4"><a href=""></a><span class="fu">write.xlsx</span>(dados, <span class="at">file =</span> <span class="st">"dados/dados.xlsx"</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p><strong>3.</strong> Exportando para Texto (<em>txt</em>)</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">write.table</span>(dados, <span class="at">file =</span> <span class="st">"dados/dados.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+
+<section id="importação-de-dados" class="title-slide slide level1 center">
+<h1>Importação de dados</h1>
+<p>Neste caso, ao importar dados no R, estaremos carregando conjuntos de dados externos para análise, manipulação e visualização.</p>
+<p><strong>1.</strong> Importando para CSV</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"dados/dados.csv"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p><strong>2.</strong> Importando para Excel (<em>xlsx</em>)</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Ativando o pacote</span></span>
+<span id="cb9-2"><a href=""></a><span class="fu">library</span>(readxl) <span class="co"># Necessário instalar</span></span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">"dados/dados.xlsx"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p><strong>3.</strong> Importando para Texto (<em>txt</em>)</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"dados/dados.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+
+<section id="estruturas-condicionais-e-de-repetição" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>04 - Estruturas condicionais e de repetição</h1>
+
+</section>
+
+<section id="operadores-lógicos" class="title-slide slide level1 center">
+<h1>Operadores lógicos</h1>
+<div class="fragment fade-in-then-semi-out">
+<p>As operações lógicas (ou <em>booleanas</em>), utilizadas para retornar valores <code>TRUE</code> ou <code>FALSE</code>, são fundamentais para <strong>controle de fluxo, filtragem de dados</strong>, e muitos outros aspectos da programação em R.</p>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment">Principais Operadores Lógicos:
+<ul>
+<li class="fragment"><strong>AND</strong> (<code>&amp;</code> e <code>&amp;&amp;</code>);</li>
+<li class="fragment"><strong>OR</strong> (<code>|</code> e <code>||</code>);</li>
+<li class="fragment"><strong>NOT</strong> (<code>!</code>).</li>
+</ul></li>
+</ul>
+</div>
+</section>
+
+<section id="operadores-lógicos-1" class="title-slide slide level1 center">
+<h1>Operadores lógicos</h1>
+<div style="text-align: center;">
+<img data-src="images/transform.png" height="350">
+<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
+<p>Fonte: <span class="citation" data-cites="wickham2023r">Wickham e Grolemund (<a href="#/referências" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
+</div>
+</div>
+</section>
+
+<section id="operadores-relacionais" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Operadores Relacionais</h1>
+<ul>
+<li class="fragment">Igual a (<code>==</code>);</li>
+<li class="fragment">Diferente de (<code>!=</code>);</li>
+<li class="fragment">Maior que (<code>&gt;</code>);</li>
+<li class="fragment">Menor que (<code>&lt;</code>);</li>
+<li class="fragment">Maior ou igual a (<code>&gt;=</code>);</li>
+<li class="fragment">Menor ou igual a (<code>&lt;=</code>);</li>
+<li class="fragment">Pertence a (<code>%in%</code>).</li>
+</ul>
+</section>
+
+<section id="estrutura-condicional" class="title-slide slide level1 center">
+<h1>Estrutura condicional</h1>
+<p>O <code>if</code> é uma estrutura condicional que permite executar um bloco de código se uma condição for verdadeira. O <code>else</code> é opcional e permite executar um bloco de código alternativo se a condição do <code>if</code> for falsa.</p>
+<div class="fragment">
+<div style="text-align: center;">
+<p><img data-src="images/function_schema.png" height="450"></p>
+</div>
+</div>
+</section>
+
+<section id="ifelseelse-if" class="title-slide slide level1 center">
+<h1>if/else/else if</h1>
+<div class="fragment">
+<p>O <code>if</code>…<code>else</code> permite criar dois blocos de código:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="|3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb11-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Número não negativo"</span>)</span>
+<span id="cb11-5"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb11-6"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Número negativo"</span>)</span>
+<span id="cb11-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p>Use o <code>else if</code> para testar várias condições em sequência.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb12-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é um número positivo"</span>)</span>
+<span id="cb12-5"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb12-6"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é um número negativo"</span>)</span>
+<span id="cb12-7"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb12-8"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é zero"</span>)</span>
+<span id="cb12-9"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+
+<section id="uso-de-operadores-lógicos-em-condicionais" class="title-slide slide level1 center">
+<h1>Uso de operadores lógicos em condicionais</h1>
+<p>Os operadores lógicos são amplamente usados em estruturas condicionais, como <code>if</code>, <code>else</code> e <code>while</code>.</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># Usando operadores lógicos em condicionais</span></span>
+<span id="cb13-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb13-3"><a href=""></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb13-4"><a href=""></a></span>
+<span id="cb13-5"><a href=""></a><span class="co"># Condicional if</span></span>
+<span id="cb13-6"><a href=""></a><span class="cf">if</span> (x <span class="sc">&gt;</span> y <span class="sc">&amp;&amp;</span> y <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb13-7"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é maior que y e y é positivo"</span>)</span>
+<span id="cb13-8"><a href=""></a>}</span>
+<span id="cb13-9"><a href=""></a></span>
+<span id="cb13-10"><a href=""></a><span class="co"># Condicional if-else</span></span>
+<span id="cb13-11"><a href=""></a><span class="cf">if</span> (x <span class="sc">&lt;</span> y <span class="sc">||</span> y <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb13-12"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é menor que y ou y é negativo"</span>)</span>
+<span id="cb13-13"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb13-14"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Nenhuma das condições foi satisfeita"</span>)</span>
+<span id="cb13-15"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+
+<section id="loop" class="title-slide slide level1 center">
+<h1>Loop</h1>
+<p>Estruturas de repetição, ou <em>loops</em>, são fundamentais na programação para executar um bloco de código várias vezes.</p>
+<ul>
+<li class="fragment">Estrutura <code>for</code></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb14-3"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="loop-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Loop</h1>
+<ul>
+<li class="fragment">Estrutura <code>while</code></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Inicializando uma variável</span></span>
+<span id="cb16-2"><a href=""></a>contador <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb16-3"><a href=""></a></span>
+<span id="cb16-4"><a href=""></a><span class="co"># Loop while para iterar até que a condição seja falsa</span></span>
+<span id="cb16-5"><a href=""></a><span class="cf">while</span> (contador <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb16-6"><a href=""></a>  <span class="fu">print</span>(contador)</span>
+<span id="cb16-7"><a href=""></a>  contador <span class="ot">&lt;-</span> contador <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb16-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="loop-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Loop</h1>
+<ul>
+<li class="fragment">Estrutura <code>repeat</code></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Inicializando uma variável</span></span>
+<span id="cb18-2"><a href=""></a>contador <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb18-3"><a href=""></a></span>
+<span id="cb18-4"><a href=""></a><span class="co"># Loop repeat</span></span>
+<span id="cb18-5"><a href=""></a><span class="cf">repeat</span> {</span>
+<span id="cb18-6"><a href=""></a>  <span class="fu">print</span>(contador)</span>
+<span id="cb18-7"><a href=""></a>  contador <span class="ot">&lt;-</span> contador <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb18-8"><a href=""></a>  <span class="cf">if</span> (contador <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb18-9"><a href=""></a>    <span class="cf">break</span></span>
+<span id="cb18-10"><a href=""></a>  }</span>
+<span id="cb18-11"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="condições-vetorizadas" class="title-slide slide level1 center">
+<h1>Condições vetorizadas</h1>
+<p>O <code>ifelse</code> é uma função fundamental no R que permite aplicar condições de forma vetorizada, ou seja, para cada elemento de um vetor, aplica-se uma decisão baseada em uma condição lógica.</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb20-2"><a href=""></a></span>
+<span id="cb20-3"><a href=""></a>y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>), x, <span class="cn">NA</span>)</span>
+<span id="cb20-4"><a href=""></a></span>
+<span id="cb20-5"><a href=""></a>y</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  2 NA  1 NA NA  2 NA  3</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Tem-se o <code>if_else</code> do pacote <code>dplyr</code> como alternativa ao <code>ifelse</code> do pacote base do R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>y2 <span class="ot">&lt;-</span> <span class="fu">if_else</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>), x, <span class="cn">NA</span>)</span>
+<span id="cb22-2"><a href=""></a></span>
+<span id="cb22-3"><a href=""></a>y2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] a    b    b    &lt;NA&gt; a    &lt;NA&gt; &lt;NA&gt; b    &lt;NA&gt; c   
+Levels: a b c d e</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="diferenças-entre-ifelse-e-if_else" class="title-slide slide level1 center">
+<h1>Diferenças entre ifelse e if_else</h1>
+<ul>
+<li class="fragment"><code>ifelse</code>
+<ul>
+<li class="fragment">Funciona bem para vetores simples, mas <strong>pode causar problemas de coerção de tipos e eficiência em grandes conjuntos de dados</strong> ou quando esses tipos são mistos, como mostrado no primeiro exemplo.</li>
+</ul></li>
+<li class="fragment"><code>if_else</code>
+<ul>
+<li class="fragment">É mais seguro para uso em <em>data frames</em>, mantendo a coerência dos tipos de dados e <strong>evitando problemas de coerção</strong>, como mostrado no segundo exemplo.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="o-que-são-funções" class="title-slide slide level1 center">
+<h1>O que são funções?</h1>
+<p>Uma função é um conjunto de instruções que recebe entradas (argumentos), realiza operações específicas e retorna uma saída (valor de retorno).</p>
+<div class="fragment">
+<div style="text-align: center;">
+<p><img data-src="images/r_function_syntax.png" height="450"></p>
+</div>
+</div>
+</section>
+
+<section id="funções-com-condicionais" class="title-slide slide level1 center">
+<h1>Funções com condicionais</h1>
+<div class="fragment fade-in-then-semi-out">
+<p>A seguir, iremos criar uma função em R para calcular o Índice de Massa Corporal (IMC) e determinar a faixa de peso (abaixo do peso, peso normal, ou acima do peso) utilizando estruturas condicionais (<code>if</code>, <code>else if</code>, <code>else</code>).</p>
+</div>
+<div class="fragment">
+<p>O IMC é calculado pela fórmula:</p>
+<p><span class="math display">\[ \text{IMC} = \frac{\text{peso}}{\text{altura}^2} \]</span></p>
+</div>
+<div class="fragment">
+<p>Neste caso, <span class="math inline">\(peso\)</span> é o peso da pessoa em quilogramas, e <span class="math inline">\(altura\)</span> é a altura em metros.</p>
+</div>
+</section>
+
+<section id="funções-com-condicionais-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Funções com condicionais</h1>
+<p>Definindo a Função <code>calculo_imc</code>:</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" data-code-line-numbers="|3-4|7|9-14|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>calculo_imc <span class="ot">&lt;-</span> <span class="cf">function</span>(peso, altura) {</span>
+<span id="cb24-2"><a href=""></a>  <span class="co"># Verifica se peso ou altura são NA</span></span>
+<span id="cb24-3"><a href=""></a>  <span class="cf">if</span> (<span class="fu">is.na</span>(peso) <span class="sc">|</span> <span class="fu">is.na</span>(altura)) {</span>
+<span id="cb24-4"><a href=""></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
+<span id="cb24-5"><a href=""></a>  }</span>
+<span id="cb24-6"><a href=""></a>  <span class="co"># Calcula o IMC</span></span>
+<span id="cb24-7"><a href=""></a>  imc <span class="ot">&lt;-</span> peso <span class="sc">/</span> (altura<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb24-8"><a href=""></a>  <span class="co"># Avalia o IMC e retorna a faixa de peso correspondente</span></span>
+<span id="cb24-9"><a href=""></a>  <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="fl">18.5</span>) {</span>
+<span id="cb24-10"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Abaixo do peso"</span>)</span>
+<span id="cb24-11"><a href=""></a>  } <span class="cf">else</span> <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="dv">25</span>) {</span>
+<span id="cb24-12"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Peso normal"</span>)</span>
+<span id="cb24-13"><a href=""></a>  } <span class="cf">else</span> {</span>
+<span id="cb24-14"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Acima do peso"</span>)</span>
+<span id="cb24-15"><a href=""></a>  }</span>
+<span id="cb24-16"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+
+<section id="funções-com-condicionais-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Funções com condicionais</h1>
+<p>E então, podemos utilizá-la com base nos valores dos vetores <code>altura</code> e <code>peso</code>.</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># Definindo o peso e a altura</span></span>
+<span id="cb25-2"><a href=""></a>peso <span class="ot">&lt;-</span> <span class="dv">70</span></span>
+<span id="cb25-3"><a href=""></a>altura <span class="ot">&lt;-</span> <span class="fl">1.68</span></span>
+<span id="cb25-4"><a href=""></a></span>
+<span id="cb25-5"><a href=""></a><span class="co"># Calculando o IMC</span></span>
+<span id="cb25-6"><a href=""></a>imc <span class="ot">&lt;-</span> <span class="fu">calculo_imc</span>(peso, altura)</span>
+<span id="cb25-7"><a href=""></a></span>
+<span id="cb25-8"><a href=""></a>imc</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Peso normal"</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="como-aplicar-funções-aos-dados" class="title-slide slide level1 center">
+<h1>Como aplicar funções aos dados?</h1>
+<p>Primeiramente, iremos instalar o pacote <code>dados</code>, que oferece uma versão traduzida dos conjuntos de dados listados, facilitando o acesso e a compreensão para usuários que preferem ou necessitam de informações em português.</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co"># Instalar e carregar o pacote dados (se ainda não estiver instalado)</span></span>
+<span id="cb27-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"dados"</span>)</span>
+<span id="cb27-3"><a href=""></a></span>
+<span id="cb27-4"><a href=""></a><span class="fu">library</span>(dados)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="co"># Armazenando dados_stars</span></span>
+<span id="cb28-2"><a href=""></a>dados <span class="ot">&lt;-</span> dados<span class="sc">::</span>dados_starwars <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a href=""></a>          dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  nome           altura massa cor_do_cabelo cor_da_pele 
+  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;       
+1 Luke Skywalker    172    77 Loiro         Branca clara
+2 C-3PO             167    75 &lt;NA&gt;          Ouro        
+3 R2-D2              96    32 &lt;NA&gt;          Branca, Azul
+4 Darth Vader       202   136 Nenhum        Branca      
+5 Leia Organa       150    49 Castanho      Clara       </code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="como-aplicar-funções-aos-dados-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Como aplicar funções aos dados?</h1>
+<p>Neste caso, aplicaremos a função <code>calculo_imc</code> ao conjunto <code>dados_starwars</code>. Porém, será necessário tornar a altura dos personagens, que está em centímetros, em metros.</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>dados<span class="sc">$</span>altura <span class="ot">&lt;-</span> dados<span class="sc">$</span>altura <span class="sc">/</span> <span class="dv">100</span> </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="fragment">
+<p>Vamos usar <code>mapply</code> para aplicar a função <code>calculo_imc</code> as colunas de <code>massa</code> e <code>altura</code> de <code>dados</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>dados<span class="sc">$</span>categoria_imc <span class="ot">&lt;-</span> <span class="fu">mapply</span>(calculo_imc, dados<span class="sc">$</span>massa, dados<span class="sc">$</span>altura)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 6
+  nome           altura massa cor_do_cabelo cor_da_pele  categoria_imc
+  &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;        
+1 Luke Skywalker   1.72    77 Loiro         Branca clara Acima do peso
+2 C-3PO            1.67    75 &lt;NA&gt;          Ouro         Acima do peso
+3 R2-D2            0.96    32 &lt;NA&gt;          Branca, Azul Acima do peso
+4 Darth Vader      2.02   136 Nenhum        Branca       Acima do peso
+5 Leia Organa      1.5     49 Castanho      Clara        Peso normal  </code></pre>
+</div>
+</div>
+</div>
+<!--
+##  {.center .nonincremental}
+
+::: {style="text-align: center; margin-top: 1em"}
+![](images/freq.jpeg){height="500"}
+:::
+-->
 </section>
 
 <section id="referências" class="title-slide slide level1 unnumbered smaller scrollable">
