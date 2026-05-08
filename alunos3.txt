@@ -1,8 +1,0 @@
-"master yoda"     10  sim
-"Chewbacca"        8  sim 
-"Jabba"               
-"C-3PO"            7  não
-"Obi-Wan Kenobi"   9  sim
-"Luke Skywalker"   8  sim
-"Darth Vader"      10 sim
-"Han Solo"         
