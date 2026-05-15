@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-inpute5bd845f5d6b92ae</title>
+  <title>quarto-input1d6ea8b37d875b68</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -232,7 +232,7 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">8 de maio de 2026</p>
+  <p class="date">15 de maio de 2026</p>
 </section>
 <section id="introdução-ao-r-e-pensamento-com-dados" class="title-slide slide level1 center" style="font-size:1.5em;">
 <h1>01 - Introdução ao R e pensamento com dados</h1>
@@ -882,7 +882,7 @@ Necessário realizar <strong>login</strong> (através de uma conta Google, Githu
 <span id="cb20-4"><a href=""></a></span>
 <span id="cb20-5"><a href=""></a>y</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  1  2  2 NA  1 NA NA  2 NA  3</code></pre>
+<pre><code> [1]  1 NA NA  1 NA NA NA  1  1  2</code></pre>
 </div>
 </div>
 </div>
@@ -893,8 +893,8 @@ Necessário realizar <strong>login</strong> (através de uma conta Google, Githu
 <span id="cb22-2"><a href=""></a></span>
 <span id="cb22-3"><a href=""></a>y2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] a    b    b    &lt;NA&gt; a    &lt;NA&gt; &lt;NA&gt; b    &lt;NA&gt; c   
-Levels: a b c d e</code></pre>
+<pre><code> [1] a    &lt;NA&gt; &lt;NA&gt; a    &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; a    a    c   
+Levels: a c d</code></pre>
 </div>
 </div>
 </div>
@@ -1040,6 +1040,36 @@ Levels: a b c d e</code></pre>
 5 Leia Organa      1.5     49 Castanho      Clara        Peso normal  </code></pre>
 </div>
 </div>
+</div>
+</section>
+
+<section id="vamos-à-prática-2" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>Vamos à prática!</h1>
+
+</section>
+
+<section id="exercício-de-fixação-aula-04" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação (Aula 04)</h1>
+<ol type="1">
+<li class="fragment"><p>Um número é par se for divisível por dois, o que, no R, você pode descobrir com <code>x %% 2 == 0</code>. Use este fato e <code>ifelse()</code> para determinar se cada número entre 0 e 20 é par ou ímpar.</p></li>
+<li class="fragment"><p>Dado um vetor de dias como <code>x &lt;- c("Segunda-feira", "Sábado", "Quarta-feira")</code>, use uma instrução <code>ifelse()</code> para rotulá-los como fins de semana ou dias de semana.</p></li>
+</ol>
+</section>
+
+<section id="exercício-de-fixação-aula-04-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação (Aula 04)</h1>
+<ol start="2" type="1">
+<li class="fragment">Decisões e Índices Econômicos:</li>
+</ol>
+<div class="fragment">
+<p>Você recebeu uma planilha <em>Dados_EB.xls</em> com informações de indivíduos: salário em salários mínimos, número de filhos, grau de instrução, estado civil, idade e região de procedência. O objetivo é aplicar decisões lógicas e criar indicadores econômicos simples para análise.</p>
+<p>Crie uma função que calcule a carga familiar usando o salário e número de filhos:</p>
+<ul>
+<li class="fragment">Fórmula:
+<ul>
+<li class="fragment">score = salario - 0.7 * n_filho</li>
+</ul></li>
+</ul>
 </div>
 <!--
 ##  {.center .nonincremental}

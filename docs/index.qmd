@@ -728,6 +728,27 @@ head(dados, 5)
 ```
 :::
 
+# Vamos à prática! {style="font-size:1.5em;"}
+
+# Exercício de Fixação (Aula 04) {.center .center-x background-color="#00263A"}
+
+1. Um número é par se for divisível por dois, o que, no R, você pode descobrir com `x %% 2 == 0`. Use este fato e `ifelse()` para determinar se cada número entre 0 e 20 é par ou ímpar.
+
+2. Dado um vetor de dias como `x <- c("Segunda-feira", "Sábado", "Quarta-feira")`, use uma instrução `ifelse()` para rotulá-los como fins de semana ou dias de semana.
+
+# Exercício de Fixação (Aula 04) {.center .center-x background-color="#00263A"}
+
+2. Decisões e Índices Econômicos:
+
+::: fragment
+Você recebeu uma planilha *Dados_EB.xls* com informações de indivíduos: salário em salários mínimos, número de filhos, grau de instrução, estado civil, idade e região de procedência. O objetivo é aplicar decisões lógicas e criar indicadores econômicos simples para análise.
+
+Crie uma função que calcule a carga familiar usando o salário e número de filhos:
+
+-   Fórmula: 
+    -   score = salario - 0.7 * n_filho
+:::
+
 <!--
 ##  {.center .nonincremental}
 

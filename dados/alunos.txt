@@ -1,8 +1,0 @@
-"master yoda"     10
-"Chewbacca"        8
-"Jabba"             
-"C-3PO"            7
-"Obi-Wan Kenobi"   9
-"Luke Skywalker"   8
-"Darth Vader"      10
-"Han Solo"         
