@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input1d6ea8b37d875b68</title>
+  <title>quarto-input51c00a8e5c03ae19</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,77 +28,10 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-      margin-bottom: 1em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -216,7 +149,7 @@
   <h1 class="title"><div style="display: flex; align-items: center;">
 <p><span style="color: #313130; font-weight: bold; font-size: 2em;">Introdução ao</span> <img src="logo/r_logo.png" style="margin-left: -15px; height: 150px; margin-bottom: -40px;"> <object data="images/qrcode.svg" type="image/svg+xml" style="margin-left: 650px; height: 300px; position: absolute; top: 180px; right: 0;"></object></p>
 </div></h1>
-  <p class="subtitle">Fundamentos do R e pensamento com dados</p>
+  <p class="subtitle">Manipulação de dados com tidyverse</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -232,863 +165,80 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">15 de maio de 2026</p>
+  <p class="date">22 de maio de 2026</p>
 </section>
-<section id="introdução-ao-r-e-pensamento-com-dados" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>01 - Introdução ao R e pensamento com dados</h1>
+<section id="exploração-e-seleção-de-dados-com-dplyr" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>01 - Exploração e seleção de dados com dplyr</h1>
 
 </section>
 
-<section id="o-que-é-análise-de-dados" class="title-slide slide level1 center nonincremental">
-<h1>O que é análise de dados?</h1>
+<section id="exercício-de-fixação-explorando-indicadores-estaduais" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação: explorando indicadores estaduais</h1>
+<div class="fragment">
+<p>Você está trabalhando com uma base de indicadores estaduais do Brasil. A base contém informações de desenvolvimento humano, renda, pobreza, população, leitos de UTI, região e outras características das Unidades Federativas.</p>
+<p>O objetivo é praticar os principais verbos do <code>dplyr</code> aplicados a perguntas econômicas e sociais simples.</p>
+</div>
+<div class="fragment">
+<p>Nesta atividade, use os verbos:</p>
 <ul>
-<li class="fragment">Rodar o código, fazer um gráfico ou só calcular estatísticas para formalizar seu resultado?
-<ul>
-<li class="fragment">Nenhum dos três de forma isolada. <strong>É transformar dados em respostas.</strong></li>
-</ul></li>
-<li class="fragment"><em>“É muito melhor uma resposta aproximada à pergunta certa, que muitas vezes é vaga, do que uma resposta exata à pergunta errada, que sempre pode ser tornada precisa. (John Tukey)”</em></li>
+<li class="fragment"><code>select()</code> para escolher colunas;</li>
+<li class="fragment"><code>filter()</code> para escolher linhas;</li>
+<li class="fragment"><code>arrange()</code> para ordenar a base;</li>
+<li class="fragment"><code>mutate()</code> para criar novas variáveis.</li>
 </ul>
-</section>
-
-<section id="exemplo-de-análise-de-dados-case-1" class="title-slide slide level1 center nonincremental">
-<h1>Exemplo de análise de dados (Case 1)</h1>
-<div style="text-align: center; margin-top: 1em">
-<div class="fragment fade-in-then-semi-out">
-<div style="text-align: center;">
-<img data-src="images/case1.png" height="500">
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-<p>Fonte: <span class="citation" data-cites="wilher2023analise">Wilher (<a href="#/referências" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
-</div>
-</div>
-</div>
 </div>
 </section>
 
-<section id="exemplo-de-análise-de-dados-case-2" class="title-slide slide level1 center nonincremental">
-<h1>Exemplo de análise de dados (Case 2)</h1>
-<div style="text-align: center; margin-top: 1em">
-<div class="fragment fade-in-then-semi-out">
-<p><img data-src="images/case2.png" height="500"></p>
-</div>
-</div>
-</section>
-
-<section id="o-papel-do-r" class="title-slide slide level1 center nonincremental">
-<h1>O papel do R</h1>
-<ul>
-<li class="fragment">Onde entra o R nisso?</li>
-</ul>
-<div style="text-align: center; margin-top: 1em">
-<div class="fragment fade-in-then-semi-out">
-<div style="text-align: center;">
-<img data-src="images/workflow.png" height="350">
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-<p>Fonte: <span class="citation" data-cites="wickham2023r">Wickham e Grolemund (<a href="#/referências" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="por-que-economistas-usam-r" class="title-slide slide level1 center nonincremental">
-<h1>Por que economistas usam R</h1>
-<ul>
-<li class="fragment">Trabalha bem com grandes bases;</li>
-<li class="fragment">É completamente gratuito e <em>open source</em>;</li>
-<li class="fragment">Muito utilizado pela comunidade acadêmica e pelo mercado;</li>
-<li class="fragment">Possui uma comunidade ativa que <strong>desenvolve e compartilha pacotes</strong>;</li>
-<li class="fragment">Permite replicação de resultados;</li>
-<li class="fragment">E o principal: <strong>Permite contar histórias com dados!</strong></li>
-</ul>
-</section>
-
-<section id="o-que-é-o-rstudio" class="title-slide slide level1 center nonincremental">
-<h1>O que é o RStudio?</h1>
-<ul>
-<li class="fragment">Ambiente de Desenvolvimento Integrado (IDE);
-<ul>
-<li class="fragment">RStudio é um ambiente de desenvolvimento integrado projetado especificamente para trabalhar com a linguagem R.</li>
-</ul></li>
-<li class="fragment">Suas vantagens.
-<ul>
-<li class="fragment">Facilita o desenvolvimento e análise de código R com recursos como edição de scripts, <strong>gerenciamento de projetos e depuração integrada</strong>.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="passos-da-instalação" class="title-slide slide level1 center">
-<h1>Passos da instalação</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment fade-in-then-semi-out">
-<p>Visite <a href="https://cran.rstudio.com/">CRAN - The Comprehensive R Archive Network</a> e baixe a linguagem, através de um arquivo executável, para seu sistema operacional;</p>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<p>Visite <a href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</a> e baixe o instalador para seu sistema operacional;</p>
-</div>
-<div class="fragment fade-in">
-<p style="color: #028DB7">
-Siga as instruções fornecidas nos instaladores para completar o processo de instalação.
-</p>
-</div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="logo/rstudio_logo.png" class="absolute" style="height: 150px; "><br>
-<img data-src="logo/r_logo.png" class="absolute" style="bottom: 50px; height: 200px; "></p>
-</div></div>
-</section>
-
-<section id="rstudio-cloud" class="title-slide slide level1 center nonincremental">
-<h1>RStudio Cloud</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment fade-in-then-semi-out">
-<p>Visite a <a href="https://posit.cloud/">Posit Cloud</a> para acessar e utilizar o RStudio sem a necessidade de instalação local;</p>
-</div>
-<div class="fragment fade-in">
-<p style="color: #028DB7">
-Necessário realizar <strong>login</strong> (através de uma conta Google, Github, entre outros) para acessar o RStudio Cloud.
-</p>
-</div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/rstudio_cloud.png" class="absolute border shadow-border" style="width: 600px; height: 300px; "></p>
-</div></div>
-</section>
-
-<section id="interface-do-rstudio" class="title-slide slide level1 center nonincremental">
-<h1>Interface do RStudio</h1>
-<div style="text-align: center; margin-top: 1em">
-<div class="fragment fade-in-then-semi-out">
-<p><img data-src="images/console.png" class="border shadow-border" height="500"></p>
-</div>
-</div>
-</section>
-
-<section id="vamos-à-prática" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>Vamos à prática!</h1>
-
-</section>
-
-<section id="exercício-de-fixação" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação</h1>
+<section id="exercício-de-fixação-01-primeiros-verbos-do-dplyr" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação 01: primeiros verbos do dplyr</h1>
 <ol type="1">
-<li class="fragment">Considere os dados de uma empresa que vende 4 produtos:</li>
+<li class="fragment"><p><strong>Seleção de variáveis com <code>select()</code></strong></p>
+<p>Quais variáveis permitem comparar desenvolvimento humano, renda e pobreza entre os estados?</p>
+<p>Selecione apenas as colunas <code>uf</code>, <code>state</code>, <code>region</code>, <code>hdi_2017</code>, <code>gdp</code> e <code>poverty</code>.</p></li>
+<li class="fragment"><p><strong>Filtragem de linhas com <code>filter()</code></strong></p>
+<p>Quais estados apresentam pobreza acima de 15%?</p>
+<p>Filtre os estados em que <code>poverty</code> seja maior que <code>0.150</code> e mantenha apenas <code>uf</code>, <code>state</code>, <code>region</code> e <code>poverty</code>.</p></li>
 </ol>
+</section>
+
+<section id="exercício-de-fixação-02-ordenação-e-criação-de-variáveis" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação 02: ordenação e criação de variáveis</h1>
 <div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>preco <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">30</span>)</span>
-<span id="cb1-2"><a href=""></a>quantidade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">80</span>, <span class="dv">40</span>)</span>
-<span id="cb1-3"><a href=""></a>custo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">800</span>, <span class="dv">600</span>, <span class="dv">900</span>, <span class="dv">1250</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<ol type="a">
-<li class="fragment">Calcule a receita de cada produto</li>
-<li class="fragment">Calcule o lucro de cada produto</li>
-<li class="fragment">Mostre quais produtos tiveram lucro positivo</li>
-<li class="fragment">Qual produto teve maior lucro?</li>
-<li class="fragment">Existe algum produto que deu prejuízo?</li>
+<ol start="3" type="1">
+<li class="fragment"><p><strong>Ordenação com <code>arrange()</code></strong></p>
+<p>Quais são os estados com maior PIB per capita?</p>
+<p>Ordene os estados pelo valor de <code>gdp</code> em ordem decrescente e mostre apenas <code>uf</code>, <code>state</code>, <code>region</code> e <code>gdp</code>.</p></li>
 </ol>
-<ol start="2" type="1">
-<li class="fragment">Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)</li>
-</ol>
-</section>
-
-<section id="estruturas-de-dados-e-funções-básicas" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>02 - Estruturas de dados e funções básicas</h1>
-
-</section>
-
-<section id="como-os-dados-aparecem-na-economia" class="title-slide slide level1 center nonincremental">
-<h1>Como os dados aparecem na economia</h1>
-<ul>
-<li class="fragment">Séries de valores (ex: PIB ao longo do tempo)</li>
-<li class="fragment">Séries temporais (inflação, taxa de juros, desemprego)</li>
-<li class="fragment">Tabelas com múltiplas variáveis (PIB, emprego, crédito por município)</li>
-<li class="fragment">Bases com diferentes indicadores (social, econômico, ambiental)</li>
-<li class="fragment">Dados por região (país, estado)</li>
-<li class="fragment">Dados por setor (indústria, serviços, agropecuária, entre outros)</li>
-</ul>
-</section>
-
-<section id="e-o-que-podemos-fazer-com-esses-dados" class="title-slide slide level1 center nonincremental">
-<h1>E o que podemos fazer com esses dados</h1>
-<ul>
-<li class="fragment">Calcular médias e medianas</li>
-<li class="fragment">Identificar máximos e mínimos</li>
-<li class="fragment">Criar novas variáveis</li>
-<li class="fragment">Comparar informações</li>
-<li class="fragment">Agrupar dados</li>
-<li class="fragment">A ideia central é <strong>transformar dados brutos em informação econômica</strong></li>
-</ul>
-</section>
-
-<section id="tipos-de-estruturas-de-dados" class="title-slide slide level1 center noincremental">
-<h1>Tipos de estruturas de dados</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment fade-in-then-semi-out">
-<p>Na linguagem R, há várias estruturas de dados fundamentais que são usadas para armazenar e manipular informações de maneiras específicas.</p>
 </div>
+<ol start="4" type="1">
+<li class="fragment"><p><strong>Criação de variáveis com <code>mutate()</code></strong></p>
+<p>Como classificar os estados segundo o nível de pobreza observado na própria base?</p>
+<p>Crie uma variável chamada <code>nivel_pobreza</code>, dividindo os estados em três grupos:</p>
 <ul>
-<li class="fragment"><strong>Vetores</strong>: Unidimensionais;</li>
-<li class="fragment"><strong>Matrizes</strong>: Bidimensionais;</li>
-<li class="fragment"><strong>Data Frames</strong>: Bidimensionais;</li>
-<li class="fragment"><strong>Arrays</strong>: Multidimensionais;</li>
-<li class="fragment"><strong>Listas</strong>: Flexíveis.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/estruturas_de_dados.png" class="absolute border shadow-border" style="width: 500px; " data-heigth="500"></p>
-</div></div>
-</section>
-
-<section id="tipos-de-estruturas-de-dados-1" class="title-slide slide level1 center nonincremental" data-visibility="uncounted">
-<h1>Tipos de estruturas de dados</h1>
-<div style="text-align: center; margin-top: 1em">
-<p><img data-src="images/datatypes_dataframes.png" height="400"></p>
-</div>
-</section>
-
-<section id="principais-classes-de-dados" class="title-slide slide level1 center noincremental">
-<h1>Principais classes de dados</h1>
-<div class="columns">
-<div class="column" style="width:30%;">
-<ul>
-<li class="fragment">numeric;</li>
-<li class="fragment">integer;</li>
-<li class="fragment">character;</li>
-<li class="fragment">logical;</li>
-<li class="fragment">complex;</li>
-<li class="fragment">raw;</li>
-<li class="fragment">list.</li>
-</ul>
-</div><div class="column" style="width:70%;">
-<div class="fragment">
-<p>Quando se mistura diferentes tipos de dados em uma operação, o R usa uma <strong>hierarquia de coerção</strong> para determinar como converter <strong>estes dados</strong>.</p>
-<div class="fragment center-text">
-<p>logical ➡ integer ➡ numeric ➡ complex ➡ character</p>
-</div>
-</div>
-</div></div>
-</section>
-
-<section id="o-que-são-data-frames" class="title-slide slide level1 center noincremental">
-<h1>O que são data frames?</h1>
-<ul>
-<li class="fragment"><p>Os <em>data frames</em> são estruturas de dados fundamentais no R, muito utilizadas para <strong>armazenar conjuntos de dados tabulares</strong>, onde as colunas podem conter <strong>diferentes tipos de classes</strong> (numéricos, caracteres, lógicos, etc.).</p></li>
-<li class="fragment"><p>Quanto a sua estrutura, temos:</p>
-<ul>
-<li class="fragment"><strong>Nome das Colunas (variáveis):</strong> Cada coluna em um <em>data frame</em> tem um nome que a identifica, representando seus respectivos atributos;</li>
-<li class="fragment"><strong>Rótulos de Linhas (observações):</strong> As linhas podem ser rotuladas para identificar cada observação de maneira única ou significativa.</li>
+<li class="fragment">Baixa pobreza; Pobreza intermediária; Alta pobreza (Use os quantis de 33% e 66% da variável <code>poverty</code>).</li>
 </ul></li>
-</ul>
-</section>
-
-<section id="o-que-são-data-frames-1" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>O que são data frames?</h1>
-<div style="text-align: center; margin-top: 1em">
-<p><img data-src="images/schema_data.png" height="450"></p>
-</div>
-</section>
-
-<section id="dados-nativos-do-r" class="title-slide slide level1 center">
-<h1>Dados nativos do R</h1>
-<p>O R vem com vários conjuntos de <em>data frames</em> nativos, que estão disponíveis para <strong>uso imediato</strong>. Esses conjuntos de dados são fornecidos principalmente pelo pacote <code>datasets</code>, que é <strong>carregado automaticamente quando você inicia uma sessão R</strong>.</p>
-<div class="fragment">
-<p>Você pode listar todos os conjuntos de dados disponíveis no pacote <code>datasets</code> usando a função <code>data()</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">data</span>(<span class="at">package =</span> <span class="st">"datasets"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<ul>
-<li class="fragment">Principais conjuntos de dados:
-<ul>
-<li class="fragment">airquality</li>
-<li class="fragment">mtcars</li>
-<li class="fragment">cars</li>
-<li class="fragment">iris</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="dados-brasileiros" class="title-slide slide level1 center">
-<h1>Dados brasileiros</h1>
-<ul>
-<li class="fragment"><strong>sidrar</strong>: IBGE <em>(PIB, população, produção, etc.)</em><br>
-</li>
-<li class="fragment"><strong>rbcb</strong>: Banco Central <em>(juros, crédito, inflação)</em><br>
-</li>
-<li class="fragment"><strong>ipeadatar</strong>: indicadores econômicos (IPEA)<br>
-</li>
-<li class="fragment"><strong>basedosdados</strong>: diversas bases públicas organizadas <em>(IBGE, BCB, RAIS, etc.)</em><br>
-</li>
-<li class="fragment"><strong>pnadcIBGE</strong>: microdados da PNAD Contínua <em>(mercado de trabalho)</em><br>
-</li>
-<li class="fragment"><strong>microdatasus</strong>: dados de saúde <em>(DATASUS)</em><br>
-</li>
-<li class="fragment"><strong>censobr</strong>: Censo demográfico<br>
-</li>
-<li class="fragment"><strong>geobr</strong>: dados espaciais do Brasil <em>(mapas, municípios)</em></li>
-</ul>
-</section>
-
-<section id="dados-internacionais" class="title-slide slide level1 center">
-<h1>Dados internacionais</h1>
-<ul>
-<li class="fragment"><strong>WDI</strong>: Banco Mundial <em>(PIB, pobreza, educação)</em><br>
-</li>
-<li class="fragment"><strong>gapminder</strong>: desenvolvimento global <em>(didático)</em><br>
-</li>
-<li class="fragment"><strong>oecd</strong> / APIs: indicadores econômicos de países<br>
-</li>
-<li class="fragment"><strong>IMFData</strong>: Fundo Monetário Internacional <em>(macro global)</em><br>
-</li>
-<li class="fragment"><strong>tidyquant</strong>: dados financeiros <em>(mercados, ações)</em><br>
-</li>
-<li class="fragment"><strong>quantmod</strong>: séries financeiras <em>(Yahoo Finance, etc.)</em><br>
-</li>
-<li class="fragment"><strong>fredr</strong>: Federal Reserve <em>(EUA: juros, inflação, desemprego)</em></li>
-</ul>
-</section>
-
-<section id="listas-no-r" class="title-slide slide level1 center">
-<h1>Listas no R</h1>
-<ul>
-<li class="fragment"><p>Permitem guardar <strong>diferentes tipos de dados juntos</strong><br>
-</p></li>
-<li class="fragment"><p>Podem conter vetores, data frames e até outros objetos, ou seja, são úteis quando trabalhamos com <strong>múltiplas bases ou resultados</strong></p></li>
-<li class="fragment"><p>Então temos:</p>
-<ul>
-<li class="fragment"><strong>Vetor</strong>: uma única informação</li>
-<li class="fragment"><strong>Data frame</strong>: várias informações organizadas<br>
-</li>
-<li class="fragment"><strong>Lista</strong>: vários objetos diferentes reunidos</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="criando-listas" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Criando listas</h1>
-<ul>
-<li class="fragment">Dessa forma, a lista criada estará em um formato parecido com esse:</li>
-</ul>
-<div class="fragment">
-<div style="text-align: center;">
-<p><img data-src="images/rstudio_screenshot1.png" class="border shadow-border" height="450"></p>
-</div>
-</div>
-</section>
-
-<section id="vamos-à-prática-1" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>Vamos à prática!</h1>
-
-</section>
-
-<section id="exercício-de-fixação-aula-02" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação (Aula 02)</h1>
-<ol type="1">
-<li class="fragment">Utilizando o objeto <code>paises</code>, responda:</li>
-</ol>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>paises <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb3-2"><a href=""></a>  <span class="at">pais =</span> <span class="fu">c</span>(<span class="st">"Brasil"</span>, <span class="st">"Argentina"</span>, <span class="st">"Chile"</span>, <span class="st">"Peru"</span>),</span>
-<span id="cb3-3"><a href=""></a>  <span class="at">pop =</span> <span class="fu">c</span>(<span class="dv">203</span>, <span class="dv">46</span>, <span class="dv">19</span>, <span class="dv">34</span>),</span>
-<span id="cb3-4"><a href=""></a>  <span class="at">desemprego =</span> <span class="fu">c</span>(<span class="fl">7.8</span>, <span class="fl">6.5</span>, <span class="fl">8.7</span>, <span class="fl">7.2</span>),</span>
-<span id="cb3-5"><a href=""></a>  <span class="at">pib =</span> <span class="fu">c</span>(<span class="dv">2174</span>, <span class="dv">633</span>, <span class="dv">335</span>, <span class="dv">268</span>)</span>
-<span id="cb3-6"><a href=""></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<ol type="a">
-<li class="fragment">Mostre apenas as colunas pais e pib.</li>
-<li class="fragment">Mostre apenas os países com pib maior que 300.</li>
-<li class="fragment">Crie uma nova coluna chamada pib_percapita, que representa a divisão do pib pela população</li>
-<li class="fragment">Crie uma nova coluna chamada desemprego_alto, que deve ser: TRUE para desemprego maior que 7 e FALSE caso contrário</li>
-<li class="fragment">Altere o valor do desemprego do Chile para 8 e remova a coluna pop</li>
 </ol>
 </section>
 
-<section id="exercício-de-fixação-aula-02-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação (Aula 02)</h1>
-<ol start="2" type="1">
-<li class="fragment">Na lista lista_econ:</li>
-</ol>
+<section id="exercício-aplicado-desenvolvimento-e-pobreza-regional" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício Aplicado: desenvolvimento e pobreza regional</h1>
 <div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>lista_econ <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb4-2"><a href=""></a>  <span class="at">paises =</span> paises,</span>
-<span id="cb4-3"><a href=""></a>  <span class="at">codigos =</span> <span class="fu">c</span>(<span class="st">"Brasil"</span> <span class="ot">=</span> <span class="st">"BRA"</span>, </span>
-<span id="cb4-4"><a href=""></a>              <span class="st">"Argentina"</span> <span class="ot">=</span> <span class="st">"ARG"</span>, </span>
-<span id="cb4-5"><a href=""></a>              <span class="st">"Chile"</span> <span class="ot">=</span> <span class="st">"CHL"</span>, </span>
-<span id="cb4-6"><a href=""></a>              <span class="st">"Peru"</span> <span class="ot">=</span> <span class="st">"PER"</span>),</span>
-<span id="cb4-7"><a href=""></a>  <span class="at">anos =</span> <span class="fu">c</span>(<span class="dv">2021</span>, <span class="dv">2022</span>, <span class="dv">2023</span>, <span class="dv">2024</span>)</span>
-<span id="cb4-8"><a href=""></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<ol type="a">
-<li class="fragment">Modifique, dentro da lista, o código do Peru de “PER” para “PRU”</li>
-</ol>
-</section>
-
-<section id="importação-e-exportação-de-dados" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>03 - Importação e exportação de dados</h1>
-
-</section>
-
-<section id="exportação-de-dados" class="title-slide slide level1 center">
-<h1>Exportação de dados</h1>
-<p>Exportar dados é uma tarefa comum no R, especialmente quando se deseja salvar resultados de análises ou compartilhar informações com outros usuários.</p>
-<p><strong>1.</strong> Exportando para CSV</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">write.csv</span>(dados, <span class="at">file =</span> <span class="st">"dados/dados.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<p><strong>2.</strong> Exportando para Excel (<em>xlsx</em>)</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Ativando pacote</span></span>
-<span id="cb6-2"><a href=""></a><span class="fu">library</span>(openxlsx) <span class="co"># Necessário instalar</span></span>
-<span id="cb6-3"><a href=""></a></span>
-<span id="cb6-4"><a href=""></a><span class="fu">write.xlsx</span>(dados, <span class="at">file =</span> <span class="st">"dados/dados.xlsx"</span>, <span class="at">rowNames =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<p><strong>3.</strong> Exportando para Texto (<em>txt</em>)</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">write.table</span>(dados, <span class="at">file =</span> <span class="st">"dados/dados.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</section>
-
-<section id="importação-de-dados" class="title-slide slide level1 center">
-<h1>Importação de dados</h1>
-<p>Neste caso, ao importar dados no R, estaremos carregando conjuntos de dados externos para análise, manipulação e visualização.</p>
-<p><strong>1.</strong> Importando para CSV</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"dados/dados.csv"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<p><strong>2.</strong> Importando para Excel (<em>xlsx</em>)</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Ativando o pacote</span></span>
-<span id="cb9-2"><a href=""></a><span class="fu">library</span>(readxl) <span class="co"># Necessário instalar</span></span>
-<span id="cb9-3"><a href=""></a></span>
-<span id="cb9-4"><a href=""></a>readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">"dados/dados.xlsx"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<p><strong>3.</strong> Importando para Texto (<em>txt</em>)</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"dados/dados.txt"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</section>
-
-<section id="estruturas-condicionais-e-de-repetição" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>04 - Estruturas condicionais e de repetição</h1>
-
-</section>
-
-<section id="operadores-lógicos" class="title-slide slide level1 center">
-<h1>Operadores lógicos</h1>
-<div class="fragment fade-in-then-semi-out">
-<p>As operações lógicas (ou <em>booleanas</em>), utilizadas para retornar valores <code>TRUE</code> ou <code>FALSE</code>, são fundamentais para <strong>controle de fluxo, filtragem de dados</strong>, e muitos outros aspectos da programação em R.</p>
+<p><strong>Pressuposto econômico</strong></p>
+<p>Estados com maior desenvolvimento humano tendem a apresentar melhores condições socioeconômicas. Espera-se, então, que regiões com maior IDH médio tenham menor pobreza média e maior PIB per capita.</p>
 </div>
 <div class="fragment">
-<ul>
-<li class="fragment">Principais Operadores Lógicos:
-<ul>
-<li class="fragment"><strong>AND</strong> (<code>&amp;</code> e <code>&amp;&amp;</code>);</li>
-<li class="fragment"><strong>OR</strong> (<code>|</code> e <code>||</code>);</li>
-<li class="fragment"><strong>NOT</strong> (<code>!</code>).</li>
-</ul></li>
-</ul>
-</div>
-</section>
-
-<section id="operadores-lógicos-1" class="title-slide slide level1 center">
-<h1>Operadores lógicos</h1>
-<div style="text-align: center;">
-<img data-src="images/transform.png" height="350">
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-<p>Fonte: <span class="citation" data-cites="wickham2023r">Wickham e Grolemund (<a href="#/referências" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
-</div>
-</div>
-</section>
-
-<section id="operadores-relacionais" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Operadores Relacionais</h1>
-<ul>
-<li class="fragment">Igual a (<code>==</code>);</li>
-<li class="fragment">Diferente de (<code>!=</code>);</li>
-<li class="fragment">Maior que (<code>&gt;</code>);</li>
-<li class="fragment">Menor que (<code>&lt;</code>);</li>
-<li class="fragment">Maior ou igual a (<code>&gt;=</code>);</li>
-<li class="fragment">Menor ou igual a (<code>&lt;=</code>);</li>
-<li class="fragment">Pertence a (<code>%in%</code>).</li>
-</ul>
-</section>
-
-<section id="estrutura-condicional" class="title-slide slide level1 center">
-<h1>Estrutura condicional</h1>
-<p>O <code>if</code> é uma estrutura condicional que permite executar um bloco de código se uma condição for verdadeira. O <code>else</code> é opcional e permite executar um bloco de código alternativo se a condição do <code>if</code> for falsa.</p>
-<div class="fragment">
-<div style="text-align: center;">
-<p><img data-src="images/function_schema.png" height="450"></p>
-</div>
-</div>
-</section>
-
-<section id="ifelseelse-if" class="title-slide slide level1 center">
-<h1>if/else/else if</h1>
-<div class="fragment">
-<p>O <code>if</code>…<code>else</code> permite criar dois blocos de código:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="|3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb11-2"><a href=""></a></span>
-<span id="cb11-3"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>){</span>
-<span id="cb11-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Número não negativo"</span>)</span>
-<span id="cb11-5"><a href=""></a>} <span class="cf">else</span> {</span>
-<span id="cb11-6"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Número negativo"</span>)</span>
-<span id="cb11-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p><strong>Pergunta</strong></p>
+<p>As regiões com maior IDH médio também apresentam menor pobreza média e maior PIB per capita médio?</p>
 </div>
 <div class="fragment">
-<p>Use o <code>else if</code> para testar várias condições em sequência.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb12-2"><a href=""></a></span>
-<span id="cb12-3"><a href=""></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb12-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é um número positivo"</span>)</span>
-<span id="cb12-5"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb12-6"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é um número negativo"</span>)</span>
-<span id="cb12-7"><a href=""></a>} <span class="cf">else</span> {</span>
-<span id="cb12-8"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é zero"</span>)</span>
-<span id="cb12-9"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Tarefa:</strong> compare as regiões com <code>group_by()</code>, <code>summarise()</code> e <code>arrange()</code>, calculando IDH médio, pobreza média, PIB per capita médio e número de estados.</p>
 </div>
-</div>
-</section>
-
-<section id="uso-de-operadores-lógicos-em-condicionais" class="title-slide slide level1 center">
-<h1>Uso de operadores lógicos em condicionais</h1>
-<p>Os operadores lógicos são amplamente usados em estruturas condicionais, como <code>if</code>, <code>else</code> e <code>while</code>.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># Usando operadores lógicos em condicionais</span></span>
-<span id="cb13-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb13-3"><a href=""></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb13-4"><a href=""></a></span>
-<span id="cb13-5"><a href=""></a><span class="co"># Condicional if</span></span>
-<span id="cb13-6"><a href=""></a><span class="cf">if</span> (x <span class="sc">&gt;</span> y <span class="sc">&amp;&amp;</span> y <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb13-7"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é maior que y e y é positivo"</span>)</span>
-<span id="cb13-8"><a href=""></a>}</span>
-<span id="cb13-9"><a href=""></a></span>
-<span id="cb13-10"><a href=""></a><span class="co"># Condicional if-else</span></span>
-<span id="cb13-11"><a href=""></a><span class="cf">if</span> (x <span class="sc">&lt;</span> y <span class="sc">||</span> y <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb13-12"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é menor que y ou y é negativo"</span>)</span>
-<span id="cb13-13"><a href=""></a>} <span class="cf">else</span> {</span>
-<span id="cb13-14"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Nenhuma das condições foi satisfeita"</span>)</span>
-<span id="cb13-15"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</section>
-
-<section id="loop" class="title-slide slide level1 center">
-<h1>Loop</h1>
-<p>Estruturas de repetição, ou <em>loops</em>, são fundamentais na programação para executar um bloco de código várias vezes.</p>
-<ul>
-<li class="fragment">Estrutura <code>for</code></li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
-<span id="cb14-2"><a href=""></a>  <span class="fu">print</span>(i)</span>
-<span id="cb14-3"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5</code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="loop-1" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Loop</h1>
-<ul>
-<li class="fragment">Estrutura <code>while</code></li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Inicializando uma variável</span></span>
-<span id="cb16-2"><a href=""></a>contador <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb16-3"><a href=""></a></span>
-<span id="cb16-4"><a href=""></a><span class="co"># Loop while para iterar até que a condição seja falsa</span></span>
-<span id="cb16-5"><a href=""></a><span class="cf">while</span> (contador <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
-<span id="cb16-6"><a href=""></a>  <span class="fu">print</span>(contador)</span>
-<span id="cb16-7"><a href=""></a>  contador <span class="ot">&lt;-</span> contador <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb16-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5</code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="loop-2" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Loop</h1>
-<ul>
-<li class="fragment">Estrutura <code>repeat</code></li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Inicializando uma variável</span></span>
-<span id="cb18-2"><a href=""></a>contador <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb18-3"><a href=""></a></span>
-<span id="cb18-4"><a href=""></a><span class="co"># Loop repeat</span></span>
-<span id="cb18-5"><a href=""></a><span class="cf">repeat</span> {</span>
-<span id="cb18-6"><a href=""></a>  <span class="fu">print</span>(contador)</span>
-<span id="cb18-7"><a href=""></a>  contador <span class="ot">&lt;-</span> contador <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb18-8"><a href=""></a>  <span class="cf">if</span> (contador <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
-<span id="cb18-9"><a href=""></a>    <span class="cf">break</span></span>
-<span id="cb18-10"><a href=""></a>  }</span>
-<span id="cb18-11"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5</code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="condições-vetorizadas" class="title-slide slide level1 center">
-<h1>Condições vetorizadas</h1>
-<p>O <code>ifelse</code> é uma função fundamental no R que permite aplicar condições de forma vetorizada, ou seja, para cada elemento de um vetor, aplica-se uma decisão baseada em uma condição lógica.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb20-2"><a href=""></a></span>
-<span id="cb20-3"><a href=""></a>y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>), x, <span class="cn">NA</span>)</span>
-<span id="cb20-4"><a href=""></a></span>
-<span id="cb20-5"><a href=""></a>y</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1]  1 NA NA  1 NA NA NA  1  1  2</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Tem-se o <code>if_else</code> do pacote <code>dplyr</code> como alternativa ao <code>ifelse</code> do pacote base do R.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>y2 <span class="ot">&lt;-</span> <span class="fu">if_else</span>(x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>), x, <span class="cn">NA</span>)</span>
-<span id="cb22-2"><a href=""></a></span>
-<span id="cb22-3"><a href=""></a>y2</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] a    &lt;NA&gt; &lt;NA&gt; a    &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; a    a    c   
-Levels: a c d</code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="diferenças-entre-ifelse-e-if_else" class="title-slide slide level1 center">
-<h1>Diferenças entre ifelse e if_else</h1>
-<ul>
-<li class="fragment"><code>ifelse</code>
-<ul>
-<li class="fragment">Funciona bem para vetores simples, mas <strong>pode causar problemas de coerção de tipos e eficiência em grandes conjuntos de dados</strong> ou quando esses tipos são mistos, como mostrado no primeiro exemplo.</li>
-</ul></li>
-<li class="fragment"><code>if_else</code>
-<ul>
-<li class="fragment">É mais seguro para uso em <em>data frames</em>, mantendo a coerência dos tipos de dados e <strong>evitando problemas de coerção</strong>, como mostrado no segundo exemplo.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="o-que-são-funções" class="title-slide slide level1 center">
-<h1>O que são funções?</h1>
-<p>Uma função é um conjunto de instruções que recebe entradas (argumentos), realiza operações específicas e retorna uma saída (valor de retorno).</p>
-<div class="fragment">
-<div style="text-align: center;">
-<p><img data-src="images/r_function_syntax.png" height="450"></p>
-</div>
-</div>
-</section>
-
-<section id="funções-com-condicionais" class="title-slide slide level1 center">
-<h1>Funções com condicionais</h1>
-<div class="fragment fade-in-then-semi-out">
-<p>A seguir, iremos criar uma função em R para calcular o Índice de Massa Corporal (IMC) e determinar a faixa de peso (abaixo do peso, peso normal, ou acima do peso) utilizando estruturas condicionais (<code>if</code>, <code>else if</code>, <code>else</code>).</p>
-</div>
-<div class="fragment">
-<p>O IMC é calculado pela fórmula:</p>
-<p><span class="math display">\[ \text{IMC} = \frac{\text{peso}}{\text{altura}^2} \]</span></p>
-</div>
-<div class="fragment">
-<p>Neste caso, <span class="math inline">\(peso\)</span> é o peso da pessoa em quilogramas, e <span class="math inline">\(altura\)</span> é a altura em metros.</p>
-</div>
-</section>
-
-<section id="funções-com-condicionais-1" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Funções com condicionais</h1>
-<p>Definindo a Função <code>calculo_imc</code>:</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" data-code-line-numbers="|3-4|7|9-14|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>calculo_imc <span class="ot">&lt;-</span> <span class="cf">function</span>(peso, altura) {</span>
-<span id="cb24-2"><a href=""></a>  <span class="co"># Verifica se peso ou altura são NA</span></span>
-<span id="cb24-3"><a href=""></a>  <span class="cf">if</span> (<span class="fu">is.na</span>(peso) <span class="sc">|</span> <span class="fu">is.na</span>(altura)) {</span>
-<span id="cb24-4"><a href=""></a>    <span class="fu">return</span>(<span class="cn">NA</span>)</span>
-<span id="cb24-5"><a href=""></a>  }</span>
-<span id="cb24-6"><a href=""></a>  <span class="co"># Calcula o IMC</span></span>
-<span id="cb24-7"><a href=""></a>  imc <span class="ot">&lt;-</span> peso <span class="sc">/</span> (altura<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb24-8"><a href=""></a>  <span class="co"># Avalia o IMC e retorna a faixa de peso correspondente</span></span>
-<span id="cb24-9"><a href=""></a>  <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="fl">18.5</span>) {</span>
-<span id="cb24-10"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Abaixo do peso"</span>)</span>
-<span id="cb24-11"><a href=""></a>  } <span class="cf">else</span> <span class="cf">if</span> (imc <span class="sc">&lt;</span> <span class="dv">25</span>) {</span>
-<span id="cb24-12"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Peso normal"</span>)</span>
-<span id="cb24-13"><a href=""></a>  } <span class="cf">else</span> {</span>
-<span id="cb24-14"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Acima do peso"</span>)</span>
-<span id="cb24-15"><a href=""></a>  }</span>
-<span id="cb24-16"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</section>
-
-<section id="funções-com-condicionais-2" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Funções com condicionais</h1>
-<p>E então, podemos utilizá-la com base nos valores dos vetores <code>altura</code> e <code>peso</code>.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="co"># Definindo o peso e a altura</span></span>
-<span id="cb25-2"><a href=""></a>peso <span class="ot">&lt;-</span> <span class="dv">70</span></span>
-<span id="cb25-3"><a href=""></a>altura <span class="ot">&lt;-</span> <span class="fl">1.68</span></span>
-<span id="cb25-4"><a href=""></a></span>
-<span id="cb25-5"><a href=""></a><span class="co"># Calculando o IMC</span></span>
-<span id="cb25-6"><a href=""></a>imc <span class="ot">&lt;-</span> <span class="fu">calculo_imc</span>(peso, altura)</span>
-<span id="cb25-7"><a href=""></a></span>
-<span id="cb25-8"><a href=""></a>imc</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Peso normal"</code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="como-aplicar-funções-aos-dados" class="title-slide slide level1 center">
-<h1>Como aplicar funções aos dados?</h1>
-<p>Primeiramente, iremos instalar o pacote <code>dados</code>, que oferece uma versão traduzida dos conjuntos de dados listados, facilitando o acesso e a compreensão para usuários que preferem ou necessitam de informações em português.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co"># Instalar e carregar o pacote dados (se ainda não estiver instalado)</span></span>
-<span id="cb27-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"dados"</span>)</span>
-<span id="cb27-3"><a href=""></a></span>
-<span id="cb27-4"><a href=""></a><span class="fu">library</span>(dados)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="co"># Armazenando dados_stars</span></span>
-<span id="cb28-2"><a href=""></a>dados <span class="ot">&lt;-</span> dados<span class="sc">::</span>dados_starwars <span class="sc">|&gt;</span> </span>
-<span id="cb28-3"><a href=""></a>          dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 5
-  nome           altura massa cor_do_cabelo cor_da_pele 
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;       
-1 Luke Skywalker    172    77 Loiro         Branca clara
-2 C-3PO             167    75 &lt;NA&gt;          Ouro        
-3 R2-D2              96    32 &lt;NA&gt;          Branca, Azul
-4 Darth Vader       202   136 Nenhum        Branca      
-5 Leia Organa       150    49 Castanho      Clara       </code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="como-aplicar-funções-aos-dados-1" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Como aplicar funções aos dados?</h1>
-<p>Neste caso, aplicaremos a função <code>calculo_imc</code> ao conjunto <code>dados_starwars</code>. Porém, será necessário tornar a altura dos personagens, que está em centímetros, em metros.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>dados<span class="sc">$</span>altura <span class="ot">&lt;-</span> dados<span class="sc">$</span>altura <span class="sc">/</span> <span class="dv">100</span> </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="fragment">
-<p>Vamos usar <code>mapply</code> para aplicar a função <code>calculo_imc</code> as colunas de <code>massa</code> e <code>altura</code> de <code>dados</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>dados<span class="sc">$</span>categoria_imc <span class="ot">&lt;-</span> <span class="fu">mapply</span>(calculo_imc, dados<span class="sc">$</span>massa, dados<span class="sc">$</span>altura)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 6
-  nome           altura massa cor_do_cabelo cor_da_pele  categoria_imc
-  &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;        
-1 Luke Skywalker   1.72    77 Loiro         Branca clara Acima do peso
-2 C-3PO            1.67    75 &lt;NA&gt;          Ouro         Acima do peso
-3 R2-D2            0.96    32 &lt;NA&gt;          Branca, Azul Acima do peso
-4 Darth Vader      2.02   136 Nenhum        Branca       Acima do peso
-5 Leia Organa      1.5     49 Castanho      Clara        Peso normal  </code></pre>
-</div>
-</div>
-</div>
-</section>
-
-<section id="vamos-à-prática-2" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>Vamos à prática!</h1>
-
-</section>
-
-<section id="exercício-de-fixação-aula-04" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação (Aula 04)</h1>
-<ol type="1">
-<li class="fragment"><p>Um número é par se for divisível por dois, o que, no R, você pode descobrir com <code>x %% 2 == 0</code>. Use este fato e <code>ifelse()</code> para determinar se cada número entre 0 e 20 é par ou ímpar.</p></li>
-<li class="fragment"><p>Dado um vetor de dias como <code>x &lt;- c("Segunda-feira", "Sábado", "Quarta-feira")</code>, use uma instrução <code>ifelse()</code> para rotulá-los como fins de semana ou dias de semana.</p></li>
-</ol>
-</section>
-
-<section id="exercício-de-fixação-aula-04-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação (Aula 04)</h1>
-<ol start="2" type="1">
-<li class="fragment">Decisões e Índices Econômicos:</li>
-</ol>
-<div class="fragment">
-<p>Você recebeu uma planilha <em>Dados_EB.xls</em> com informações de indivíduos: salário em salários mínimos, número de filhos, grau de instrução, estado civil, idade e região de procedência. O objetivo é aplicar decisões lógicas e criar indicadores econômicos simples para análise.</p>
-<p>Crie uma função que calcule a carga familiar usando o salário e número de filhos:</p>
-<ul>
-<li class="fragment">Fórmula:
-<ul>
-<li class="fragment">score = salario - 0.7 * n_filho</li>
-</ul></li>
-</ul>
-</div>
-<!--
-##  {.center .nonincremental}
-
-::: {style="text-align: center; margin-top: 1em"}
-![](images/freq.jpeg){height="500"}
-:::
--->
 </section>
 
 <section id="referências" class="title-slide slide level1 unnumbered smaller scrollable">
 <h1>Referências</h1>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="1" role="list">
-<div id="ref-wickham2023r" class="csl-entry" role="listitem">
-WICKHAM, H.; GROLEMUND, G. <strong>R para ciência de dados: importe, transforme, visualize e modele dados</strong>. Rio de Janeiro: Alta Books, 2023.
-</div>
-<div id="ref-wilher2023analise" class="csl-entry" role="listitem">
-WILHER, V. Análise de Dados na Prática com um Case real. [<em>S. l.</em>]: Análise Macro, 21 abr. 2023. Disponível em: <a href="https://analisemacro.com.br/data-science/analise-de-dados-na-pratica-com-um-case-real/">https://analisemacro.com.br/data-science/analise-de-dados-na-pratica-com-um-case-real/</a>.
-</div>
+<div id="refs" role="list">
+
 </div>
 
 </section>
@@ -1333,82 +483,6 @@ WILHER, V. Análise de Dados na Prática com um Case real. [<em>S. l.</em>]: An�
         });
       };
     </script>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

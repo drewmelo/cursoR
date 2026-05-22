@@ -148,3 +148,48 @@ dados_salarios$vulnerabilidade <- mapply(indice_vulnerabilidade,
                                      salario = dados_salarios$`Salario (x Sal Min)`,
                                      n_filhos = dados_salarios$`N de Filhos`,
                                      regiao = dados_salarios$`Região de Procedência`)
+
+# Um número é par se for divisível por dois, o que, no R, 
+# você pode descobrir com x %% 2 == 0. Use este fato e 
+# ifelse() para determinar se cada número entre 0 e 20 é 
+# par ou ímpar.
+
+ifelse(test = 0:20 %% 2 == 0, yes = "Par", no = "Ímpar")
+
+
+# Dado um vetor de dias como x <- c("Segunda-feira", 
+# "Sábado", "Quarta-feira"), use uma instrução ifelse() 
+# para rotulá-los como fins de semana ou dias de semana.
+
+x <- c("Segunda-feira", "Sábado", "Quarta-feira")
+
+ifelse(x == "Sábado", yes = "Fim de semana", 
+       no = "Dia da semana")
+
+# Crie uma função que calcule a carga familiar usando o 
+# salário e número de filhos:
+# Fórmula: score = salario - 0.7 * n_filho
+
+ind_carga_familiar <- function(salario, 
+                               n_filhos) {
+  if (is.na(n_filhos))
+    return(NA)
+  
+  score <- salario - 0.7 * n_filhos
+  
+  if (score < 5) {
+    return("Alta")
+  } else if (score < 10) {
+    return("Média")
+  } else {
+    return("Baixa")
+  }
+}
+
+dados_salarios$carga_familiar <- mapply(
+  ind_carga_familiar,
+  salario = dados_salarios$`Salario (x Sal Min)`,
+  n_filhos = dados_salarios$`N de Filhos`
+)
+
+

@@ -9,7 +9,7 @@ author:
   - name: André Vitor Pereira de Melo
     email: andre.melo@ufdpar.edu.br
     affiliations: Universidade Federal do Delta do Parnaíba
-subtitle: "Fundamentos do R e pensamento com dados"
+subtitle: "Manipulação de dados com tidyverse"
 date: today
 date-format: long
 lang: pt-BR
@@ -36,726 +36,75 @@ format:
     csl: abnt.csl
 ---
 
-# 01 - Introdução ao R e pensamento com dados {style="font-size:1.5em;"}
+# 01 - Exploração e seleção de dados com dplyr {style="font-size:1.5em;"}
 
-# O que é análise de dados? {.center .nonincremental}
-
-- Rodar o código, fazer um gráfico ou só calcular estatísticas para formalizar seu resultado?
-  - Nenhum dos três de forma isolada. **É transformar dados em respostas.**
-
-- *“É muito melhor uma resposta aproximada à pergunta certa, que muitas vezes é vaga, do que uma resposta exata à pergunta errada, que sempre pode ser tornada precisa. (John Tukey)”*
-
-# Exemplo de análise de dados (Case 1) {.center .nonincremental}
-
-::: {style="text-align: center; margin-top: 1em"}
-::: {.fragment .fade-in-then-semi-out}
-<div style="text-align: center;">
-![](images/case1.png){height="500"}
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-Fonte: @wilher2023analise.
-</div>
-</div>
-:::
-:::
-
-# Exemplo de análise de dados (Case 2) {.center .nonincremental}
-
-::: {style="text-align: center; margin-top: 1em"}
-::: {.fragment .fade-in-then-semi-out}
-![](images/case2.png){height="500"}
-:::
-:::
-
-# O papel do R {.center .nonincremental}
-
-- Onde entra o R nisso?
-
-::: {style="text-align: center; margin-top: 1em"}
-::: {.fragment .fade-in-then-semi-out}
-<div style="text-align: center;">
-![](images/workflow.png){height="350"}
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-Fonte: @wickham2023r.
-</div>
-</div>
-:::
-:::
-
-# Por que economistas usam R {.center .nonincremental}
-
-- Trabalha bem com grandes bases;
-- É completamente gratuito e *open source*;
-- Muito utilizado pela comunidade acadêmica e pelo mercado;
-- Possui uma comunidade ativa que **desenvolve e compartilha pacotes**;
-- Permite replicação de resultados;
-- E o principal: **Permite contar histórias com dados!**
-
-# O que é o RStudio? {.center .nonincremental}
-
--   Ambiente de Desenvolvimento Integrado (IDE);
-    -   RStudio é um ambiente de desenvolvimento integrado projetado especificamente para trabalhar com a linguagem R.
--   Suas vantagens.
-    -   Facilita o desenvolvimento e análise de código R com recursos como edição de scripts, **gerenciamento de projetos e depuração integrada**.
-
-# Passos da instalação {.center}
-
-::: columns
-::: {.column width="50%"}
-::: {.fragment .fade-in-then-semi-out}
-Visite [CRAN - The Comprehensive R Archive Network](https://cran.rstudio.com/) e baixe a linguagem, através de um arquivo executável, para seu sistema operacional;
-:::
-
-::: {.fragment .fade-in-then-semi-out}
-Visite [RStudio Desktop](https://posit.co/download/rstudio-desktop/) e baixe o instalador para seu sistema operacional;
-:::
-
-::: {.fragment .fade-in}
-<p style="color: #028DB7">
-Siga as instruções fornecidas nos instaladores para completar o processo de instalação.
-</p>
-:::
-:::
-
-::: {.column width="50%"}
-![](logo/rstudio_logo.png){.absolute height="150"}\
-![](logo/r_logo.png){.absolute height="200" bottom="50px"}
-:::
-:::
-
-# RStudio Cloud {.center .nonincremental}
-
-::: columns
-::: {.column width="50%"}
-::: {.fragment .fade-in-then-semi-out}
-Visite a [Posit Cloud](https://posit.cloud/) para acessar e utilizar o RStudio sem a necessidade de instalação local;
-:::
-
-::: {.fragment .fade-in}
-<p style="color: #028DB7">
-Necessário realizar **login** (através de uma conta Google, Github, entre outros) para acessar o RStudio Cloud.
-</p>
-:::
-:::
-
-::: {.column width="50%"}
-![](images/rstudio_cloud.png){.absolute .border .shadow-border height="300" width="600"}
-:::
-:::
-
-# Interface do RStudio {.center .nonincremental}
-
-::: {style="text-align: center; margin-top: 1em"}
-::: {.fragment .fade-in-then-semi-out}
-![](images/console.png){.border .shadow-border height="500"}
-:::
-:::
-
-# Vamos à prática! {style="font-size:1.5em;"}
-
-# Exercício de Fixação {.center .center-x background-color="#00263A"}
-
-1. Considere os dados de uma empresa que vende 4 produtos:
+# Exercício de Fixação: explorando indicadores estaduais {.center .center-x background-color="#00263A"}
 
 ::: fragment
-```{r}
-preco <- c(10, 20, 15, 30)
-quantidade <- c(100, 50, 80, 40)
-custo <- c(800, 600, 900, 1250)
-```
-:::
+Você está trabalhando com uma base de indicadores estaduais do Brasil. A base contém informações de desenvolvimento humano, renda, pobreza, população, leitos de UTI, região e outras características das Unidades Federativas.
 
-(a) Calcule a receita de cada produto
-(b) Calcule o lucro de cada produto
-(c) Mostre quais produtos tiveram lucro positivo
-(d) Qual produto teve maior lucro?
-(e) Existe algum produto que deu prejuízo?
-
-2. Substitua os lucros negativos por 0 (como se a empresa ignorasse prejuízo)
-
-# 02 - Estruturas de dados e funções básicas {style="font-size:1.5em;"}
-
-# Como os dados aparecem na economia {.center .nonincremental}
-
-- Séries de valores (ex: PIB ao longo do tempo)
-- Séries temporais (inflação, taxa de juros, desemprego)
-- Tabelas com múltiplas variáveis (PIB, emprego, crédito por município)
-- Bases com diferentes indicadores (social, econômico, ambiental)
-- Dados por região (país, estado)
-- Dados por setor (indústria, serviços, agropecuária, entre outros)
-
-# E o que podemos fazer com esses dados {.center .nonincremental}
-
-- Calcular médias e medianas
-- Identificar máximos e mínimos
-- Criar novas variáveis
-- Comparar informações 
-- Agrupar dados
-- A ideia central é **transformar dados brutos em informação econômica**
-
-# Tipos de estruturas de dados {.center .noincremental}
-
-::: columns
-::: {.column width="50%"}
-::: {.fragment .fade-in-then-semi-out}
-Na linguagem R, há várias estruturas de dados fundamentais que são usadas para armazenar e manipular informações de maneiras específicas.
-:::
-
--   **Vetores**: Unidimensionais;
--   **Matrizes**: Bidimensionais;
--   **Data Frames**: Bidimensionais;
--   **Arrays**: Multidimensionais;
--   **Listas**: Flexíveis.
-:::
-
-::: {.column width="50%"}
-![](images/estruturas_de_dados.png){.absolute .border .shadow-border width="500" heigth="500"}
-:::
-:::
-
-# Tipos de estruturas de dados {.center .nonincremental visibility="uncounted"}
-
-::: {style="text-align: center; margin-top: 1em"}
-![](images/datatypes_dataframes.png){height="400"}
-:::
-
-# Principais classes de dados {.center .noincremental}
-
-::: columns
-::: {.column width="30%"}
--   numeric;
--   integer;
--   character;
--   logical;
--   complex;
--   raw;
--   list.
-:::
-
-::: {.column width="70%"}
-::: fragment
-Quando se mistura diferentes tipos de dados em uma operação, o R usa uma **hierarquia de coerção** para determinar como converter **estes dados**.
-
-::: {.fragment .center-text}
-logical ➡ integer ➡ numeric ➡ complex ➡ character
-:::
-:::
-:::
-:::
-
-# O que são data frames? {.center .noincremental}
-
-- Os *data frames* são estruturas de dados fundamentais no R, muito utilizadas para **armazenar conjuntos de dados tabulares**, onde as colunas podem conter **diferentes tipos de classes** (numéricos, caracteres, lógicos, etc.).
-
--   Quanto a sua estrutura, temos:
-    -   **Nome das Colunas (variáveis):** Cada coluna em um *data frame* tem um nome que a identifica, representando seus respectivos atributos;
-    -   **Rótulos de Linhas (observações):** As linhas podem ser rotuladas para identificar cada observação de maneira única ou significativa.
-
-# O que são data frames? {.center visibility="uncounted"}
-
-::: {style="text-align: center; margin-top: 1em"}
-![](images/schema_data.png){height="450"}
-:::
-
-# Dados nativos do R
-
-O R vem com vários conjuntos de *data frames* nativos, que estão disponíveis para **uso imediato**. Esses conjuntos de dados são fornecidos principalmente pelo pacote `datasets`, que é **carregado automaticamente quando você inicia uma sessão R**.
-
-::: fragment
-Você pode listar todos os conjuntos de dados disponíveis no pacote `datasets` usando a função `data()`.
-
-```{r, results='hide', eval=FALSE}
-data(package = "datasets")
-```
-:::
-
--   Principais conjuntos de dados:
-    -   airquality
-    -   mtcars
-    -   cars
-    -   iris
-
-# Dados brasileiros
-
-- **sidrar**: IBGE *(PIB, população, produção, etc.)*  
-- **rbcb**: Banco Central *(juros, crédito, inflação)*  
-- **ipeadatar**: indicadores econômicos (IPEA)  
-- **basedosdados**: diversas bases públicas organizadas *(IBGE, BCB, RAIS, etc.)*  
-- **pnadcIBGE**: microdados da PNAD Contínua *(mercado de trabalho)*  
-- **microdatasus**: dados de saúde *(DATASUS)*  
-- **censobr**: Censo demográfico  
-- **geobr**: dados espaciais do Brasil *(mapas, municípios)* 
-
-# Dados internacionais
-
-- **WDI**: Banco Mundial *(PIB, pobreza, educação)*  
-- **gapminder**: desenvolvimento global *(didático)*  
-- **oecd** / APIs: indicadores econômicos de países  
-- **IMFData**: Fundo Monetário Internacional *(macro global)*  
-- **tidyquant**: dados financeiros *(mercados, ações)*  
-- **quantmod**: séries financeiras *(Yahoo Finance, etc.)*  
-- **fredr**: Federal Reserve *(EUA: juros, inflação, desemprego)*  
-
-# Listas no R 
-
-- Permitem guardar **diferentes tipos de dados juntos**  
-- Podem conter vetores, data frames e até outros objetos, ou seja, são úteis quando trabalhamos com **múltiplas bases ou resultados**
-
-- Então temos:
-  - **Vetor**: uma única informação 
-  - **Data frame**: várias informações organizadas  
-  - **Lista**: vários objetos diferentes reunidos 
-
-# Criando listas {.center visibility="uncounted"}
-
-- Dessa forma, a lista criada estará em um formato parecido com esse:
-
-::: fragment
-::: {style="text-align: center;"}
-![](images/rstudio_screenshot1.png){.border .shadow-border height="450"}
-:::
-:::
-
-# Vamos à prática! {style="font-size:1.5em;"}
-
-# Exercício de Fixação (Aula 02) {.center .center-x background-color="#00263A"}
-
-1. Utilizando o objeto `paises`, responda:
-
-```{r, echo = FALSE}
-library(tidyverse)
-```
-
-::: fragment
-```{r}
-paises <- tibble(
-  pais = c("Brasil", "Argentina", "Chile", "Peru"),
-  pop = c(203, 46, 19, 34),
-  desemprego = c(7.8, 6.5, 8.7, 7.2),
-  pib = c(2174, 633, 335, 268)
-)
-```
-:::
-
-(a) Mostre apenas as colunas pais e pib.
-(b) Mostre apenas os países com pib maior que 300.
-(c) Crie uma nova coluna chamada pib_percapita, que representa a divisão do pib pela população
-(d) Crie uma nova coluna chamada desemprego_alto, que deve ser: TRUE para desemprego maior que 7 e FALSE caso contrário
-(e) Altere o valor do desemprego do Chile para 8 e remova a coluna pop
-
-# Exercício de Fixação (Aula 02) {.center .center-x background-color="#00263A"}
-
-2. Na lista lista_econ:
-
-::: fragment
-```{r}
-lista_econ <- list(
-  paises = paises,
-  codigos = c("Brasil" = "BRA", 
-              "Argentina" = "ARG", 
-              "Chile" = "CHL", 
-              "Peru" = "PER"),
-  anos = c(2021, 2022, 2023, 2024)
-)
-```
-:::
-
-(a) Modifique, dentro da lista, o código do Peru de "PER" para "PRU"
-
-# 03 - Importação e exportação de dados {style="font-size:1.5em;"}
-
-# Exportação de dados {.center}
-
-Exportar dados é uma tarefa comum no R, especialmente quando se deseja salvar resultados de análises ou compartilhar informações com outros usuários.
-
-**1.** Exportando para CSV
-
-::: fragment
-```{r, eval=FALSE}
-write.csv(dados, file = "dados/dados.csv", row.names = FALSE)
-```
-:::
-
-**2.** Exportando para Excel (*xlsx*)
-
-::: fragment
-```{r, eval=FALSE}
-# Ativando pacote
-library(openxlsx) # Necessário instalar
-
-write.xlsx(dados, file = "dados/dados.xlsx", rowNames = FALSE)
-```
-:::
-
-**3.** Exportando para Texto (*txt*)
-
-::: fragment
-```{r, eval=FALSE}
-write.table(dados, file = "dados/dados.txt", sep = "\t", row.names = FALSE)
-```
-:::
-
-# Importação de dados {.center}
-
-Neste caso, ao importar dados no R, estaremos carregando conjuntos de dados externos para análise, manipulação e visualização.
-
-**1.** Importando para CSV
-
-::: fragment
-```{r, eval=FALSE}
-readr::read_csv(file = "dados/dados.csv")
-```
-:::
-
-**2.** Importando para Excel (*xlsx*)
-
-::: fragment
-```{r, eval=FALSE}
-# Ativando o pacote
-library(readxl) # Necessário instalar
-
-readxl::read_excel(path = "dados/dados.xlsx")
-```
-:::
-
-**3.** Importando para Texto (*txt*)
-
-::: fragment
-```{r, eval=FALSE}
-read.table(file = "dados/dados.txt", header = TRUE, sep = "\t")
-```
-:::
-
-# 04 - Estruturas condicionais e de repetição  {style="font-size:1.5em;"}
-
-# Operadores lógicos {.center}
-
-::: {.fragment .fade-in-then-semi-out}
-As operações lógicas (ou *booleanas*), utilizadas para retornar valores `TRUE` ou `FALSE`, são fundamentais para **controle de fluxo, filtragem de dados**, e muitos outros aspectos da programação em R.
+O objetivo é praticar os principais verbos do `dplyr` aplicados a perguntas econômicas e sociais simples.
 :::
 
 ::: fragment
--   Principais Operadores Lógicos:
-    -   **AND** (`&` e `&&`);
-    -   **OR** (`|` e `||`);
-    -   **NOT** (`!`).
+Nesta atividade, use os verbos:
+
+- `select()` para escolher colunas;
+- `filter()` para escolher linhas;
+- `arrange()` para ordenar a base;
+- `mutate()` para criar novas variáveis.
 :::
 
-#  Operadores lógicos {.center}
+# Exercício de Fixação 01: primeiros verbos do dplyr {.center .center-x background-color="#00263A"}
 
-<div style="text-align: center;">
-![](images/transform.png){height="350"}
-<div style="margin-top: 2px; font-size: 0.6em; color: gray;">
-Fonte: @wickham2023r.
-</div>
-</div>
+1. **Seleção de variáveis com `select()`**
 
-# Operadores Relacionais {.center visibility="uncounted"}
+    Quais variáveis permitem comparar desenvolvimento humano, renda e pobreza entre os estados?
 
--   Igual a (`==`);
--   Diferente de (`!=`);
--   Maior que (`>`);
--   Menor que (`<`);
--   Maior ou igual a (`>=`);
--   Menor ou igual a (`<=`);
--   Pertence a (`%in%`).
+    Selecione apenas as colunas `uf`, `state`, `region`, `hdi_2017`, `gdp` e `poverty`.
 
-# Estrutura condicional {.center}
+2. **Filtragem de linhas com `filter()`**
 
-O `if` é uma estrutura condicional que permite executar um bloco de código se uma condição for verdadeira. O `else` é opcional e permite executar um bloco de código alternativo se a condição do `if` for falsa.
+    Quais estados apresentam pobreza acima de 15%?
+
+    Filtre os estados em que `poverty` seja maior que `0.150` e mantenha apenas `uf`, `state`, `region` e `poverty`.
+
+
+# Exercício de Fixação 02: ordenação e criação de variáveis {.center .center-x background-color="#00263A"}
 
 ::: fragment
-::: {style="text-align: center;"}
-![](images/function_schema.png){height="450"}
-:::
+3. **Ordenação com `arrange()`**
+
+    Quais são os estados com maior PIB per capita?
+
+    Ordene os estados pelo valor de `gdp` em ordem decrescente e mostre apenas `uf`, `state`, `region` e `gdp`.
 :::
 
-# if/else/else if {.center}
+4. **Criação de variáveis com `mutate()`**
+
+    Como classificar os estados segundo o nível de pobreza observado na própria base?
+
+    Crie uma variável chamada `nivel_pobreza`, dividindo os estados em três grupos:
+
+    - Baixa pobreza; Pobreza intermediária; Alta pobreza (Use os quantis de 33% e 66% da variável `poverty`).
+
+# Exercício Aplicado: desenvolvimento e pobreza regional {.center .center-x background-color="#00263A"}
 
 ::: fragment
-O `if`…`else` permite criar dois blocos de código:
+**Pressuposto econômico**
 
-```{r, results='hide'}
-#| code-line-numbers: "|3-4"
-x <- 10
-
-if(x > 0){
-  print("Número não negativo")
-} else {
-  print("Número negativo")
-}
-
-```
+Estados com maior desenvolvimento humano tendem a apresentar melhores condições socioeconômicas. Espera-se, então, que regiões com maior IDH médio tenham menor pobreza média e maior PIB per capita.
 :::
 
 ::: fragment
-Use o `else if` para testar várias condições em sequência.
+**Pergunta**
 
-```{r, results='hide'}
-#| code-line-numbers: "|5-6"
-x <- 0
-
-if (x > 0) {
-  print("x é um número positivo")
-} else if (x < 0) {
-  print("x é um número negativo")
-} else {
-  print("x é zero")
-}
-
-```
-:::
-
-# Uso de operadores lógicos em condicionais {.center}
-
-Os operadores lógicos são amplamente usados em estruturas condicionais, como `if`, `else` e `while`.
-
-::: fragment
-```{r, results='hide'}
-# Usando operadores lógicos em condicionais
-x <- 10
-y <- 5
-
-# Condicional if
-if (x > y && y > 0) {
-  print("x é maior que y e y é positivo")
-}
-
-# Condicional if-else
-if (x < y || y < 0) {
-  print("x é menor que y ou y é negativo")
-} else {
-  print("Nenhuma das condições foi satisfeita")
-}
-
-```
-:::
-
-# Loop {.center}
-
-Estruturas de repetição, ou *loops*, são fundamentais na programação para executar um bloco de código várias vezes.
-
--   Estrutura `for`
-
-::: fragment
-```{r}
-for (i in 1:5) {
-  print(i)
-}
-```
-:::
-
-# Loop {.center visibility="uncounted"}
-
--   Estrutura `while`
-
-::: fragment
-```{r}
-# Inicializando uma variável
-contador <- 1
-
-# Loop while para iterar até que a condição seja falsa
-while (contador <= 5) {
-  print(contador)
-  contador <- contador + 1
-}
-```
-:::
-
-# Loop {.center visibility="uncounted"}
-
--   Estrutura `repeat`
-
-::: fragment
-```{r}
-# Inicializando uma variável
-contador <- 1
-
-# Loop repeat
-repeat {
-  print(contador)
-  contador <- contador + 1
-  if (contador > 5) {
-    break
-  }
-}
-```
-:::
-
-# Condições vetorizadas {.center}
-
-O `ifelse` é uma função fundamental no R que permite aplicar condições de forma vetorizada, ou seja, para cada elemento de um vetor, aplica-se uma decisão baseada em uma condição lógica.
-
-::: fragment
-```{r}
-x <- factor(sample(letters[1:5], 10, replace = TRUE))
-
-y <- ifelse(x %in% c("a", "b", "c"), x, NA)
-
-y
-```
+As regiões com maior IDH médio também apresentam menor pobreza média e maior PIB per capita médio?
 :::
 
 ::: fragment
-Tem-se o `if_else` do pacote `dplyr` como alternativa ao `ifelse` do pacote base do R.
-
-```{r}
-y2 <- if_else(x %in% c("a", "b", "c"), x, NA)
-
-y2
-```
+**Tarefa:** compare as regiões com `group_by()`, `summarise()` e `arrange()`, calculando IDH médio, pobreza média, PIB per capita médio e número de estados.
 :::
-
-# Diferenças entre ifelse e if_else {.center}
-
--   `ifelse`
-    -   Funciona bem para vetores simples, mas **pode causar problemas de coerção de tipos e eficiência em grandes conjuntos de dados** ou quando esses tipos são mistos, como mostrado no primeiro exemplo.
--   `if_else`
-    -   É mais seguro para uso em *data frames*, mantendo a coerência dos tipos de dados e **evitando problemas de coerção**, como mostrado no segundo exemplo.
-
-# O que são funções? {.center}
-
-Uma função é um conjunto de instruções que recebe entradas (argumentos), realiza operações específicas e retorna uma saída (valor de retorno).
-
-::: fragment
-::: {style="text-align: center;"}
-![](images/r_function_syntax.png){height="450"}
-:::
-:::
-
-# Funções com condicionais {.center}
-
-::: {.fragment .fade-in-then-semi-out}
-A seguir, iremos criar uma função em R para calcular o Índice de Massa Corporal (IMC) e determinar a faixa de peso (abaixo do peso, peso normal, ou acima do peso) utilizando estruturas condicionais (`if`, `else if`, `else`).
-:::
-
-::: fragment
-O IMC é calculado pela fórmula:
-
-$$ \text{IMC} = \frac{\text{peso}}{\text{altura}^2} $$
-:::
-
-::: fragment
-Neste caso, $peso$ é o peso da pessoa em quilogramas, e $altura$ é a altura em metros.
-:::
-
-# Funções com condicionais {.center visibility="uncounted"}
-
-Definindo a Função `calculo_imc`:
-
-::: fragment
-```{r}
-#| code-line-numbers: "|3-4|7|9-14|"
-calculo_imc <- function(peso, altura) {
-  # Verifica se peso ou altura são NA
-  if (is.na(peso) | is.na(altura)) {
-    return(NA)
-  }
-  # Calcula o IMC
-  imc <- peso / (altura^2)
-  # Avalia o IMC e retorna a faixa de peso correspondente
-  if (imc < 18.5) {
-    return("Abaixo do peso")
-  } else if (imc < 25) {
-    return("Peso normal")
-  } else {
-    return("Acima do peso")
-  }
-}
-```
-:::
-
-# Funções com condicionais {.center visibility="uncounted"}
-
-E então, podemos utilizá-la com base nos valores dos vetores `altura` e `peso`.
-
-::: fragment
-```{r}
-# Definindo o peso e a altura
-peso <- 70
-altura <- 1.68
-
-# Calculando o IMC
-imc <- calculo_imc(peso, altura)
-
-imc
-```
-:::
-
-# Como aplicar funções aos dados? {.center}
-
-Primeiramente, iremos instalar o pacote `dados`, que oferece uma versão traduzida dos conjuntos de dados listados, facilitando o acesso e a compreensão para usuários que preferem ou necessitam de informações em português.
-
-::: fragment
-```{r, eval=FALSE}
-# Instalar e carregar o pacote dados (se ainda não estiver instalado)
-install.packages("dados")
-
-library(dados)
-```
-:::
-
-::: fragment
-```{r}
-# Armazenando dados_stars
-dados <- dados::dados_starwars |> 
-          dplyr::select(1:5) 
-```
-
-```{r, echo=FALSE}
-head(dados, 5)
-```
-:::
-
-# Como aplicar funções aos dados? {.center visibility="uncounted"}
-
-Neste caso, aplicaremos a função `calculo_imc` ao conjunto `dados_starwars`. Porém, será necessário tornar a altura dos personagens, que está em centímetros, em metros.
-
-::: fragment
-```{r}
-dados$altura <- dados$altura / 100 
-```
-:::
-
-::: fragment
-Vamos usar `mapply` para aplicar a função `calculo_imc` as colunas de `massa` e `altura` de `dados`.
-
-```{r}
-dados$categoria_imc <- mapply(calculo_imc, dados$massa, dados$altura)
-```
-
-```{r, echo=FALSE}
-head(dados, 5)
-```
-:::
-
-# Vamos à prática! {style="font-size:1.5em;"}
-
-# Exercício de Fixação (Aula 04) {.center .center-x background-color="#00263A"}
-
-1. Um número é par se for divisível por dois, o que, no R, você pode descobrir com `x %% 2 == 0`. Use este fato e `ifelse()` para determinar se cada número entre 0 e 20 é par ou ímpar.
-
-2. Dado um vetor de dias como `x <- c("Segunda-feira", "Sábado", "Quarta-feira")`, use uma instrução `ifelse()` para rotulá-los como fins de semana ou dias de semana.
-
-# Exercício de Fixação (Aula 04) {.center .center-x background-color="#00263A"}
-
-2. Decisões e Índices Econômicos:
-
-::: fragment
-Você recebeu uma planilha *Dados_EB.xls* com informações de indivíduos: salário em salários mínimos, número de filhos, grau de instrução, estado civil, idade e região de procedência. O objetivo é aplicar decisões lógicas e criar indicadores econômicos simples para análise.
-
-Crie uma função que calcule a carga familiar usando o salário e número de filhos:
-
--   Fórmula: 
-    -   score = salario - 0.7 * n_filho
-:::
-
-<!--
-##  {.center .nonincremental}
-
-::: {style="text-align: center; margin-top: 1em"}
-![](images/freq.jpeg){height="500"}
-:::
--->
 
 
 # Referências {.unnumbered}
