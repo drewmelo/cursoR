@@ -125,3 +125,41 @@ dados_indicadores |>
 
 dados_indicadores |> 
   count(region, classe_idh, sort = T)
+
+
+# Exercício ---------------------------------------------------------------
+# primeira questão
+dados |> 
+  select(uf, state, region, hdi_2017, gdp, poverty)
+
+# segunda questão 
+dados |> 
+  filter(poverty > 0.15)
+
+# terceira questão
+dados |> 
+  arrange(desc(gdp)) |> 
+  select(uf, state, region, gdp)
+
+# quarta questão
+dados |> 
+  mutate(
+    nivel_pobreza = case_when(
+      poverty < quantile(poverty, 0.33, na.rm = T) ~ "Baixa pobreza",
+      poverty < quantile(poverty, 0.66, na.rm = T) ~ "Pobreza intermediária",
+      TRUE ~ "Alta pobreza"
+    )
+  ) |> 
+  select(uf, state, region, nivel_pobreza)
+
+# quinta questão
+dados |> 
+  group_by(region) |> 
+  summarise(
+    total_estados = n(),
+    media_idh = mean(hdi_2017, na.rm = T),
+    media_pobreza = mean(poverty, na.rm = T),
+    pib_pc_medio = mean(gdp, na.rm = T),
+    pib_pc_mediana = median(gdp, na.rm = T)
+  ) |> 
+  arrange(desc(media_idh))
