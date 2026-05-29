@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input51c00a8e5c03ae19</title>
+  <title>quarto-input2d27f6ccccbf3a33</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -165,7 +165,7 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">22 de maio de 2026</p>
+  <p class="date">29 de maio de 2026</p>
 </section>
 <section id="exploração-e-seleção-de-dados-com-dplyr" class="title-slide slide level1 center" style="font-size:1.5em;">
 <h1>01 - Exploração e seleção de dados com dplyr</h1>
@@ -233,6 +233,32 @@ André Vitor Pereira de Melo
 <div class="fragment">
 <p><strong>Tarefa:</strong> compare as regiões com <code>group_by()</code>, <code>summarise()</code> e <code>arrange()</code>, calculando IDH médio, pobreza média, PIB per capita médio e número de estados.</p>
 </div>
+</section>
+
+<section id="agregação-de-dados-e-integração-de-bases-joins" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>02 - Agregação de dados e integração de bases (joins)</h1>
+
+</section>
+
+<section id="exercício-de-fixação-01" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação 01</h1>
+<ol type="a">
+<li class="fragment"><p>Leia, com <code>read_csv2()</code>, as bases <code>gastos_seguranca_defesa.csv</code> e <code>gastos_urbanismo_habitacao.csv</code>, disponíveis na pasta <code>dados</code>. Depois, aplique <code>clean_names()</code>.</p></li>
+<li class="fragment"><p>Verifique quais colunas aparecem nas duas bases. Para a junção, considere <code>sigla</code>, <code>codigo</code> e <code>municipio</code>.</p></li>
+<li class="fragment"><p>Junte segurança/defesa e urbanismo/habitação com <code>left_join()</code>. A base de segurança/defesa deve ficar como referência.</p></li>
+<li class="fragment"><p>Defina os sufixos <code>_seguranca</code> e <code>_urbanismo</code> para separar as colunas de anos vindas de cada base.</p></li>
+</ol>
+</section>
+
+<section id="exercício-de-fixação-02" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação 02</h1>
+<ol type="a">
+<li class="fragment"><p>Leia a base <code>gastos_urbanismo_habitacao.csv</code>, disponível na pasta <code>dados</code>. Use <code>read_csv2()</code> e depois aplique <code>clean_names()</code>.</p></li>
+<li class="fragment"><p>Filtre a base para manter apenas os municípios das UFs <code>PI</code>, <code>MA</code>, <code>TO</code> e <code>BA</code>.</p></li>
+<li class="fragment"><p>Transforme a base para o formato longo com <code>pivot_longer()</code>. As colunas dos anos devem virar uma coluna chamada <code>ano</code>, e os valores devem ficar em <code>gasto_urbanismo</code>.</p></li>
+<li class="fragment"><p>Depois, volte a base para o formato largo com <code>pivot_wider()</code>. A coluna <code>ano</code> deve voltar a formar colunas, e os valores devem sair de <code>gasto_urbanismo</code>.</p></li>
+<li class="fragment"><p>Compare a base longa e a base larga. Observe o que muda na organização das linhas e colunas.</p></li>
+</ol>
 </section>
 
 <section id="referências" class="title-slide slide level1 unnumbered smaller scrollable">

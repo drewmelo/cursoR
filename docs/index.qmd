@@ -106,6 +106,29 @@ As regiões com maior IDH médio também apresentam menor pobreza média e maior
 **Tarefa:** compare as regiões com `group_by()`, `summarise()` e `arrange()`, calculando IDH médio, pobreza média, PIB per capita médio e número de estados.
 :::
 
+# 02 - Agregação de dados e integração de bases (joins) {style="font-size:1.5em;"}
+
+# Exercício de Fixação 01 {.center .center-x background-color="#00263A"}
+
+a. Leia, com `read_csv2()`, as bases `gastos_seguranca_defesa.csv` e `gastos_urbanismo_habitacao.csv`, disponíveis na pasta `dados`. Depois, aplique `clean_names()`.
+
+b. Verifique quais colunas aparecem nas duas bases. Para a junção, considere `sigla`, `codigo` e `municipio`.
+
+c. Junte segurança/defesa e urbanismo/habitação com `left_join()`. A base de segurança/defesa deve ficar como referência.
+
+d. Defina os sufixos `_seguranca` e `_urbanismo` para separar as colunas de anos vindas de cada base.
+
+# Exercício de Fixação 02 {.center .center-x background-color="#00263A"}
+
+a. Leia a base `gastos_urbanismo_habitacao.csv`, disponível na pasta `dados`. Use `read_csv2()` e depois aplique `clean_names()`.
+
+b. Filtre a base para manter apenas os municípios das UFs `PI`, `MA`, `TO` e `BA`.
+
+c. Transforme a base para o formato longo com `pivot_longer()`. As colunas dos anos devem virar uma coluna chamada `ano`, e os valores devem ficar em `gasto_urbanismo`.
+
+d. Depois, volte a base para o formato largo com `pivot_wider()`. A coluna `ano` deve voltar a formar colunas, e os valores devem sair de `gasto_urbanismo`.
+
+e. Compare a base longa e a base larga. Observe o que muda na organização das linhas e colunas.
 
 # Referências {.unnumbered}
 
