@@ -114,3 +114,57 @@ right_join(x = band_instruments, y = band_members,
 
 full_join(x = band_instruments, y = band_members,
            by = "name")
+
+
+# Exercício de fixação 01 -------------------------------------------------
+
+# A
+
+urls <- c(
+  "https://raw.githubusercontent.com/drewmelo/cursoR/refs/heads/master/dados/gastos_seguranca_defesa.csv",
+  "https://raw.githubusercontent.com/drewmelo/cursoR/refs/heads/master/dados/gastos_urbanismo_habitacao.csv"
+)
+
+seguranca <- read_csv2(urls[1], skip = 1) |> 
+  clean_names()
+
+urbanismo_habitacao <- read_csv2(urls[2], skip = 1) |> 
+  clean_names()
+
+# C
+
+dados_join <- seguranca |>
+  left_join(urbanismo_habitacao,
+             # letra b
+             by = c("sigla", "codigo", "municipio"))
+
+dados_join2 <- seguranca |>
+  right_join(urbanismo_habitacao,
+            # letra b
+            by = c("sigla", "codigo", "municipio"),
+            # letra d
+            suffix = c("_seguranca", "_urbanismo")
+            )
+
+# Exercício de fixação 02 -------------------------------------------------
+
+# letra A
+urbanismo_habitacao
+
+# letra b
+urbanismo_habitacao <- urbanismo_habitacao |> 
+  filter(sigla %in% c("PI", "MA", "TO", "BA"))
+
+# letra c
+urbanismo_habitacao_longo <- urbanismo_habitacao |> 
+  pivot_longer(cols = contains("20"),
+               names_to = "ano",
+               values_to = "gastos_urbanismo")
+# letra d
+urbanismo_habitacao_largo <- urbanismo_habitacao_longo |> 
+  pivot_wider(names_from = ano,
+              values_from = gastos_urbanismo)
+
+# letra e
+glimpse(urbanismo_habitacao_longo)
+glimpse(urbanismo_habitacao_largo)
