@@ -1,0 +1,155 @@
+---
+title: "Projeto 01"
+subtitle: "Escolaridade e renda no mercado de trabalho do Piauí"
+lang: pt-BR
+mainfont: "Arial"
+format:
+  pdf:
+    toc: false
+    toc-depth: 3
+    number-sections: false
+    pdf-engine: xelatex
+---
+
+## Tema
+
+**Escolaridade e rendimento dos trabalhadores ocupados no Piauí em 2024**
+
+## Pergunta principal
+
+**Como a escolaridade está relacionada à renda dos trabalhadores ocupados no Piauí em 2024?**
+
+## Objetivo
+
+O projeto tem como objetivo analisar a relação entre escolaridade e rendimento no mercado de trabalho do Piauí. O grupo deverá verificar se trabalhadores com níveis mais elevados de instrução apresentam rendas maiores e observar como os rendimentos se distribuem entre os diferentes grupos educacionais.
+
+Além da análise principal, o grupo deverá escolher uma característica complementar para verificar se a relação entre escolaridade e renda muda entre diferentes grupos da população.
+
+## Entendendo a base
+
+A base foi construída com dados da PNAD Contínua de 2024 e contém informações sobre moradores do Piauí entrevistados nos quatro trimestres do ano.
+
+Cada linha representa uma pessoa entrevistada. As colunas apresentam informações sobre suas características pessoais, sua escolaridade e sua situação no mercado de trabalho.
+
+Como o projeto analisa rendimentos do trabalho, deverão ser consideradas apenas as pessoas ocupadas e com informação disponível sobre renda e escolaridade.
+
+## Variáveis principais
+
+### `Ocupacao`
+
+Informa se a pessoa estava ocupada ou desocupada no período da pesquisa.
+
+Como o projeto analisa rendimentos do trabalho, deverão ser consideradas apenas as pessoas ocupadas.
+
+### `Nivel_Instrucao`
+
+Apresenta o nível de escolaridade alcançado pela pessoa.
+
+Entre as categorias podem aparecer ensino fundamental incompleto, ensino fundamental completo, ensino médio incompleto, ensino médio completo, ensino superior incompleto e ensino superior completo.
+
+### `Anos_Estudo_Num`
+
+Apresenta os anos de estudo em formato numérico.
+
+O valor 0 representa pessoas sem instrução ou com menos de um ano de estudo. Os demais valores correspondem à quantidade de anos estudados, até o limite de 16 anos ou mais.
+
+### `Renda`
+
+Apresenta o rendimento mensal habitual do trabalho principal.
+
+Na análise, deverão ser consideradas a média e a mediana. A média pode ser influenciada por rendimentos muito elevados, enquanto a mediana representa o valor central da distribuição.
+
+### `Faixa_Renda`
+
+Agrupa os trabalhadores nos seguintes intervalos:
+
+* até 1 salário mínimo;
+* mais de 1 a 2 salários mínimos;
+* mais de 2 a 3 salários mínimos;
+* mais de 3 a 4 salários mínimos;
+* mais de 4 a 5 salários mínimos;
+* mais de 5 salários mínimos.
+
+## Variáveis complementares
+
+O grupo deverá escolher apenas uma das variáveis abaixo para aprofundar a análise.
+
+### `Sexo`
+
+Identifica o sexo da pessoa entrevistada.
+
+### `Cor_Raca`
+
+Apresenta a classificação de cor ou raça declarada pela pessoa.
+
+### `Urbano`
+
+Informa se a pessoa mora em área urbana ou rural.
+
+### `Posicao_Ocupacao`
+
+Indica a forma de inserção no mercado de trabalho, como empregado com carteira, empregado sem carteira, servidor público, empregador ou trabalhador por conta própria.
+
+### `Horas_Trabalhadas`
+
+Apresenta o número habitual de horas trabalhadas por semana.
+
+Essa variável permite observar se trabalhadores com diferentes níveis de escolaridade possuem jornadas distintas e se parte das diferenças de renda pode estar relacionada à quantidade de horas trabalhadas.
+
+### `Grupo_Jornada`
+
+Classifica os trabalhadores conforme a jornada semanal:
+
+* até 20 horas;
+* de 21 a 40 horas;
+* de 41 a 44 horas;
+* acima de 44 horas.
+
+Essa variável facilita a comparação da renda entre grupos com diferentes jornadas de trabalho.
+
+## Questões obrigatórias
+
+O grupo deverá responder às seguintes questões:
+
+1. **Qual é o nível de escolaridade mais frequente entre os trabalhadores ocupados?**
+
+2. **Como a renda média e a renda mediana variam entre os níveis de instrução?**
+
+3. **A renda tende a aumentar conforme crescem os anos de estudo?**
+
+4. **A relação entre escolaridade e renda muda quando se considera a variável complementar escolhida pelo grupo?**
+
+## Elementos mínimos do projeto
+
+O trabalho deverá apresentar:
+
+* pelo menos uma tabela com informações relevantes para as questões propostas;
+* pelo menos dois gráficos adequados ao tema;
+* uma comparação entre os níveis de instrução;
+* uma análise utilizando uma variável complementar escolhida pelo grupo;
+* explicações para os principais resultados;
+* uma conclusão que responda diretamente à pergunta principal.
+
+A escolha das tabelas, dos gráficos, das medidas estatísticas e das formas de comparação ficará sob responsabilidade do grupo. Os recursos utilizados deverão contribuir para responder às quatro questões obrigatórias.
+
+Para a análise complementar, o grupo poderá, por exemplo:
+
+* comparar a relação entre escolaridade e renda entre homens e mulheres;
+* comparar os rendimentos entre grupos de cor ou raça com níveis semelhantes de instrução;
+* verificar se a relação entre escolaridade e renda muda entre áreas urbanas e rurais;
+* comparar os rendimentos entre diferentes posições na ocupação;
+* analisar se trabalhadores com o mesmo nível de instrução apresentam rendimentos diferentes conforme a forma de inserção no mercado de trabalho;
+* comparar a relação entre escolaridade e renda entre trabalhadores com diferentes jornadas semanais;
+* verificar se trabalhadores com níveis semelhantes de instrução apresentam rendimentos diferentes conforme o número de horas trabalhadas ou o grupo de jornada.
+
+O grupo deverá escolher apenas uma dessas possibilidades ou propor outra análise que seja adequada ao tema e às informações disponíveis na base.
+
+## Interpretação dos resultados
+
+As tabelas e os gráficos deverão ser acompanhados de explicações.
+
+O grupo deverá identificar quais níveis de instrução apresentam os maiores e os menores rendimentos, observar as diferenças entre média e mediana e verificar se existe uma tendência de crescimento da renda conforme aumentam os anos de estudo.
+
+Na análise complementar, deverá ser observado se pessoas com escolaridade semelhante apresentam rendimentos diferentes conforme sexo, cor ou raça, localização urbana ou rural ou posição na ocupação.
+
+A conclusão deverá responder diretamente à pergunta principal e apresentar os resultados mais importantes encontrados pelo grupo.

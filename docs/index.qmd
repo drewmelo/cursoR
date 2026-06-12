@@ -9,7 +9,7 @@ author:
   - name: André Vitor Pereira de Melo
     email: andre.melo@ufdpar.edu.br
     affiliations: Universidade Federal do Delta do Parnaíba
-subtitle: "Manipulação de dados com tidyverse"
+subtitle: "Visualização de dados com ggplot2"
 date: today
 date-format: long
 lang: pt-BR
@@ -36,99 +36,159 @@ format:
     csl: abnt.csl
 ---
 
-# 01 - Exploração e seleção de dados com dplyr {style="font-size:1.5em;"}
+# 01 - Fundamentos do ggplot2 e construção de gráficos {style="font-size:1.5em;"}
 
-# Exercício de Fixação: explorando indicadores estaduais {.center .center-x background-color="#00263A"}
+# Introdução ao ggplot2 {.center}
 
-::: fragment
-Você está trabalhando com uma base de indicadores estaduais do Brasil. A base contém informações de desenvolvimento humano, renda, pobreza, população, leitos de UTI, região e outras características das Unidades Federativas.
-
-O objetivo é praticar os principais verbos do `dplyr` aplicados a perguntas econômicas e sociais simples.
+::: {.fragment .fade-in-then-semi-out}
+O `ggplot2` é um dos pacotes mais populares para visualização de dados no R, criado por Hadley Wickham. Ele implementa a gramática de gráficos, permitindo a criação de **visualizações complexas de forma intuitiva e flexível**.
 :::
 
 ::: fragment
-Nesta atividade, use os verbos:
-
-- `select()` para escolher colunas;
-- `filter()` para escolher linhas;
-- `arrange()` para ordenar a base;
-- `mutate()` para criar novas variáveis.
+::: columns
+::: {.column width="50%"}
+A gramática de gráficos (*Grammar of Graphics*) é um conceito que descreve e constrói gráficos através de componentes básicos.
 :::
 
-# Exercício de Fixação 01: primeiros verbos do dplyr {.center .center-x background-color="#00263A"}
-
-1. **Seleção de variáveis com `select()`**
-
-    Quais variáveis permitem comparar desenvolvimento humano, renda e pobreza entre os estados?
-
-    Selecione apenas as colunas `uf`, `state`, `region`, `hdi_2017`, `gdp` e `poverty`.
-
-2. **Filtragem de linhas com `filter()`**
-
-    Quais estados apresentam pobreza acima de 15%?
-
-    Filtre os estados em que `poverty` seja maior que `0.150` e mantenha apenas `uf`, `state`, `region` e `poverty`.
-
-
-# Exercício de Fixação 02: ordenação e criação de variáveis {.center .center-x background-color="#00263A"}
-
-::: fragment
-3. **Ordenação com `arrange()`**
-
-    Quais são os estados com maior PIB per capita?
-
-    Ordene os estados pelo valor de `gdp` em ordem decrescente e mostre apenas `uf`, `state`, `region` e `gdp`.
+::: {.column width="50%"}
+![](images/ggplot_logo.jpg){.absolute height="450"}
+:::
+:::
 :::
 
-4. **Criação de variáveis com `mutate()`**
+# Princípios básicos do ggplot2 {.center}
 
-    Como classificar os estados segundo o nível de pobreza observado na própria base?
-
-    Crie uma variável chamada `nivel_pobreza`, dividindo os estados em três grupos:
-
-    - Baixa pobreza; Pobreza intermediária; Alta pobreza (Use os quantis de 33% e 66% da variável `poverty`).
-
-# Exercício Aplicado: desenvolvimento e pobreza regional {.center .center-x background-color="#00263A"}
-
-::: fragment
-**Pressuposto econômico**
-
-Estados com maior desenvolvimento humano tendem a apresentar melhores condições socioeconômicas. Espera-se, então, que regiões com maior IDH médio tenham menor pobreza média e maior PIB per capita.
+::: columns
+::: {.column width="50%"}
+-   **Data**:
+    -   O primeiro passo na construção de um gráfico é fornecer os dados.
+-   **Aesthetics** (`aes`):
+    -   Especifica como os dados são mapeados visualmente
+-   **Geometries** (`geoms`):
+    -   Define o tipo de gráfico a ser criado, como pontos, barras, linhas, caixas, etc.
 :::
 
-::: fragment
-**Pergunta**
-
-As regiões com maior IDH médio também apresentam menor pobreza média e maior PIB per capita médio?
+::: {.column width="50%"}
+-   **Facets**:
+    -   Permite dividir os dados em subgráficos baseados em uma ou mais variáveis.
+-   **Scales**:
+    -   Controla a mapeamento das variáveis para as estéticas, incluindo eixos e legendas.
+-   **Themes**:
+    -   Modifica a aparência geral do gráfico, como cores de fundo, fontes, etc.
+:::
 :::
 
-::: fragment
-**Tarefa:** compare as regiões com `group_by()`, `summarise()` e `arrange()`, calculando IDH médio, pobreza média, PIB per capita médio e número de estados.
+# Princípios básicos do ggplot2 {.center visibility="uncounted"}
+
+::: {style="text-align: center; margin-top: 1em"}
+![](images/ggplot-grammar-of-graphics.png){.border .shadow-border height="500"}
 :::
 
-# 02 - Agregação de dados e integração de bases (joins) {style="font-size:1.5em;"}
+# Processo de camada (layers) {.center}
+
+No `ggplot2`, é possível desenvolver gráficos camada por camada. Cada camada adiciona novos elementos ou modifica os existentes. A seguir, utilizaremos a base `mtcars`.
+
+Porém, antes é necessário ativarmos o pacote.
+```{r}
+library(ggplot2)
+```
+
+
+# Camada de Dados e Aesthetics {.center}
+
+```{r}
+p <- ggplot(data = mtcars, aes(x = wt, y = mpg))
+```
+
+```{r, echo=FALSE, fig.align='center'}
+p
+```
+
+# Camada de Geometria {.center}
+
+```{r}
+p <- p + geom_point()
+```
+
+```{r, echo=FALSE, fig.align='center'}
+p
+```
+
+# Camada de Facets (Opcional) {.center}
+
+```{r}
+p <- p + facet_wrap(~ cyl)
+```
+
+```{r, echo=FALSE, fig.align='center'}
+p
+```
+
+# Camada de Facets (Opcional) {.center}
+
+```{r}
+p <- p + scale_x_continuous(breaks = seq(0, 6, by = 1))
+```
+
+```{r, echo=FALSE, fig.align='center'}
+p
+```
+
+# Camada de Themes (Opcional) {.center}
+
+```{r}
+p <- p + theme_minimal()
+```
+
+```{r, echo=FALSE, fig.align='center'}
+p
+```
+
+# ggsave {.center}
+
+Para gráficos gerados com `ggplot2`, podemos salvá-los em formato *png*, *jpeg* e *pdf*. Neste caso, salvaremos nesses 3 formatos diretamente para a pasta `figuras`.
+
+```{r, eval=FALSE}
+# Salvar em PNG
+ggsave("figuras/figura1.png", plot = p, width = 6, height = 4, dpi = 300)
+
+# Salvar em JPEG
+ggsave("figuras/figura2.jpeg", plot = p, width = 6, height = 4)
+
+# Salvar em PDF
+ggsave("figuras/figura2.pdf", plot = p, width = 6, height = 4)
+```
+
 
 # Exercício de Fixação 01 {.center .center-x background-color="#00263A"}
 
-a. Leia, com `read_csv2()`, as bases `gastos_seguranca_defesa.csv` e `gastos_urbanismo_habitacao.csv`, disponíveis na pasta `dados`. Depois, aplique `clean_names()`.
+::: {.fragment}
+A base utilizada corresponde à **Tabela 473 do SIDRA/IBGE**, intitulada *Pessoas de 4 anos ou mais de idade por grupos de idade, anos de estudo, sexo e situação do domicílio em 1996*.
+:::
 
-b. Verifique quais colunas aparecem nas duas bases. Para a junção, considere `sigla`, `codigo` e `municipio`.
+::: {.fragment}
+Cada linha representa uma combinação entre:
+:::
 
-c. Junte segurança/defesa e urbanismo/habitação com `left_join()`. A base de segurança/defesa deve ficar como referência.
+* grupo de idade;
+* grupo de anos de estudo;
+* sexo;
+* situação do domicílio.
 
-d. Defina os sufixos `_seguranca` e `_urbanismo` para separar as colunas de anos vindas de cada base.
+::: {.fragment}
+A variável `valor` informa a quantidade de pessoas correspondente a cada combinação.
+:::
 
-# Exercício de Fixação 02 {.center .center-x background-color="#00263A"}
+# Exercício de Fixação 01 {.center .center-x background-color="#00263A"}
 
-a. Leia a base `gastos_urbanismo_habitacao.csv`, disponível na pasta `dados`. Use `read_csv2()` e depois aplique `clean_names()`.
+**Questão 1**
 
-b. Filtre a base para manter apenas os municípios das UFs `PI`, `MA`, `TO` e `BA`.
+Construa um gráfico de barras que apresente a quantidade de pessoas de 4 anos ou mais em cada grupo de anos de estudo no Brasil, em 1996. Retire as categorias `Total` e `Ignorados`, apresente os valores em milhões e ordene as barras de acordo com a quantidade de pessoas. Com base no gráfico, identifique o grupo predominante e descreva como a população se distribuía entre os níveis de escolaridade.
 
-c. Transforme a base para o formato longo com `pivot_longer()`. As colunas dos anos devem virar uma coluna chamada `ano`, e os valores devem ficar em `gasto_urbanismo`.
+**Questão 2**
 
-d. Depois, volte a base para o formato largo com `pivot_wider()`. A coluna `ano` deve voltar a formar colunas, e os valores devem sair de `gasto_urbanismo`.
+Entre as pessoas com **5 a 7 anos de estudo**, compare a quantidade de homens e mulheres residentes nas áreas urbana e rural. Organize os resultados em uma tabela, calcule o total de pessoas em cada situação do domicílio e a razão entre homens e mulheres. Em seguida, interprete as diferenças observadas.
 
-e. Compare a base longa e a base larga. Observe o que muda na organização das linhas e colunas.
 
 # Referências {.unnumbered}
 

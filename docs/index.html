@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input2d27f6ccccbf3a33</title>
+  <title>quarto-input7d46f0a837c71f9a</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -149,7 +215,7 @@
   <h1 class="title"><div style="display: flex; align-items: center;">
 <p><span style="color: #313130; font-weight: bold; font-size: 2em;">Introdução ao</span> <img src="logo/r_logo.png" style="margin-left: -15px; height: 150px; margin-bottom: -40px;"> <object data="images/qrcode.svg" type="image/svg+xml" style="margin-left: 650px; height: 300px; position: absolute; top: 180px; right: 0;"></object></p>
 </div></h1>
-  <p class="subtitle">Manipulação de dados com tidyverse</p>
+  <p class="subtitle">Visualização de dados com ggplot2</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -165,100 +231,160 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">29 de maio de 2026</p>
+  <p class="date">12 de junho de 2026</p>
 </section>
-<section id="exploração-e-seleção-de-dados-com-dplyr" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>01 - Exploração e seleção de dados com dplyr</h1>
+<section id="fundamentos-do-ggplot2-e-construção-de-gráficos" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>01 - Fundamentos do ggplot2 e construção de gráficos</h1>
 
 </section>
 
-<section id="exercício-de-fixação-explorando-indicadores-estaduais" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação: explorando indicadores estaduais</h1>
-<div class="fragment">
-<p>Você está trabalhando com uma base de indicadores estaduais do Brasil. A base contém informações de desenvolvimento humano, renda, pobreza, população, leitos de UTI, região e outras características das Unidades Federativas.</p>
-<p>O objetivo é praticar os principais verbos do <code>dplyr</code> aplicados a perguntas econômicas e sociais simples.</p>
+<section id="introdução-ao-ggplot2" class="title-slide slide level1 center">
+<h1>Introdução ao ggplot2</h1>
+<div class="fragment fade-in-then-semi-out">
+<p>O <code>ggplot2</code> é um dos pacotes mais populares para visualização de dados no R, criado por Hadley Wickham. Ele implementa a gramática de gráficos, permitindo a criação de <strong>visualizações complexas de forma intuitiva e flexível</strong>.</p>
 </div>
 <div class="fragment">
-<p>Nesta atividade, use os verbos:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A gramática de gráficos (<em>Grammar of Graphics</em>) é um conceito que descreve e constrói gráficos através de componentes básicos.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/ggplot_logo.jpg" class="absolute" style="height: 450px; "></p>
+</div></div>
+</div>
+</section>
+
+<section id="princípios-básicos-do-ggplot2" class="title-slide slide level1 center">
+<h1>Princípios básicos do ggplot2</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><code>select()</code> para escolher colunas;</li>
-<li class="fragment"><code>filter()</code> para escolher linhas;</li>
-<li class="fragment"><code>arrange()</code> para ordenar a base;</li>
-<li class="fragment"><code>mutate()</code> para criar novas variáveis.</li>
-</ul>
-</div>
-</section>
-
-<section id="exercício-de-fixação-01-primeiros-verbos-do-dplyr" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação 01: primeiros verbos do dplyr</h1>
-<ol type="1">
-<li class="fragment"><p><strong>Seleção de variáveis com <code>select()</code></strong></p>
-<p>Quais variáveis permitem comparar desenvolvimento humano, renda e pobreza entre os estados?</p>
-<p>Selecione apenas as colunas <code>uf</code>, <code>state</code>, <code>region</code>, <code>hdi_2017</code>, <code>gdp</code> e <code>poverty</code>.</p></li>
-<li class="fragment"><p><strong>Filtragem de linhas com <code>filter()</code></strong></p>
-<p>Quais estados apresentam pobreza acima de 15%?</p>
-<p>Filtre os estados em que <code>poverty</code> seja maior que <code>0.150</code> e mantenha apenas <code>uf</code>, <code>state</code>, <code>region</code> e <code>poverty</code>.</p></li>
-</ol>
-</section>
-
-<section id="exercício-de-fixação-02-ordenação-e-criação-de-variáveis" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação 02: ordenação e criação de variáveis</h1>
-<div class="fragment">
-<ol start="3" type="1">
-<li class="fragment"><p><strong>Ordenação com <code>arrange()</code></strong></p>
-<p>Quais são os estados com maior PIB per capita?</p>
-<p>Ordene os estados pelo valor de <code>gdp</code> em ordem decrescente e mostre apenas <code>uf</code>, <code>state</code>, <code>region</code> e <code>gdp</code>.</p></li>
-</ol>
-</div>
-<ol start="4" type="1">
-<li class="fragment"><p><strong>Criação de variáveis com <code>mutate()</code></strong></p>
-<p>Como classificar os estados segundo o nível de pobreza observado na própria base?</p>
-<p>Crie uma variável chamada <code>nivel_pobreza</code>, dividindo os estados em três grupos:</p>
+<li class="fragment"><strong>Data</strong>:
 <ul>
-<li class="fragment">Baixa pobreza; Pobreza intermediária; Alta pobreza (Use os quantis de 33% e 66% da variável <code>poverty</code>).</li>
+<li class="fragment">O primeiro passo na construção de um gráfico é fornecer os dados.</li>
 </ul></li>
-</ol>
+<li class="fragment"><strong>Aesthetics</strong> (<code>aes</code>):
+<ul>
+<li class="fragment">Especifica como os dados são mapeados visualmente</li>
+</ul></li>
+<li class="fragment"><strong>Geometries</strong> (<code>geoms</code>):
+<ul>
+<li class="fragment">Define o tipo de gráfico a ser criado, como pontos, barras, linhas, caixas, etc.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Facets</strong>:
+<ul>
+<li class="fragment">Permite dividir os dados em subgráficos baseados em uma ou mais variáveis.</li>
+</ul></li>
+<li class="fragment"><strong>Scales</strong>:
+<ul>
+<li class="fragment">Controla a mapeamento das variáveis para as estéticas, incluindo eixos e legendas.</li>
+</ul></li>
+<li class="fragment"><strong>Themes</strong>:
+<ul>
+<li class="fragment">Modifica a aparência geral do gráfico, como cores de fundo, fontes, etc.</li>
+</ul></li>
+</ul>
+</div></div>
 </section>
 
-<section id="exercício-aplicado-desenvolvimento-e-pobreza-regional" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício Aplicado: desenvolvimento e pobreza regional</h1>
-<div class="fragment">
-<p><strong>Pressuposto econômico</strong></p>
-<p>Estados com maior desenvolvimento humano tendem a apresentar melhores condições socioeconômicas. Espera-se, então, que regiões com maior IDH médio tenham menor pobreza média e maior PIB per capita.</p>
-</div>
-<div class="fragment">
-<p><strong>Pergunta</strong></p>
-<p>As regiões com maior IDH médio também apresentam menor pobreza média e maior PIB per capita médio?</p>
-</div>
-<div class="fragment">
-<p><strong>Tarefa:</strong> compare as regiões com <code>group_by()</code>, <code>summarise()</code> e <code>arrange()</code>, calculando IDH médio, pobreza média, PIB per capita médio e número de estados.</p>
+<section id="princípios-básicos-do-ggplot2-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Princípios básicos do ggplot2</h1>
+<div style="text-align: center; margin-top: 1em">
+<p><img data-src="images/ggplot-grammar-of-graphics.png" class="border shadow-border" height="500"></p>
 </div>
 </section>
 
-<section id="agregação-de-dados-e-integração-de-bases-joins" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>02 - Agregação de dados e integração de bases (joins)</h1>
+<section id="processo-de-camada-layers" class="title-slide slide level1 center">
+<h1>Processo de camada (layers)</h1>
+<p>No <code>ggplot2</code>, é possível desenvolver gráficos camada por camada. Cada camada adiciona novos elementos ou modifica os existentes. A seguir, utilizaremos a base <code>mtcars</code>.</p>
+<p>Porém, antes é necessário ativarmos o pacote.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
 
+<section id="camada-de-dados-e-aesthetics" class="title-slide slide level1 center">
+<h1>Camada de Dados e Aesthetics</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section id="camada-de-geometria" class="title-slide slide level1 center">
+<h1>Camada de Geometria</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section id="camada-de-facets-opcional" class="title-slide slide level1 center">
+<h1>Camada de Facets (Opcional)</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span> cyl)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section id="camada-de-facets-opcional-1" class="title-slide slide level1 center">
+<h1>Camada de Facets (Opcional)</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="at">by =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section id="camada-de-themes-opcional" class="title-slide slide level1 center">
+<h1>Camada de Themes (Opcional)</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section id="ggsave" class="title-slide slide level1 center">
+<h1>ggsave</h1>
+<p>Para gráficos gerados com <code>ggplot2</code>, podemos salvá-los em formato <em>png</em>, <em>jpeg</em> e <em>pdf</em>. Neste caso, salvaremos nesses 3 formatos diretamente para a pasta <code>figuras</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># Salvar em PNG</span></span>
+<span id="cb7-2"><a href=""></a><span class="fu">ggsave</span>(<span class="st">"figuras/figura1.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb7-3"><a href=""></a></span>
+<span id="cb7-4"><a href=""></a><span class="co"># Salvar em JPEG</span></span>
+<span id="cb7-5"><a href=""></a><span class="fu">ggsave</span>(<span class="st">"figuras/figura2.jpeg"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb7-6"><a href=""></a></span>
+<span id="cb7-7"><a href=""></a><span class="co"># Salvar em PDF</span></span>
+<span id="cb7-8"><a href=""></a><span class="fu">ggsave</span>(<span class="st">"figuras/figura2.pdf"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 
 <section id="exercício-de-fixação-01" class="title-slide slide level1 center center-x" data-background-color="#00263A">
 <h1>Exercício de Fixação 01</h1>
-<ol type="a">
-<li class="fragment"><p>Leia, com <code>read_csv2()</code>, as bases <code>gastos_seguranca_defesa.csv</code> e <code>gastos_urbanismo_habitacao.csv</code>, disponíveis na pasta <code>dados</code>. Depois, aplique <code>clean_names()</code>.</p></li>
-<li class="fragment"><p>Verifique quais colunas aparecem nas duas bases. Para a junção, considere <code>sigla</code>, <code>codigo</code> e <code>municipio</code>.</p></li>
-<li class="fragment"><p>Junte segurança/defesa e urbanismo/habitação com <code>left_join()</code>. A base de segurança/defesa deve ficar como referência.</p></li>
-<li class="fragment"><p>Defina os sufixos <code>_seguranca</code> e <code>_urbanismo</code> para separar as colunas de anos vindas de cada base.</p></li>
-</ol>
+<div class="fragment">
+<p>A base utilizada corresponde à <strong>Tabela 473 do SIDRA/IBGE</strong>, intitulada <em>Pessoas de 4 anos ou mais de idade por grupos de idade, anos de estudo, sexo e situação do domicílio em 1996</em>.</p>
+</div>
+<div class="fragment">
+<p>Cada linha representa uma combinação entre:</p>
+</div>
+<ul>
+<li class="fragment">grupo de idade;</li>
+<li class="fragment">grupo de anos de estudo;</li>
+<li class="fragment">sexo;</li>
+<li class="fragment">situação do domicílio.</li>
+</ul>
+<div class="fragment">
+<p>A variável <code>valor</code> informa a quantidade de pessoas correspondente a cada combinação.</p>
+</div>
 </section>
 
-<section id="exercício-de-fixação-02" class="title-slide slide level1 center center-x" data-background-color="#00263A">
-<h1>Exercício de Fixação 02</h1>
-<ol type="a">
-<li class="fragment"><p>Leia a base <code>gastos_urbanismo_habitacao.csv</code>, disponível na pasta <code>dados</code>. Use <code>read_csv2()</code> e depois aplique <code>clean_names()</code>.</p></li>
-<li class="fragment"><p>Filtre a base para manter apenas os municípios das UFs <code>PI</code>, <code>MA</code>, <code>TO</code> e <code>BA</code>.</p></li>
-<li class="fragment"><p>Transforme a base para o formato longo com <code>pivot_longer()</code>. As colunas dos anos devem virar uma coluna chamada <code>ano</code>, e os valores devem ficar em <code>gasto_urbanismo</code>.</p></li>
-<li class="fragment"><p>Depois, volte a base para o formato largo com <code>pivot_wider()</code>. A coluna <code>ano</code> deve voltar a formar colunas, e os valores devem sair de <code>gasto_urbanismo</code>.</p></li>
-<li class="fragment"><p>Compare a base longa e a base larga. Observe o que muda na organização das linhas e colunas.</p></li>
-</ol>
+<section id="exercício-de-fixação-01-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
+<h1>Exercício de Fixação 01</h1>
+<p><strong>Questão 1</strong></p>
+<p>Construa um gráfico de barras que apresente a quantidade de pessoas de 4 anos ou mais em cada grupo de anos de estudo no Brasil, em 1996. Retire as categorias <code>Total</code> e <code>Ignorados</code>, apresente os valores em milhões e ordene as barras de acordo com a quantidade de pessoas. Com base no gráfico, identifique o grupo predominante e descreva como a população se distribuía entre os níveis de escolaridade.</p>
+<p><strong>Questão 2</strong></p>
+<p>Entre as pessoas com <strong>5 a 7 anos de estudo</strong>, compare a quantidade de homens e mulheres residentes nas áreas urbana e rural. Organize os resultados em uma tabela, calcule o total de pessoas em cada situação do domicílio e a razão entre homens e mulheres. Em seguida, interprete as diferenças observadas.</p>
 </section>
 
 <section id="referências" class="title-slide slide level1 unnumbered smaller scrollable">
@@ -509,6 +635,82 @@ André Vitor Pereira de Melo
         });
       };
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

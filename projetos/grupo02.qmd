@@ -1,0 +1,164 @@
+---
+title: "Projeto 02"
+subtitle: "Evolução dos preços dos combustíveis no Piauí"
+lang: pt-BR
+mainfont: "Arial"
+format:
+  pdf:
+    toc: false
+    toc-depth: 3
+    number-sections: false
+    pdf-engine: xelatex
+---
+
+## Tema
+
+**Evolução e diferenças dos preços de um combustível no Piauí entre 2016 e 2026**
+
+## Pergunta principal
+
+**Como o preço de um combustível selecionado evoluiu no Piauí entre 2016 e 2026 e quais diferenças podem ser observadas entre os municípios pesquisados?**
+
+## Objetivo
+
+O projeto tem como objetivo analisar a evolução do preço de venda de um combustível no Piauí entre 2016 e 2026.
+
+O grupo deverá escolher apenas um produto, como gasolina comum, etanol hidratado, diesel, diesel S10 ou GLP. A partir desse recorte, deverá observar como o preço mudou ao longo do tempo, comparar os municípios pesquisados e verificar a diferença entre os valores encontrados.
+
+A escolha de um único produto evita comparações entre combustíveis com características e unidades de medida diferentes.
+
+## Entendendo a base
+
+A base reúne informações da pesquisa de preços realizada pela Agência Nacional do Petróleo, Gás Natural e Biocombustíveis, a ANP.
+
+Cada linha representa o preço de um produto coletado em determinado estabelecimento e em uma data específica.
+
+Uma mesma revenda pode aparecer várias vezes porque os preços foram coletados em diferentes datas e para diferentes produtos.
+
+Como o projeto analisará apenas um combustível, o grupo deverá selecionar o produto escolhido antes de iniciar as comparações.
+
+## Variáveis principais
+
+### `Ano`
+
+Indica o ano em que o preço foi coletado.
+
+Os dados de 2026 podem abranger apenas parte do ano. Caso isso ocorra, essa limitação deverá ser considerada na comparação com os anos completos.
+
+### `Data_Coleta`
+
+Apresenta a data exata em que o preço foi pesquisado.
+
+A variável permite organizar os dados por mês, trimestre ou ano, conforme a estratégia escolhida pelo grupo.
+
+### `ID_Municipio_Nome`
+
+Apresenta o nome do município onde está localizada a revenda pesquisada.
+
+É importante observar a quantidade de coletas disponíveis em cada município, pois resultados calculados com poucas observações podem ser menos representativos.
+
+### `Produto`
+
+Indica o combustível ou produto pesquisado.
+
+Podem aparecer categorias como gasolina comum, gasolina aditivada, etanol hidratado, diesel, diesel S10 e GLP.
+
+O grupo deverá escolher apenas um produto para realizar a análise.
+
+### `Unidade_Medida`
+
+Apresenta a unidade na qual o produto é comercializado.
+
+Os combustíveis automotivos geralmente são registrados em reais por litro. O GLP é registrado em reais por botijão de 13 quilogramas.
+
+### `Preco_Venda`
+
+Apresenta o preço cobrado do consumidor final na data da coleta.
+
+Na análise, poderão ser utilizadas medidas como média, mediana, valor mínimo, valor máximo e diferença entre o maior e o menor preço.
+
+A média pode ser influenciada por valores muito altos ou muito baixos, enquanto a mediana representa o valor central da distribuição.
+
+## Variáveis complementares
+
+As variáveis abaixo podem ser utilizadas para aprofundar a análise, mas não são obrigatórias.
+
+### `ID_Municipio`
+
+Apresenta o código oficial do município definido pelo IBGE.
+
+Essa variável identifica cada município de forma única.
+
+### `Bairro_Revenda`
+
+Apresenta o bairro onde a revenda está localizada.
+
+Pode ser utilizada para comparar preços dentro de um município que possua quantidade suficiente de observações.
+
+### `CNPJ_Revenda`
+
+Apresenta o CNPJ do estabelecimento e permite identificar cada revenda de forma única.
+
+### `Nome_Estabelecimento`
+
+Apresenta o nome do estabelecimento pesquisado.
+
+Pode ser utilizada para comparar revendas dentro de um mesmo município.
+
+### `Bandeira_Revenda`
+
+Indica a bandeira comercial da revenda.
+
+Pode apresentar o nome de uma distribuidora ou a classificação bandeira branca.
+
+### `Preco_Compra`
+
+Apresenta o preço de venda da distribuidora para a revenda.
+
+Como essa variável possui muitos valores ausentes, deverá ser utilizada apenas se houver quantidade suficiente de observações válidas.
+
+## Questões obrigatórias
+
+O grupo deverá responder às seguintes questões:
+
+1. **Como o preço médio e o preço mediano do combustível escolhido evoluíram entre 2016 e 2026?**
+
+2. **Em quais anos ocorreram os maiores aumentos ou reduções no preço médio?**
+
+3. **Quais municípios apresentaram os maiores e os menores preços médios do combustível escolhido?**
+
+4. **A diferença entre o maior e o menor preço observado aumentou ou diminuiu ao longo do período?**
+
+## Elementos mínimos do projeto
+
+O trabalho deverá apresentar:
+
+* pelo menos uma tabela com informações relevantes para as questões propostas;
+* pelo menos dois gráficos adequados ao tema;
+* uma análise da evolução dos preços ao longo do período;
+* uma comparação entre os municípios pesquisados;
+* uma análise utilizando uma variável complementar escolhida pelo grupo;
+* explicações para os principais resultados;
+* uma conclusão que responda diretamente à pergunta principal.
+
+A escolha das tabelas, dos gráficos, das medidas estatísticas e das formas de comparação ficará sob responsabilidade do grupo. Os recursos utilizados deverão contribuir para responder às quatro questões obrigatórias.
+
+Para a análise complementar, o grupo poderá, por exemplo:
+
+* comparar os preços entre bandeiras;
+* comparar estabelecimentos dentro de um mesmo município;
+* comparar bairros de um município;
+* analisar a evolução mensal dos preços;
+* utilizar o preço de compra, caso existam dados suficientes.
+
+O grupo deverá escolher apenas uma dessas possibilidades ou propor outra análise que seja adequada ao tema e às informações disponíveis na base.
+
+## Interpretação dos resultados
+
+As tabelas e os gráficos deverão ser acompanhados de explicações.
+
+O grupo deverá observar quanto o preço mudou ao longo do período, identificar os anos de maior aumento ou redução e verificar se a média e a mediana apresentaram comportamentos semelhantes.
+
+Na comparação entre municípios, deverá identificar quais apresentaram os preços mais altos e mais baixos, considerando também a quantidade de observações disponível.
+
+A conclusão deverá responder diretamente à pergunta principal e apresentar os resultados mais importantes encontrados pelo grupo.
