@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input7d46f0a837c71f9a</title>
+  <title>quarto-input1aa139b929aad8c5</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -231,7 +231,7 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">12 de junho de 2026</p>
+  <p class="date">19 de junho de 2026</p>
 </section>
 <section id="fundamentos-do-ggplot2-e-construção-de-gráficos" class="title-slide slide level1 center" style="font-size:1.5em;">
 <h1>01 - Fundamentos do ggplot2 e construção de gráficos</h1>
@@ -363,28 +363,32 @@ André Vitor Pereira de Melo
 <section id="exercício-de-fixação-01" class="title-slide slide level1 center center-x" data-background-color="#00263A">
 <h1>Exercício de Fixação 01</h1>
 <div class="fragment">
-<p>A base utilizada corresponde à <strong>Tabela 473 do SIDRA/IBGE</strong>, intitulada <em>Pessoas de 4 anos ou mais de idade por grupos de idade, anos de estudo, sexo e situação do domicílio em 1996</em>.</p>
+<p>A base utilizada foi construída com séries temporais do Banco Central do Brasil, obtidas pelo pacote <em>rbcb</em>.</p>
+<div class="fragment">
+<p>O objetivo é analisar a relação entre juros e comprometimento da renda das famílias no Brasil entre 2016 e fevereiro de 2026.</p>
 </div>
 <div class="fragment">
-<p>Cada linha representa uma combinação entre:</p>
+<p>As variáveis disponíveis na base são:</p>
 </div>
 <ul>
-<li class="fragment">grupo de idade;</li>
-<li class="fragment">grupo de anos de estudo;</li>
-<li class="fragment">sexo;</li>
-<li class="fragment">situação do domicílio.</li>
+<li class="fragment"><code>selic</code>: taxa Selic;</li>
+<li class="fragment"><code>atraso_pf</code>: atraso da carteira de crédito para pessoa física;</li>
+<li class="fragment"><code>comprometimento_renda</code>: comprometimento da renda das famílias com dívidas;</li>
+<li class="fragment"><code>endividamento_familias</code>: endividamento das famílias.</li>
 </ul>
-<div class="fragment">
-<p>A variável <code>valor</code> informa a quantidade de pessoas correspondente a cada combinação.</p>
 </div>
 </section>
 
 <section id="exercício-de-fixação-01-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
 <h1>Exercício de Fixação 01</h1>
-<p><strong>Questão 1</strong></p>
-<p>Construa um gráfico de barras que apresente a quantidade de pessoas de 4 anos ou mais em cada grupo de anos de estudo no Brasil, em 1996. Retire as categorias <code>Total</code> e <code>Ignorados</code>, apresente os valores em milhões e ordene as barras de acordo com a quantidade de pessoas. Com base no gráfico, identifique o grupo predominante e descreva como a população se distribuía entre os níveis de escolaridade.</p>
-<p><strong>Questão 2</strong></p>
-<p>Entre as pessoas com <strong>5 a 7 anos de estudo</strong>, compare a quantidade de homens e mulheres residentes nas áreas urbana e rural. Organize os resultados em uma tabela, calcule o total de pessoas em cada situação do domicílio e a razão entre homens e mulheres. Em seguida, interprete as diferenças observadas.</p>
+<div class="fragment">
+<p>Pressuposto econômico: juros mais altos tornam o crédito mais caro. Isso pode aumentar o valor das parcelas e fazer com que uma parte maior da renda das famílias seja usada para pagar dívidas.</p>
+</div>
+<div class="fragment">
+<p>Pergunta-se:</p>
+<p>Em períodos de Selic alta, o comprometimento da renda das famílias também é maior?</p>
+<p>Construa um gráfico de linhas comparando a média anual da selic e do <code>comprometimento_renda</code>. Para facilitar a visualização, calcule primeiro a média de cada variável por ano e, depois, transforme a base para o formato longo usando <code>pivot_longer()</code>. Observe se os anos com Selic mais elevada também apresentam maior comprometimento da renda das famílias.</p>
+</div>
 </section>
 
 <section id="referências" class="title-slide slide level1 unnumbered smaller scrollable">

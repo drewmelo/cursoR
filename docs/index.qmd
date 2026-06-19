@@ -163,32 +163,35 @@ ggsave("figuras/figura2.pdf", plot = p, width = 6, height = 4)
 # Exercício de Fixação 01 {.center .center-x background-color="#00263A"}
 
 ::: {.fragment}
-A base utilizada corresponde à **Tabela 473 do SIDRA/IBGE**, intitulada *Pessoas de 4 anos ou mais de idade por grupos de idade, anos de estudo, sexo e situação do domicílio em 1996*.
+A base utilizada foi construída com séries temporais do Banco Central do Brasil, obtidas pelo pacote *rbcb*.
+
+::: {.fragment}
+O objetivo é analisar a relação entre juros e comprometimento da renda das famílias no Brasil entre 2016 e fevereiro de 2026.
 :::
 
 ::: {.fragment}
-Cada linha representa uma combinação entre:
+As variáveis disponíveis na base são:
 :::
 
-* grupo de idade;
-* grupo de anos de estudo;
-* sexo;
-* situação do domicílio.
-
-::: {.fragment}
-A variável `valor` informa a quantidade de pessoas correspondente a cada combinação.
+- `selic`: taxa Selic;
+- `atraso_pf`: atraso da carteira de crédito para pessoa física;
+- `comprometimento_renda`: comprometimento da renda das famílias com dívidas;
+- `endividamento_familias`: endividamento das famílias.
 :::
 
 # Exercício de Fixação 01 {.center .center-x background-color="#00263A"}
 
-**Questão 1**
+::: {.fragment}
+Pressuposto econômico: juros mais altos tornam o crédito mais caro. Isso pode aumentar o valor das parcelas e fazer com que uma parte maior da renda das famílias seja usada para pagar dívidas.
+:::
 
-Construa um gráfico de barras que apresente a quantidade de pessoas de 4 anos ou mais em cada grupo de anos de estudo no Brasil, em 1996. Retire as categorias `Total` e `Ignorados`, apresente os valores em milhões e ordene as barras de acordo com a quantidade de pessoas. Com base no gráfico, identifique o grupo predominante e descreva como a população se distribuía entre os níveis de escolaridade.
+::: {.fragment}
+Pergunta-se:
 
-**Questão 2**
+Em períodos de Selic alta, o comprometimento da renda das famílias também é maior?
 
-Entre as pessoas com **5 a 7 anos de estudo**, compare a quantidade de homens e mulheres residentes nas áreas urbana e rural. Organize os resultados em uma tabela, calcule o total de pessoas em cada situação do domicílio e a razão entre homens e mulheres. Em seguida, interprete as diferenças observadas.
-
+Construa um gráfico de linhas comparando a média anual da selic e do `comprometimento_renda`. Para facilitar a visualização, calcule primeiro a média de cada variável por ano e, depois, transforme a base para o formato longo usando `pivot_longer()`. Observe se os anos com Selic mais elevada também apresentam maior comprometimento da renda das famílias.
+:::
 
 # Referências {.unnumbered}
 
