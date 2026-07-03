@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="André Vitor Pereira de Melo">
-  <title>quarto-input1aa139b929aad8c5</title>
+  <title>quarto-inpute79c758d34dd9561</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -215,7 +215,7 @@
   <h1 class="title"><div style="display: flex; align-items: center;">
 <p><span style="color: #313130; font-weight: bold; font-size: 2em;">Introdução ao</span> <img src="logo/r_logo.png" style="margin-left: -15px; height: 150px; margin-bottom: -40px;"> <object data="images/qrcode.svg" type="image/svg+xml" style="margin-left: 650px; height: 300px; position: absolute; top: 180px; right: 0;"></object></p>
 </div></h1>
-  <p class="subtitle">Visualização de dados com ggplot2</p>
+  <p class="subtitle">Aplicações em Economia e desenvolvimento de projeto final</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -231,163 +231,180 @@ André Vitor Pereira de Melo
     </div>
 </div>
 
-  <p class="date">19 de junho de 2026</p>
+  <p class="date">3 de julho de 2026</p>
 </section>
-<section id="fundamentos-do-ggplot2-e-construção-de-gráficos" class="title-slide slide level1 center" style="font-size:1.5em;">
-<h1>01 - Fundamentos do ggplot2 e construção de gráficos</h1>
+<section id="estatística-descritiva-e-análise-exploratória-aplicada-a-dados-econômicos" class="title-slide slide level1 center" style="font-size:1.5em;">
+<h1>01 - Estatística descritiva e análise exploratória aplicada a dados econômicos</h1>
 
 </section>
 
-<section id="introdução-ao-ggplot2" class="title-slide slide level1 center">
-<h1>Introdução ao ggplot2</h1>
-<div class="fragment fade-in-then-semi-out">
-<p>O <code>ggplot2</code> é um dos pacotes mais populares para visualização de dados no R, criado por Hadley Wickham. Ele implementa a gramática de gráficos, permitindo a criação de <strong>visualizações complexas de forma intuitiva e flexível</strong>.</p>
-</div>
+<section id="operações-estatísticas" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Operações estatísticas</h1>
+<p>O R possui uma ampla gama de funções estatísticas, tais como média, mediana, variância, desvio padrão, e outros.</p>
 <div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>A gramática de gráficos (<em>Grammar of Graphics</em>) é um conceito que descreve e constrói gráficos através de componentes básicos.</p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/ggplot_logo.jpg" class="absolute" style="height: 450px; "></p>
-</div></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href=""></a><span class="co"># Soma</span></span>
+<span id="cb1-3"><a href=""></a><span class="fu">sum</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14143</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Média</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">mean</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 174.6049</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Mediana</span></span>
+<span id="cb5-2"><a href=""></a><span class="fu">median</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 180</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># Variância</span></span>
+<span id="cb7-2"><a href=""></a><span class="fu">var</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1209.242</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Desvio padrão</span></span>
+<span id="cb9-2"><a href=""></a><span class="fu">sd</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 34.77416</code></pre>
+</div>
+</div>
 </div>
 </section>
 
-<section id="princípios-básicos-do-ggplot2" class="title-slide slide level1 center">
-<h1>Princípios básicos do ggplot2</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li class="fragment"><strong>Data</strong>:
-<ul>
-<li class="fragment">O primeiro passo na construção de um gráfico é fornecer os dados.</li>
-</ul></li>
-<li class="fragment"><strong>Aesthetics</strong> (<code>aes</code>):
-<ul>
-<li class="fragment">Especifica como os dados são mapeados visualmente</li>
-</ul></li>
-<li class="fragment"><strong>Geometries</strong> (<code>geoms</code>):
-<ul>
-<li class="fragment">Define o tipo de gráfico a ser criado, como pontos, barras, linhas, caixas, etc.</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment"><strong>Facets</strong>:
-<ul>
-<li class="fragment">Permite dividir os dados em subgráficos baseados em uma ou mais variáveis.</li>
-</ul></li>
-<li class="fragment"><strong>Scales</strong>:
-<ul>
-<li class="fragment">Controla a mapeamento das variáveis para as estéticas, incluindo eixos e legendas.</li>
-</ul></li>
-<li class="fragment"><strong>Themes</strong>:
-<ul>
-<li class="fragment">Modifica a aparência geral do gráfico, como cores de fundo, fontes, etc.</li>
-</ul></li>
-</ul>
-</div></div>
-</section>
-
-<section id="princípios-básicos-do-ggplot2-1" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Princípios básicos do ggplot2</h1>
-<div style="text-align: center; margin-top: 1em">
-<p><img data-src="images/ggplot-grammar-of-graphics.png" class="border shadow-border" height="500"></p>
+<section id="operações-estatísticas-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Operações estatísticas</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># Quartis</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">quantile</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+  66  167  180  191  264 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co"># Produto</span></span>
+<span id="cb13-2"><a href=""></a><span class="fu">prod</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.198489e+180</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># Mínimo e máximo</span></span>
+<span id="cb15-2"><a href=""></a><span class="fu">min</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 66</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">max</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 264</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="co"># Intervalo </span></span>
+<span id="cb19-2"><a href=""></a><span class="fu">range</span>(starwars<span class="sc">$</span>height, <span class="at">na.rm =</span> T)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  66 264</code></pre>
+</div>
 </div>
 </section>
 
-<section id="processo-de-camada-layers" class="title-slide slide level1 center">
-<h1>Processo de camada (layers)</h1>
+<section id="resumo-estatístico" class="title-slide slide level1 center">
+<h1>Resumo estatístico</h1>
+<p>O R possui uma função integrada chamada <code>summary</code>, que é usada para gerar um resumo estatístico básico de diferentes tipos de objetos, <strong>incluindo vetores, data frames e listas</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">summary</span>(starwars <span class="sc">|&gt;</span> <span class="fu">select</span>(name<span class="sc">:</span>skin_color))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     name               height           mass          hair_color       
+ Length:87          Min.   : 66.0   Min.   :  15.00   Length:87         
+ Class :character   1st Qu.:167.0   1st Qu.:  55.60   Class :character  
+ Mode  :character   Median :180.0   Median :  79.00   Mode  :character  
+                    Mean   :174.6   Mean   :  97.31                     
+                    3rd Qu.:191.0   3rd Qu.:  84.50                     
+                    Max.   :264.0   Max.   :1358.00                     
+                    NA's   :6       NA's   :28                          
+  skin_color       
+ Length:87         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   </code></pre>
+</div>
+</div>
+</section>
+
+<section id="histograma" class="title-slide slide level1 center">
+<h1>Histograma</h1>
+<p>As funções básicas do R também fornecem visualizações de distribuição das variáveis.</p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">hist</span>(mtcars<span class="sc">$</span>mpg, <span class="at">breaks =</span> <span class="dv">10</span>, <span class="at">col =</span> <span class="st">"lightblue3"</span>, <span class="at">main =</span> <span class="st">"Histograma de MPG"</span>, <span class="at">xlab =</span> <span class="st">"MPG"</span>, <span class="at">ylab =</span> <span class="st">"Frequência"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="boxplot" class="title-slide slide level1 center">
+<h1>Boxplot</h1>
+<p>As funções básicas do R também fornecem visualizações de distribuição das variáveis.</p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg, <span class="at">main =</span> <span class="st">"Boxplot de MPG"</span>, <span class="at">ylab =</span> <span class="st">"MPG"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <p>No <code>ggplot2</code>, é possível desenvolver gráficos camada por camada. Cada camada adiciona novos elementos ou modifica os existentes. A seguir, utilizaremos a base <code>mtcars</code>.</p>
 <p>Porém, antes é necessário ativarmos o pacote.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-
-<section id="camada-de-dados-e-aesthetics" class="title-slide slide level1 center">
-<h1>Camada de Dados e Aesthetics</h1>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-
-<section id="camada-de-geometria" class="title-slide slide level1 center">
-<h1>Camada de Geometria</h1>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-
-<section id="camada-de-facets-opcional" class="title-slide slide level1 center">
-<h1>Camada de Facets (Opcional)</h1>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span> cyl)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-
-<section id="camada-de-facets-opcional-1" class="title-slide slide level1 center">
-<h1>Camada de Facets (Opcional)</h1>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">6</span>, <span class="at">by =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-
-<section id="camada-de-themes-opcional" class="title-slide slide level1 center">
-<h1>Camada de Themes (Opcional)</h1>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-
-<section id="ggsave" class="title-slide slide level1 center">
-<h1>ggsave</h1>
-<p>Para gráficos gerados com <code>ggplot2</code>, podemos salvá-los em formato <em>png</em>, <em>jpeg</em> e <em>pdf</em>. Neste caso, salvaremos nesses 3 formatos diretamente para a pasta <code>figuras</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># Salvar em PNG</span></span>
-<span id="cb7-2"><a href=""></a><span class="fu">ggsave</span>(<span class="st">"figuras/figura1.png"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb7-3"><a href=""></a></span>
-<span id="cb7-4"><a href=""></a><span class="co"># Salvar em JPEG</span></span>
-<span id="cb7-5"><a href=""></a><span class="fu">ggsave</span>(<span class="st">"figuras/figura2.jpeg"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
-<span id="cb7-6"><a href=""></a></span>
-<span id="cb7-7"><a href=""></a><span class="co"># Salvar em PDF</span></span>
-<span id="cb7-8"><a href=""></a><span class="fu">ggsave</span>(<span class="st">"figuras/figura2.pdf"</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 
 <section id="exercício-de-fixação-01" class="title-slide slide level1 center center-x" data-background-color="#00263A">
 <h1>Exercício de Fixação 01</h1>
 <div class="fragment">
-<p>A base utilizada foi construída com séries temporais do Banco Central do Brasil, obtidas pelo pacote <em>rbcb</em>.</p>
-<div class="fragment">
-<p>O objetivo é analisar a relação entre juros e comprometimento da renda das famílias no Brasil entre 2016 e fevereiro de 2026.</p>
+<p>Com o objetivo de analisar características socioeconômicas de trabalhadores, foi utilizada uma base com informações sobre estado civil, grau de instrução, número de filhos, salário, idade e região de procedência. O objetivo é determinar se existe associação entre as variáveis <strong>estado civil</strong> e <strong>grau de instrução</strong>. Com base no arquivo <code>salarios.csv</code>, pede-se:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/drewmelo/cursoR/refs/heads/master/dados/salarios.csv"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<p>As variáveis disponíveis na base são:</p>
-</div>
-<ul>
-<li class="fragment"><code>selic</code>: taxa Selic;</li>
-<li class="fragment"><code>atraso_pf</code>: atraso da carteira de crédito para pessoa física;</li>
-<li class="fragment"><code>comprometimento_renda</code>: comprometimento da renda das famílias com dívidas;</li>
-<li class="fragment"><code>endividamento_familias</code>: endividamento das famílias.</li>
-</ul>
 </div>
 </section>
 
 <section id="exercício-de-fixação-01-1" class="title-slide slide level1 center center-x" data-background-color="#00263A">
 <h1>Exercício de Fixação 01</h1>
 <div class="fragment">
-<p>Pressuposto econômico: juros mais altos tornam o crédito mais caro. Isso pode aumentar o valor das parcelas e fazer com que uma parte maior da renda das famílias seja usada para pagar dívidas.</p>
+<ol type="a">
+<li class="fragment">Construa as tabelas de distribuição conjunta de frequências para as variáveis estado_civil e grau_instrucao ou Grau de Instrução (frequências absolutas, frequências relativas em relação ao total geral, frequências relativas em relação ao total de cada linha, frequências relativas em relação ao total de cada coluna e frequências esperadas).</li>
+</ol>
 </div>
 <div class="fragment">
-<p>Pergunta-se:</p>
-<p>Em períodos de Selic alta, o comprometimento da renda das famílias também é maior?</p>
-<p>Construa um gráfico de linhas comparando a média anual da selic e do <code>comprometimento_renda</code>. Para facilitar a visualização, calcule primeiro a média de cada variável por ano e, depois, transforme a base para o formato longo usando <code>pivot_longer()</code>. Observe se os anos com Selic mais elevada também apresentam maior comprometimento da renda das famílias.</p>
+<ol start="2" type="a">
+<li class="fragment">Determine a porcentagem de trabalhadores casados.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="a">
+<li class="fragment">Determine a porcentagem de trabalhadores com ensino médio.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="a">
+<li class="fragment">Determine a porcentagem daqueles que são solteiros e possuem ensino superior.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="5" type="a">
+<li class="fragment">Determine, dentre os trabalhadores casados, a porcentagem daqueles que possuem ensino médio.</li>
+</ol>
 </div>
 </section>
 
