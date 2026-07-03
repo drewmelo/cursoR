@@ -45,3 +45,39 @@ tab_abs <- with(data = dados_salarios,
 
 # Adicionar total
 tab_abs_total <- addmargins(tab_abs)
+
+# De forma relativa
+tab_prop_all <- addmargins(prop.table(tab_abs))
+
+# Frequência relativa por linha
+tab_prop_row <- prop.table(tab_abs, margin = 1)
+
+total <- rowSums(tab_abs) / sum(tab_abs)
+
+tab_prop_row_total <- tab_prop_row |> 
+  cbind(total)
+
+# Frequência relativa por coluna
+tab_prop_col <- prop.table(tab_abs, margin = 2)
+
+total <- Sums(tab_abs) / sum(tab_abs)
+
+tab_prop_col_total <- tab_prop_col |> 
+  rbind(total) |> 
+  round(3)
+
+
+# Teste qui-quadrado ------------------------------------------------------
+library(janitor)
+
+chi <- chisq.test(tab_abs)
+
+chi$statistic
+chi$expected
+chi$observed
+chi$residuals
+
+stats::chisq.test(tab_abs, 
+                  simulate.p.value = TRUE, B = 50000)
+
+tab_prop_all["(5,10]", "ensino fundamental"]
